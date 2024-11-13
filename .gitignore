@@ -1,0 +1,10 @@
+.cache/
+.dotnet/
+.landscape/
+.vscode-server/
+.vscode/
+.snap/
+.terraform.d/
+.viminfo
+.wget-hsts
+
