@@ -8,6 +8,5 @@
 .terraform.d/
 .viminfo
 .wget-hsts
-html/
 snap/
 terraform/.terraform/
