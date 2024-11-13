@@ -4,7 +4,10 @@
 .vscode-server/
 .vscode/
 .snap/
+.terraform/
 .terraform.d/
 .viminfo
 .wget-hsts
-
+html/
+snap/
+terraform/.terraform/
