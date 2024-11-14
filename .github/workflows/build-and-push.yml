@@ -1,4 +1,4 @@
-name: Build and Push to ecr
+name: Build and Push to ECR
 
 on:
   push:
@@ -14,12 +14,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # 2. AWS 인증 설정
-    - name: Configure AWS credentials
+    # 2. AWS OIDC 인증 설정 (IAM 역할 수임)
+    - name: Configure AWS credentials using OIDC
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-to-assume: arn:aws:iam::481665107235:role/S3WebRole
         aws-region: ap-northeast-2
 
     # 3. ECR 로그인
@@ -46,4 +45,3 @@ jobs:
     # 7. Docker 이미지 ECR에 푸시 (user-login-service)
     - name: Push Docker Image to ECR - User Login Service
       run: docker push 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
-
