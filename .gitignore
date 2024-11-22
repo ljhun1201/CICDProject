@@ -10,3 +10,9 @@
 .wget-hsts
 snap/
 terraform/.terraform/
+.lesshst
+.motd_shown
+.sudo_as_admin_successful
+.vim/.netrwhist
+.local/
+.kube/
