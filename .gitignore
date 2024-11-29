@@ -16,3 +16,4 @@ terraform/.terraform/
 .vim/.netrwhist
 .local/
 .kube/
+.aws/credentials

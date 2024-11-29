@@ -22,6 +22,10 @@ def register():
     db.session.commit()
     return jsonify({"message": "User registered successfully"}), 201
 
+@app.route("/healthz")
+def health_check():
+    return "OK", 200
+
 if __name__ == '__main__':
     if not os.path.exists('users.db'):
         db.create_all()
