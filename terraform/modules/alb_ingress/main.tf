@@ -334,6 +334,12 @@ resource "kubernetes_manifest" "app_ingress" {
         "alb.ingress.kubernetes.io/healthcheck-interval-seconds" = "30"  # Health Check 간격
         "alb.ingress.kubernetes.io/healthcheck-timeout-seconds" = "5"    # Health Check 타임아웃
         "alb.ingress.kubernetes.io/success-codes" = "200"                # 성공 응답 코드
+
+        # CORS 설정 추가
+        "alb.ingress.kubernetes.io/allow-headers" = "*"
+        "alb.ingress.kubernetes.io/allow-methods" = "GET,POST,PUT,DELETE,OPTIONS"
+        "alb.ingress.kubernetes.io/allow-origin"  = "*"
+        "alb.ingress.kubernetes.io/expose-headers" = "Authorization,Content-Type"
       }
     }
     spec = {
