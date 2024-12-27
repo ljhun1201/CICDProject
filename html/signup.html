@@ -135,7 +135,7 @@
             var password = document.querySelector('[name="password"]').value;
             var email = document.querySelector('[name="email"]').value;
 
-            fetch('https://i59dwzj3x8.execute-api.ap-northeast-2.amazonaws.com/login/signup', {
+            fetch("https://www.ljhun.shop/app-one/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -150,7 +150,6 @@
                 }
             }))
             .catch(error => {
-		console.log('2');
                 console.error('Error:', error);
                 showErrorMessage();
             });

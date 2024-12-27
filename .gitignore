@@ -17,3 +17,4 @@ terraform/.terraform/
 .local/
 .kube/
 .aws/credentials
+.bash_history

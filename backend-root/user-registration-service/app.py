@@ -1,33 +1,71 @@
+import os
+import pymysql
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    password = db.Column(db.String(120), nullable=False)
+# 환경변수로부터 DB 정보 가져오기
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
 
-@app.route('/register', methods=['POST'])
-def register():
-    data = request.get_json()
-    if User.query.filter_by(username=data['username']).first():
-        return jsonify({"message": "Username already exists"}), 400
-    new_user = User(username=data['username'], password=data['password'])
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify({"message": "User registered successfully"}), 201
+def get_db_connection():
+    return pymysql.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+
+# DB 초기화 로직
+def init_db():
+    conn = get_db_connection()
+
+    try:
+        with conn.cursor() as cursor:
+            # users 테이블이 존재하지 않으면 생성
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    username VARCHAR(50) NOT NULL,
+                    password VARCHAR(100) NOT NULL,
+                    email VARCHAR(100) NOT NULL
+                );
+            """)
+        conn.commit()
+    finally:
+        conn.close()
 
 @app.route("/healthz")
 def health_check():
-    return "OK", 200
+    return "OK"
 
-if __name__ == '__main__':
-    if not os.path.exists('users.db'):
-        db.create_all()
-    app.run(host='0.0.0.0', port=5000)
+@app.route("/register", methods=["POST"])
+def register_user():
+    data = request.get_json()
+    username = data.get("username")
+    password = data.get("password")
+    email    = data.get("email")   # email 받기
 
+    try:
+        conn = get_db_connection()
+        with conn.cursor() as cursor:
+            sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
+            cursor.execute(sql, (username, password, email))
+        conn.commit()
+
+        # 프론트엔드에서 "response.ok && data.success" 체킹을 하므로, success 필드를 함께 내려줍니다.
+        return jsonify({"success": True, "message": "User registered successfully"}), 201
+
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 400
+
+    finally:
+        conn.close()
+
+# 필요하다면 다른 엔드포인트들도 추가
+if __name__ == "__main__":
+    init_db()  # RDS 초기화 실행
+    app.run(host="0.0.0.0", port=5000)
