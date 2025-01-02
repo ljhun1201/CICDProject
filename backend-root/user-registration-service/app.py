@@ -72,6 +72,7 @@ def register_user():
 
     try:
         conn = get_db_connection()
+        print("succeed")
         with conn.cursor() as cursor:
             sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
             cursor.execute(sql, (username, password, email))
@@ -85,8 +86,8 @@ def register_user():
         return jsonify({"success": False, "error": str(e)}), 400
 
     finally:
-        conn.close()
         print("연결 종료")
+        conn.close()
 
 # 필요하다면 다른 엔드포인트들도 추가
 if __name__ == "__main__":
