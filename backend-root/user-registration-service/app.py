@@ -52,13 +52,17 @@ def health_check():
 
 @app.route('/app-one/register', methods=['POST', 'OPTIONS'])
 def register_user():
-    
+
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
         response.headers.add("Access-Control-Allow-Origin", "https://www.ljhun.shop")
         response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
         return response, 200
+
+    app.logger.debug("Register endpoint accessed.")
+    data = request.get_json()
+    app.logger.debug(f"Received data: {data}")
 
     data = request.get_json()
     username = data.get("username")
