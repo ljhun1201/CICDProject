@@ -50,6 +50,12 @@ jobs:
     - name: Push Docker Image to ECR - User Login Service
       run: docker push 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
 
+    # 8. EKS Kubeconfig 생성
+    - name: Configure kubeconfig for EKS
+      run: |
+        aws eks update-kubeconfig --name eks-cluster --region ap-northeast-2
+      # 이 명령이 ~/.kube/config 파일 생성
+
     - name: Update Deployment in EKS
       run: |
         kubectl set image deployment/app-one app-one-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest -n default
