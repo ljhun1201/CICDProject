@@ -24,7 +24,8 @@ def get_db_connection():
 
 # DB 초기화 로직
 def init_db():
-
+    conn = None
+  
     try:
         conn = get_db_connection()
 
@@ -63,6 +64,7 @@ def register_user():
     username = data.get("username")
     password = data.get("password")
     email    = data.get("email")   # email 받기
+    conn     = None
 
     try:
         conn = get_db_connection()
@@ -80,6 +82,7 @@ def register_user():
 
     finally:
         conn.close()
+        print("연결 종료")
 
 # 필요하다면 다른 엔드포인트들도 추가
 if __name__ == "__main__":
