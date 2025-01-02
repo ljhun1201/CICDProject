@@ -380,7 +380,7 @@ resource "kubernetes_manifest" "app_ingress" {
           http = {
             paths = [
               {
-                path     = "/app-one"
+                path     = "/"
                 pathType = "Prefix"
                 backend = {
                   service = {
@@ -392,7 +392,7 @@ resource "kubernetes_manifest" "app_ingress" {
                 }
               },
               {
-                path     = "/app-two"
+                path     = "/"
                 pathType = "Prefix"
                 backend = {
                   service = {
@@ -411,7 +411,7 @@ resource "kubernetes_manifest" "app_ingress" {
           http = {
             paths = [
               {
-                path     = "/app-one"
+                path     = "/"
                 pathType = "Prefix"
                 backend = {
                   service = {
@@ -423,7 +423,7 @@ resource "kubernetes_manifest" "app_ingress" {
                 }
               },
               {
-                path     = "/app-two"
+                path     = "/"
                 pathType = "Prefix"
                 backend = {
                   service = {
