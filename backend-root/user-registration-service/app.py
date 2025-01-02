@@ -25,8 +25,8 @@ def get_db_connection():
 # DB 초기화 로직
 def init_db():
     conn = None
-
     try:
+        print("Initializing database...")
         conn = get_db_connection()
         if not conn:
             print("Failed to connect to the database.")
@@ -48,7 +48,7 @@ def init_db():
         conn.commit()
         print("Database initialized successfully.")
     except Exception as e:
-        print("DB Connection Failed:", str(e))  # 예외 메시지 출력
+        print(f"DB Initialization Failed: {str(e)}")
     finally:
         if conn:
             conn.close()
