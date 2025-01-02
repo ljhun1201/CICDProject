@@ -25,11 +25,17 @@ def get_db_connection():
 # DB 초기화 로직
 def init_db():
     conn = None
-  
+
     try:
         conn = get_db_connection()
+        if not conn:
+            print("Failed to connect to the database.")
+            return
 
         with conn.cursor() as cursor:
+            # mydb 데이터베이스 선택
+            cursor.execute("USE mydb;")
+
             # users 테이블이 존재하지 않으면 생성
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS users (
@@ -40,11 +46,12 @@ def init_db():
                 );
             """)
         conn.commit()
+        print("Database initialized successfully.")
     except Exception as e:
         print("DB Connection Failed:", str(e))  # 예외 메시지 출력
-        return jsonify({"success": False, "error": str(e)}), 400
     finally:
-        conn.close()
+        if conn:
+            conn.close()
 
 @app.route("/healthz")
 def health_check():
@@ -74,6 +81,7 @@ def register_user():
         conn = get_db_connection()
         print("succeed")
         with conn.cursor() as cursor:
+            cursor.execute("USE mydb;")
             sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
             cursor.execute(sql, (username, password, email))
         conn.commit()
