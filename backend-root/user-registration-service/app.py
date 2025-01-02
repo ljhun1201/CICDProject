@@ -45,8 +45,16 @@ def init_db():
 def health_check():
     return "OK"
 
-@app.route("/register", methods=["POST"])
+@app.route('/register', methods=['POST', 'OPTIONS'])
 def register_user():
+    
+    if request.method == 'OPTIONS':
+        response = jsonify({"message": "CORS preflight passed"})
+        response.headers.add("Access-Control-Allow-Origin", "https://www.ljhun.shop")
+        response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        return response, 200
+
     data = request.get_json()
     username = data.get("username")
     password = data.get("password")

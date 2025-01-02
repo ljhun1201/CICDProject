@@ -313,7 +313,7 @@ resource "aws_db_subnet_group" "this" {
   name        = "mydb-subnet-group"
   description = "Subnet group for my RDS"
 
-  subnet_ids = aws_subnet.private_subnets[*].id  # private 서브넷들
+  subnet_ids = aws_subnet.public_subnets[*].id  # private 서브넷들
   tags = {
     Name = "mydb-subnet-group"
   }

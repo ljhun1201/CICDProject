@@ -53,6 +53,23 @@ resource "kubernetes_deployment" "app_one" {
             container_port = 5000
           }
 
+          env {
+            name  = "DB_HOST"
+            value = var.db_endpoint
+          }
+          env {
+            name  = "DB_USER"
+            value = "admin"       # 예: 하드코딩 or 별도 변수
+          }
+          env {
+            name  = "DB_PASSWORD"
+            value = var.db_password
+          }
+          env {
+            name  = "DB_NAME"
+            value = "mydb"        # aws_db_instance.mydb.db_name에 맞춤
+          }
+
           # Health Check 설정
           liveness_probe {
             http_get {

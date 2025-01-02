@@ -38,3 +38,8 @@ output "db_endpoint" {
   description = "RDS Endpoint"
   value       = aws_db_instance.mydb.endpoint
 }
+
+output "db_password" {
+  description = "RDS Password"
+  value       = var.db_password
+}

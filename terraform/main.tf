@@ -37,7 +37,10 @@ cd modules/alb_ingress && terraform apply -auto-approve \
   -var "eks_cluster_ca=${module.network.eks_cluster_ca}" \
   -var "eks_auth=${module.network.eks_auth}" \
   -var "oidc_issuer_url=${module.network.oidc_issuer_url}" \
-  -var "alb_security_group_id=${module.network.alb_security_group_id}" && \
+  -var "alb_security_group_id=${module.network.alb_security_group_id}" \
+  -var "db_endpoint=${module.network.db_endpoint}" \
+  -var "db_password=${module.network.db_password}" \
+  && \
 
 # ALB가 생성될 때까지 대기
 sleep 60 && \
