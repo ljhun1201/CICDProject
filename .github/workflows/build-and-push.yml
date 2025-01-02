@@ -49,3 +49,8 @@ jobs:
     # 7. Docker 이미지 ECR에 푸시 (user-login-service)
     - name: Push Docker Image to ECR - User Login Service
       run: docker push 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
+
+    - name: Update Deployment in EKS
+      run: |
+        kubectl set image deployment/app-one app-one-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest -n default
+        kubectl set image deployment/app-two app-two-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest -n default

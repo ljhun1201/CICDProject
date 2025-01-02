@@ -78,5 +78,5 @@ def register_user():
 
 # 필요하다면 다른 엔드포인트들도 추가
 if __name__ == "__main__":
-    init_db()  # RDS 초기화 실행
+    init_db() 
     app.run(host="0.0.0.0", port=5000)
