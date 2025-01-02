@@ -321,6 +321,17 @@ resource "aws_iam_policy" "alb_controller_policy" {
   })
 }
 
+# CloudFront용 ACM을 위한 us-east-1 리전 프로바이더 설정
+provider "aws" {
+  region = "ap-northeast-2"
+}
+
+# 기존 ACM 인증서 조회 (동적 참조)
+data "aws_acm_certificate" "ljhun_cert" {
+  domain   = "www.ljhun.shop"     # 인증서에 등록된 도메인 이름
+  statuses = ["ISSUED"]           # 발급 완료된 인증서만 조회
+}
+
 # 생성한 정책을 OIDC 역할에 연결
 resource "aws_iam_role_policy_attachment" "alb_controller_policy_attachment" {
   policy_arn = aws_iam_policy.alb_controller_policy.arn
@@ -331,7 +342,8 @@ resource "kubernetes_manifest" "app_ingress" {
   depends_on = [
     helm_release.alb_controller,
     kubernetes_service.app_one_service,
-    kubernetes_service.app_two_service
+    kubernetes_service.app_two_service,
+    data.aws_acm_certificate.ljhun_cert
   ]
 
   manifest = {
@@ -343,7 +355,8 @@ resource "kubernetes_manifest" "app_ingress" {
       annotations = {
         "kubernetes.io/ingress.class"              = "alb"
         "alb.ingress.kubernetes.io/scheme"        = "internet-facing"
-        "alb.ingress.kubernetes.io/listen-ports"  = "[{\"HTTP\": 80}]"
+        "alb.ingress.kubernetes.io/listen-ports"  = "[{\"HTTP\":80}, {\"HTTPS\":443}]" # ALB의 포트
+        "alb.ingress.kubernetes.io/certificate-arn" = data.aws_acm_certificate.ljhun_cert.arn
         "alb.ingress.kubernetes.io/target-type"   = "ip"  # 이것을 지정하면 CNI 플러그인 형식에 따라 POD의 IP가 노드 밖으로 나오므로, NodePort 사용 X
         "alb.ingress.kubernetes.io/security-groups" = var.alb_security_group_id
         "alb.ingress.kubernetes.io/healthcheck-path" = "/healthz"  # Health Check 경로 설정

@@ -45,7 +45,7 @@ def init_db():
 def health_check():
     return "OK"
 
-@app.route('/register', methods=['POST', 'OPTIONS'])
+@app.route('/app-one/register', methods=['POST', 'OPTIONS'])
 def register_user():
     
     if request.method == 'OPTIONS':
