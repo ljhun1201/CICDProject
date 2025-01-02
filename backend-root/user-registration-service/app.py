@@ -24,9 +24,10 @@ def get_db_connection():
 
 # DB 초기화 로직
 def init_db():
-    conn = get_db_connection()
 
     try:
+        conn = get_db_connection()
+
         with conn.cursor() as cursor:
             # users 테이블이 존재하지 않으면 생성
             cursor.execute("""
@@ -38,6 +39,9 @@ def init_db():
                 );
             """)
         conn.commit()
+    except Exception as e:
+        print("DB Connection Failed:", str(e))  # 예외 메시지 출력
+        return jsonify({"success": False, "error": str(e)}), 400
     finally:
         conn.close()
 
@@ -71,6 +75,7 @@ def register_user():
         return jsonify({"success": True, "message": "User registered successfully"}), 201
 
     except Exception as e:
+        print("DB Connection Failed:", str(e))  # 예외 메시지 출력
         return jsonify({"success": False, "error": str(e)}), 400
 
     finally:
