@@ -149,6 +149,69 @@ resource "kubernetes_deployment" "app_two" {
   }
 }
 
+resource "kubernetes_job" "db_init_job" {
+  depends_on = [
+    kubernetes_deployment.app_one,
+    kubernetes_deployment.app_two
+  ]
+
+  metadata {
+    name      = "db-init-job"
+    namespace = "default"
+  }
+
+  spec {
+    backoff_limit = 3  # 실패 시 최대 3번까지 재시도
+
+    template {
+      metadata {
+        labels = {
+          job = "db-init"
+        }
+      }
+
+      spec {
+        restart_policy = "Never"  # Pod 실패 시 재시작하지 않음
+
+        container {
+          name  = "db-init-container"
+          image = "mysql:8.0"  # 데이터베이스 초기화를 위한 MySQL 이미지 사용
+          command = [
+            "sh", "-c",
+            <<EOT
+              mysql -h ${var.db_endpoint} -u admin -p${var.db_password} -e "
+              CREATE DATABASE IF NOT EXISTS mydb;
+              USE mydb;
+              CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(50) NOT NULL,
+                password VARCHAR(100) NOT NULL,
+                email VARCHAR(100) NOT NULL
+              );
+              "
+            EOT
+          ]
+
+          env {
+            name  = "DB_HOST"
+            value = var.db_endpoint
+          }
+
+          env {
+            name  = "DB_USER"
+            value = "admin"
+          }
+
+          env {
+            name  = "DB_PASSWORD"
+            value = var.db_password
+          }
+        }
+      }
+    }
+  }
+}
+
 resource "kubernetes_service" "app_one_service" {
   metadata {
     name      = "app-one-service"

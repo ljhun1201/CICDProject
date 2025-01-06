@@ -22,37 +22,6 @@ def get_db_connection():
         database=DB_NAME
     )
 
-# DB 초기화 로직
-def init_db():
-    conn = None
-    try:
-        print("Initializing database...")
-        conn = get_db_connection()
-        if not conn:
-            print("Failed to connect to the database.")
-            return
-
-        with conn.cursor() as cursor:
-            # mydb 데이터베이스 선택
-            cursor.execute("USE mydb;")
-
-            # users 테이블이 존재하지 않으면 생성
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS users (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    username VARCHAR(50) NOT NULL,
-                    password VARCHAR(100) NOT NULL,
-                    email VARCHAR(100) NOT NULL
-                );
-            """)
-        conn.commit()
-        print("Database initialized successfully.")
-    except Exception as e:
-        print(f"DB Initialization Failed: {str(e)}")
-    finally:
-        if conn:
-            conn.close()
-
 @app.route("/healthz")
 def health_check():
     return "OK"
@@ -97,5 +66,4 @@ def register_user():
 
 # 필요하다면 다른 엔드포인트들도 추가
 if __name__ == "__main__":
-    init_db() 
     app.run(host="0.0.0.0", port=5000)
