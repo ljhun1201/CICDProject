@@ -59,7 +59,6 @@ def health_check():
 
 @app.route('/app-one/register', methods=['POST', 'OPTIONS'])
 def register_user():
-
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
         response.headers.add("Access-Control-Allow-Origin", "*")
@@ -67,34 +66,34 @@ def register_user():
         response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
         return response, 200
 
-    app.logger.debug("Register endpoint accessed.")
     data = request.get_json()
     app.logger.debug(f"Received data: {data}")
 
-    data = request.get_json()
+    if not data:
+        return jsonify({"success": False, "error": "No data provided"}), 400
+
     username = data.get("username")
     password = data.get("password")
-    email    = data.get("email")   # email 받기
-    conn     = None
+    email    = data.get("email")
+
+    if not username or not password or not email:
+        return jsonify({"success": False, "error": "Missing fields"}), 400
 
     try:
         conn = get_db_connection()
-        print("succeed")
         with conn.cursor() as cursor:
             sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
             cursor.execute(sql, (username, password, email))
         conn.commit()
-
-        # 프론트엔드에서 "response.ok && data.success" 체킹을 하므로, success 필드를 함께 내려줍니다.
         return jsonify({"success": True, "message": "User registered successfully"}), 201
 
     except Exception as e:
-        print("DB Connection Failed:", str(e))  # 예외 메시지 출력
+        app.logger.error(f"DB Connection Failed: {str(e)}")
         return jsonify({"success": False, "error": str(e)}), 400
 
     finally:
-        print("연결 종료")
-        conn.close()
+        if conn:
+            conn.close()
 
 # 필요하다면 다른 엔드포인트들도 추가
 if __name__ == "__main__":
