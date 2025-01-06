@@ -380,7 +380,7 @@ resource "kubernetes_manifest" "app_ingress" {
           http = {
             paths = [
               {
-                path     = "/"
+                path     = "/app-one/register"
                 pathType = "Prefix"
                 backend = {
                   service = {
@@ -392,13 +392,25 @@ resource "kubernetes_manifest" "app_ingress" {
                 }
               },
               {
-                path     = "/"
+                path     = "/app-two/login"
                 pathType = "Prefix"
                 backend = {
                   service = {
                     name = kubernetes_service.app_two_service.metadata[0].name
                     port = {
                       number = 80
+                    }
+                  }
+                }
+              },
+              {
+                path     = "/healthz"
+                pathType = "Prefix"
+                backend = {
+                  service = {
+                    name = kubernetes_service.app_one_service.metadata[0].name
+                    port = {
+                      number = 80  # ClusterIP 서비스의 포트
                     }
                   }
                 }
@@ -411,7 +423,7 @@ resource "kubernetes_manifest" "app_ingress" {
           http = {
             paths = [
               {
-                path     = "/"
+                path     = "/app-one/register"
                 pathType = "Prefix"
                 backend = {
                   service = {
@@ -423,13 +435,25 @@ resource "kubernetes_manifest" "app_ingress" {
                 }
               },
               {
-                path     = "/"
+                path     = "/app-two/login"
                 pathType = "Prefix"
                 backend = {
                   service = {
                     name = kubernetes_service.app_two_service.metadata[0].name
                     port = {
                       number = 80
+                    }
+                  }
+                }
+              },
+              {
+                path     = "/healthz"
+                pathType = "Prefix"
+                backend = {
+                  service = {
+                    name = kubernetes_service.app_one_service.metadata[0].name
+                    port = {
+                      number = 80  # ClusterIP 서비스의 포트
                     }
                   }
                 }

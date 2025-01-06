@@ -87,6 +87,49 @@ data "aws_acm_certificate" "ljhun_cert" {
   statuses = ["ISSUED"]           # 발급 완료된 인증서만 조회
 }
 
+# CloudFront Cache Policy 리소스 생성
+resource "aws_cloudfront_cache_policy" "cache_policy_with_default" {
+  name = "cache-policy-with-default"
+
+  parameters_in_cache_key_and_forwarded_to_origin {
+    enable_accept_encoding_gzip = true
+    enable_accept_encoding_brotli = true
+
+    headers_config {
+      header_behavior = "none"
+    }
+
+    cookies_config {
+      cookie_behavior = "all"
+    }
+
+    query_strings_config {
+      query_string_behavior = "all"
+    }
+  }
+}
+
+# CloudFront Origin Request Policy 리소스 생성
+resource "aws_cloudfront_origin_request_policy" "origin_request_policy_with_host" {
+  name = "origin-request-policy-with-host"
+
+  headers_config {
+    header_behavior = "whitelist"
+
+    headers {
+      items = ["Host"]
+    }
+  }
+
+  query_strings_config {
+    query_string_behavior = "all"
+  }
+
+  cookies_config {
+    cookie_behavior = "all"
+  }
+}
+
 # CloudFront 배포 설정
 resource "aws_cloudfront_distribution" "frontend_distribution" {
   origin {
@@ -110,7 +153,6 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
     }
   }
 
-  # 나머지 설정은 이전과 동일...
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
@@ -128,46 +170,38 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
       }
     }
 
-    viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+    viewer_protocol_policy    = "redirect-to-https"
+    min_ttl                   = 0
+    default_ttl               = 3600
+    max_ttl                   = 86400
   }
 
   ordered_cache_behavior {
     path_pattern     = "/app-one/*"
     target_origin_id = "Ingress-ALB"
 
-    viewer_protocol_policy = "redirect-to-https"
-    allowed_methods        = ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
-    cached_methods         = ["GET", "HEAD"]
-    forwarded_values {
-      query_string = true
-      cookies {
-        forward = "all"
-      }
-    }
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+    viewer_protocol_policy    = "redirect-to-https"
+    allowed_methods           = ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
+    cached_methods            = ["GET", "HEAD"]
+    cache_policy_id           = aws_cloudfront_cache_policy.cache_policy_with_default.id
+    origin_request_policy_id  = aws_cloudfront_origin_request_policy.origin_request_policy_with_host.id
+    min_ttl                   = 0
+    default_ttl               = 3600
+    max_ttl                   = 86400
   }
 
   ordered_cache_behavior {
     path_pattern     = "/app-two/*"
     target_origin_id = "Ingress-ALB"
 
-    viewer_protocol_policy = "redirect-to-https"
-    allowed_methods        = ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
-    cached_methods         = ["GET", "HEAD"]
-    forwarded_values {
-      query_string = true
-      cookies {
-        forward = "all"
-      }
-    }
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
+    viewer_protocol_policy    = "redirect-to-https"
+    allowed_methods           = ["HEAD", "DELETE", "POST", "GET", "OPTIONS", "PUT", "PATCH"]
+    cached_methods            = ["GET", "HEAD"]
+    cache_policy_id           = aws_cloudfront_cache_policy.cache_policy_with_default.id
+    origin_request_policy_id  = aws_cloudfront_origin_request_policy.origin_request_policy_with_host.id
+    min_ttl                   = 0
+    default_ttl               = 3600
+    max_ttl                   = 86400
   }
 
   restrictions {
