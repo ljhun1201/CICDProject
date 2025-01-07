@@ -60,7 +60,7 @@ def login():
             if result:
                 return jsonify({"success": True, "message": "Login Succeed"}), 200
             else:
-                return jsonify({"success": False, "error": "Invalid credentials"}), 401
+                return jsonify({"success": False, "error": "Invalid credentials"}), 201
         conn.commit()    
     except Exception as e:
         app.logger.error(f"DB Connection Failed: {str(e)}")

@@ -51,6 +51,16 @@ def register_user():
     try:
         conn = get_db_connection()
         with conn.cursor() as cursor:
+
+            # 중복 ID 확인 쿼리
+            check_user_sql = "SELECT COUNT(*) FROM users WHERE username = %s"
+            cursor.execute(check_user_sql, (username,))
+            user_count = cursor.fetchone()[0]
+
+            if user_count > 0:
+                return jsonify({"success": False, "error": "Username already exists"}), 409
+
+            # 새로운 사용자 등록
             sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
             cursor.execute(sql, (username, password, email))
         conn.commit()
@@ -58,7 +68,7 @@ def register_user():
 
     except Exception as e:
         app.logger.error(f"DB Connection Failed: {str(e)}")
-        return jsonify({"success": False, "error": str(e)}), 400
+        return jsonify({"success": False, "error": str(e)}), 500
 
     finally:
         if conn:
