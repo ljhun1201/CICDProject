@@ -43,6 +43,9 @@ jobs:
      run: |
        gcloud auth configure-docker asia-northeast3-docker.pkg.dev
 
+   - name: Debug GCP Project ID
+     run: echo ${{ secrets.GCP_PROJECT_ID }}
+     
    # 7. Docker 이미지 빌드 및 태깅 (user-registration-service)
    - name: Build and Tag Docker Images - User Registration Service
      run: |
