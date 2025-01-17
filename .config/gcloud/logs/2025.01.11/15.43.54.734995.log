@@ -1,0 +1,114 @@
+2025-01-11 15:43:54,735 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-01-11 15:43:54,736 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc_peerings']
+2025-01-11 15:43:54,747 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'delete']
+2025-01-11 15:43:54,748 DEBUG    root            Running [gcloud.services.vpc-peerings.delete] with arguments: [--network: "gcp-dr-vpc", --service: "servicenetworking.googleapis.com"]
+2025-01-11 15:43:54,784 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-01-11 15:43:55,823 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5?alt=json HTTP/1.1" 200 None
+2025-01-11 15:43:55,851 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-01-11 15:43:57,304 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "POST /v1/services/servicenetworking.googleapis.com/connections/-?alt=json HTTP/1.1" 200 None
+2025-01-11 15:43:57,317 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-01-11 15:43:58,365 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "GET /v1/operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec?alt=json HTTP/1.1" 200 None
+2025-01-11 15:44:00,665 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-01-11 15:44:01,772 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "GET /v1/operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec?alt=json HTTP/1.1" 200 None
+2025-01-11 15:44:04,182 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-01-11 15:44:05,246 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "GET /v1/operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec?alt=json HTTP/1.1" 200 None
+2025-01-11 15:44:08,611 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-01-11 15:44:09,650 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "GET /v1/operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec?alt=json HTTP/1.1" 200 None
+2025-01-11 15:44:09,652 DEBUG    root            (gcloud.services.vpc-peerings.delete) The operation "operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec" resulted in a failure "Failed to delete connection; Producer services (e.g. CloudSQL, Cloud Memstore, etc.) are still using this connection.
+Help Token: Af9utUT7XMpHqo9DcvWGQa9qtdqYarpRj2npLvE_u8hBuEjqU6rvKnNZppXaGYDTPN6eWo_NtTAdvQQyX9X0Jkcnsog-FDOBhnNNyeGOX6asiqct".
+Details: "[<DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.PreconditionFailure'>>, <AdditionalProperty
+ key: 'violations'
+ value: <JsonValue
+ array_value: <JsonArray
+ entries: [<JsonValue
+ object_value: <JsonObject
+ properties: [<Property
+ key: 'type'
+ value: <JsonValue
+ string_value: 'googleapis.com'>>, <Property
+ key: 'subject'
+ value: <JsonValue
+ string_value: '171113'>>]>>]>>>]>, <DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.ErrorInfo'>>, <AdditionalProperty
+ key: 'reason'
+ value: <JsonValue
+ string_value: 'FLOW_SN_DC_RESOURCE_PREVENTING_DELETE_CONNECTION'>>, <AdditionalProperty
+ key: 'domain'
+ value: <JsonValue
+ string_value: 'servicenetworking.googleapis.com'>>]>]".
+Traceback (most recent call last):
+  File "/snap/google-cloud-cli/297/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/snap/google-cloud-cli/297/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/snap/google-cloud-cli/297/lib/surface/services/vpc_peerings/delete.py", line 102, in Run
+    services_util.PrintOperation(op)
+  File "/snap/google-cloud-cli/297/lib/googlecloudsdk/api_lib/services/services_util.py", line 133, in PrintOperation
+    raise exceptions.OperationErrorException(
+googlecloudsdk.api_lib.services.exceptions.OperationErrorException: The operation "operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec" resulted in a failure "Failed to delete connection; Producer services (e.g. CloudSQL, Cloud Memstore, etc.) are still using this connection.
+Help Token: Af9utUT7XMpHqo9DcvWGQa9qtdqYarpRj2npLvE_u8hBuEjqU6rvKnNZppXaGYDTPN6eWo_NtTAdvQQyX9X0Jkcnsog-FDOBhnNNyeGOX6asiqct".
+Details: "[<DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.PreconditionFailure'>>, <AdditionalProperty
+ key: 'violations'
+ value: <JsonValue
+ array_value: <JsonArray
+ entries: [<JsonValue
+ object_value: <JsonObject
+ properties: [<Property
+ key: 'type'
+ value: <JsonValue
+ string_value: 'googleapis.com'>>, <Property
+ key: 'subject'
+ value: <JsonValue
+ string_value: '171113'>>]>>]>>>]>, <DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.ErrorInfo'>>, <AdditionalProperty
+ key: 'reason'
+ value: <JsonValue
+ string_value: 'FLOW_SN_DC_RESOURCE_PREVENTING_DELETE_CONNECTION'>>, <AdditionalProperty
+ key: 'domain'
+ value: <JsonValue
+ string_value: 'servicenetworking.googleapis.com'>>]>]".
+2025-01-11 15:44:09,663 ERROR    root            (gcloud.services.vpc-peerings.delete) The operation "operations/dcf.p40-134982172036-f81ef20c-2971-4968-8a07-4a12491d35ec" resulted in a failure "Failed to delete connection; Producer services (e.g. CloudSQL, Cloud Memstore, etc.) are still using this connection.
+Help Token: Af9utUT7XMpHqo9DcvWGQa9qtdqYarpRj2npLvE_u8hBuEjqU6rvKnNZppXaGYDTPN6eWo_NtTAdvQQyX9X0Jkcnsog-FDOBhnNNyeGOX6asiqct".
+Details: "[<DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.PreconditionFailure'>>, <AdditionalProperty
+ key: 'violations'
+ value: <JsonValue
+ array_value: <JsonArray
+ entries: [<JsonValue
+ object_value: <JsonObject
+ properties: [<Property
+ key: 'type'
+ value: <JsonValue
+ string_value: 'googleapis.com'>>, <Property
+ key: 'subject'
+ value: <JsonValue
+ string_value: '171113'>>]>>]>>>]>, <DetailsValueListEntry
+ additionalProperties: [<AdditionalProperty
+ key: '@type'
+ value: <JsonValue
+ string_value: 'type.googleapis.com/google.rpc.ErrorInfo'>>, <AdditionalProperty
+ key: 'reason'
+ value: <JsonValue
+ string_value: 'FLOW_SN_DC_RESOURCE_PREVENTING_DELETE_CONNECTION'>>, <AdditionalProperty
+ key: 'domain'
+ value: <JsonValue
+ string_value: 'servicenetworking.googleapis.com'>>]>]".

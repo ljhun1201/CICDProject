@@ -22,7 +22,7 @@ resource "aws_s3_bucket_public_access_block" "block_public_access" {
 # 배열로 파일 정보 관리
 locals {
   files = [
-    { key = "index.html",  source = "../html/login.html" },
+    { key = "login.html",  source = "../html/login.html" },
     { key = "signup.html", source = "../html/signup.html" },
     { key = "main.html",   source = "../html/main.html" }
   ]
@@ -155,7 +155,7 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
 
   enabled             = true
   is_ipv6_enabled     = true
-  default_root_object = "index.html"
+  default_root_object = "login.html"
   aliases             = ["ljhun.shop", "www.ljhun.shop"]
 
   default_cache_behavior {

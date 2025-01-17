@@ -1,0 +1,14 @@
+2025-01-11 15:43:27,666 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-01-11 15:43:27,669 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc_peerings']
+2025-01-11 15:43:27,691 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'delete']
+2025-01-11 15:43:27,692 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services']
+2025-01-11 15:43:27,693 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc_peerings']
+2025-01-11 15:43:27,693 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'delete']
+2025-01-11 15:43:27,694 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'services']
+2025-01-11 15:43:27,695 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'services', 'vpc_peerings']
+2025-01-11 15:43:27,696 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'services', 'vpc-peerings', 'delete']
+2025-01-11 15:43:27,696 DEBUG    root            No implementation for release track [PREVIEW] for element: [/snap/google-cloud-cli/297/lib/surface/services]
+2025-01-11 15:43:27,697 ERROR    root            (gcloud.services.vpc-peerings.delete) unrecognized arguments: --region=asia-northeast3 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

@@ -118,10 +118,16 @@
         .message-box button:hover {
             background: #e64a19;
         }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- 로그인 실패 시 메시지를 표시할 영역 -->
+        <div id="error-message" style="display: none; color: red; margin-bottom: 10px; text-align: center;">
+            <!-- 에러 메시지 텍스트가 들어갈 자리 -->
+        </div>
+    
         <div id="login-box" class="box active">
             <h1>Game Login</h1>
             <form id="login-form">
@@ -136,6 +142,7 @@
             </form>
         </div>
     </div>
+    
 
     <div id="message-box" class="message-box">
         <h2>Login failed</h2>
@@ -144,18 +151,16 @@
 
     <script>
         function showSignUp() {
-            window.location.href = 'signup.html';
+            window.location.href = 'https://www.ljhun.shop/signup.html';
         }
 
-        function showMessage() {
-            document.getElementById('message-box').style.display = 'block';
+        function showMessage(message) {
+            var errorMessageBox = document.getElementById('error-message');
+            errorMessageBox.innerText = message; // 에러 메시지 텍스트 설정
+            errorMessageBox.style.display = 'block'; // 메시지 박스 표시
         }
 
-        function hideMessage() {
-            document.getElementById('message-box').style.display = 'none';
-        }
-
-        document.getElementById('login-form').onsubmit = function(event) {
+        document.getElementById('login-form').onsubmit = function (event) {
             event.preventDefault();
             var username = document.querySelector('[name="username"]').value;
             var password = document.querySelector('[name="password"]').value;
@@ -167,7 +172,7 @@
                 },
                 body: JSON.stringify({ username: username, password: password })
             })
-           .then(response => {
+            .then(response => {
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -176,15 +181,16 @@
             })
             .then(data => {
                 if (data.success) {
-                    window.location.href = 'main.html';
+                    window.location.href = 'https://www.ljhun.shop/main.html';
                 } else {
-                    showMessage();
+                    showMessage('Invalid username or password');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-             });
-        }
+                showMessage('An error occurred. Please try again.');
+            });
+        };
     </script>
 
 </body>

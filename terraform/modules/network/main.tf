@@ -313,7 +313,7 @@ resource "aws_db_subnet_group" "this" {
   name        = "mydb-subnet-group"
   description = "Subnet group for my RDS"
 
-  subnet_ids = aws_subnet.public_subnets[*].id  # private 서브넷들
+  subnet_ids = aws_subnet.private_subnets[*].id  # private 서브넷들
   tags = {
     Name = "mydb-subnet-group"
   }
@@ -356,7 +356,7 @@ resource "aws_db_instance" "mydb" {
   engine                 = "mysql"
   engine_version         = "8.0"
   instance_class         = "db.t3.micro"
-  db_name                = "mydb"            # 실제 DB 스키마 이름
+  db_name                = "mydb"            # 실제 DB 스키마 이름(RDS 인스턴스 생성 시 자동으로 "mydb" 데이터베이스 생성)
   username               = "admin"
   password               = var.db_password   # Terraform 변수 사용 (예: -var="db_password=비밀번호")
   db_subnet_group_name   = aws_db_subnet_group.this.name
