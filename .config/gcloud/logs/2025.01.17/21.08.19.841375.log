@@ -1,0 +1,201 @@
+2025-01-17 21:08:19,875 DEBUG    root            Loaded Command Group: ['gcloud', 'projects']
+2025-01-17 21:08:19,896 DEBUG    root            Loaded Command Group: ['gcloud', 'projects', 'get_iam_policy']
+2025-01-17 21:08:19,898 DEBUG    root            Running [gcloud.projects.get-iam-policy] with arguments: [PROJECT_ID_OR_NUMBER: "peppy-arcadia-432311-g5"]
+2025-01-17 21:08:19,935 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-01-17 21:08:21,035 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "POST /v1/projects/peppy-arcadia-432311-g5:getIamPolicy?alt=json HTTP/1.1" 200 None
+2025-01-17 21:08:21,040 DEBUG    root            Chosen display Format:default
+2025-01-17 21:08:21,041 INFO     root            Display format: "default"
+2025-01-17 21:08:21,099 INFO     ___FILE_ONLY___ bindings
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@gcp-sa-artifactregistry.iam.gserviceaccount.com
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,100 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ roles/artifactregistry.serviceAgent
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,101 INFO     ___FILE_ONLY___ serviceAccount:134982172036-compute@developer.gserviceaccount.com
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ roles/artifactregistry.writer
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,102 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@compute-system.iam.gserviceaccount.com
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ roles/compute.serviceAgent
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@container-engine-robot.iam.gserviceaccount.com
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,103 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ roles/container.serviceAgent
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@containerregistry.iam.gserviceaccount.com
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,104 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ roles/containerregistry.ServiceAgent
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,113 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ serviceAccount:134982172036-compute@developer.gserviceaccount.com
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ serviceAccount:134982172036@cloudservices.gserviceaccount.com
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ roles/editor
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,114 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ user:1201ljhun@gmail.com
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ roles/owner
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,115 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@gcp-sa-pubsub.iam.gserviceaccount.com
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ roles/pubsub.serviceAgent
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ members
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ -
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ serviceAccount:service-134982172036@service-networking.iam.gserviceaccount.com
+2025-01-17 21:08:21,116 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___   
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ role
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ roles/servicenetworking.serviceAgent
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ etag
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ BwYr5a97cGI=
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ version
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ :
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___  
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ 1
+2025-01-17 21:08:21,117 INFO     ___FILE_ONLY___ 
+
+2025-01-17 21:08:21,118 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,10 @@
+2025-01-17 21:04:36,521 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-01-17 21:04:36,667 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'set']
+2025-01-17 21:04:36,670 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "project", VALUE: "peppy-arcadia-432311-g5"]
+2025-01-17 21:04:36,720 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-01-17 21:04:37,796 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5?alt=json HTTP/1.1" 200 None
+2025-01-17 21:04:37,803 INFO     ___FILE_ONLY___ Updated property [core/project].
+
+2025-01-17 21:04:37,804 DEBUG    root            Chosen display Format:default
+2025-01-17 21:04:37,805 INFO     root            Display format: "default"
+2025-01-17 21:04:37,806 DEBUG    root            SDK update checks are disabled.
