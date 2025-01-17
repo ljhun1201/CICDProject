@@ -45,13 +45,13 @@ jobs:
 
    - name: Debug GCP Project ID
      run: echo ${{ secrets.GCP_PROJECT_ID }}
-     
+
    # 7. Docker 이미지 빌드 및 태깅 (user-registration-service)
    - name: Build and Tag Docker Images - User Registration Service
      run: |
        docker build -t user-registration-service:latest ./backend-root/user-registration-service
        docker tag user-registration-service:latest 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest
-       docker tag user-registration-service:latest asia-northeast3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/app-images/user-registration-service:latest
+       run: docker push asia-northeast3-docker.pkg.dev/$GCP_PROJECT/app-images/user-registration-service:latest
 
    # 8. Docker 이미지 빌드 및 태깅 (user-login-service)
    - name: Build and Tag Docker Images - User Login Service
