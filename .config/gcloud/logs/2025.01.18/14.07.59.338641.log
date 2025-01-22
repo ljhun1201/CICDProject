@@ -1,0 +1,10 @@
+2025-01-18 14:07:59,341 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-01-18 14:07:59,343 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'describe']
+2025-01-18 14:07:59,378 DEBUG    root            Running [gcloud.container.clusters.describe] with arguments: [--format: "value(addonsConfig.httpLoadBalancing.disabled)", --project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", NAME: "gcp-dr-gke"]
+2025-01-18 14:07:59,381 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 14:07:59,740 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke?alt=json HTTP/1.1" 200 None
+2025-01-18 14:07:59,749 DEBUG    root            Chosen display Format:default value(addonsConfig.httpLoadBalancing.disabled)
+2025-01-18 14:07:59,750 INFO     root            Display format: "default value(addonsConfig.httpLoadBalancing.disabled)"
+2025-01-18 14:07:59,764 INFO     ___FILE_ONLY___ 
+
+2025-01-18 14:07:59,764 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,40 @@
+2025-01-21 17:23:04,006 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'node_pools']
+2025-01-21 17:23:04,010 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'node-pools', 'list']
+2025-01-21 17:23:04,163 DEBUG    root            Running [gcloud.container.node-pools.list] with arguments: [--cluster: "gcp-dr-gke", --region: "asia-northeast3"]
+2025-01-21 17:23:04,167 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-21 17:23:04,452 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke/nodePools?alt=json HTTP/1.1" 200 None
+2025-01-21 17:23:04,475 DEBUG    root            Chosen display Format:
+     table(
+        name,
+        config.machineType,
+        config.diskSizeGb,
+        version:label=NODE_VERSION
+     )
+
+2025-01-21 17:23:04,476 INFO     root            Display format: "
+     table(
+        name,
+        config.machineType,
+        config.diskSizeGb,
+        version:label=NODE_VERSION
+     )
+"
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___ NAME
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___                  
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___ MACHINE_TYPE
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___   
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___ DISK_SIZE_GB
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___   
+2025-01-21 17:23:04,509 INFO     ___FILE_ONLY___ NODE_VERSION
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ 
+
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___   
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ e2-medium
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___      
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ 20
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___             
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ 1.30.8-gke.1051000
+2025-01-21 17:23:04,510 INFO     ___FILE_ONLY___ 
+
+2025-01-21 17:23:04,511 DEBUG    root            SDK update checks are disabled.

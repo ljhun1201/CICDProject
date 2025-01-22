@@ -1,3 +1,4 @@
+variable "project_id" {}
 variable "gke_cluster_endpoint" {}
 variable "gke_cluster_ca_certificate" {}
 
@@ -16,11 +17,11 @@ variable "www_domain_name" {
 }
 
 variable "app_one_image" {
-  default = "gcr.io/my-project/user-registration-service:latest"
+  default = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-registration-service:latest"
 }
 
 variable "app_two_image" {
-  default = "gcr.io/my-project/user-login-service:latest"
+  default = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest"
 }
 
 variable "cluster_name" {

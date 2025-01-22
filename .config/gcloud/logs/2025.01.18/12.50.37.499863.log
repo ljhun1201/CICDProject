@@ -1,0 +1,63 @@
+2025-01-18 12:50:37,501 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations']
+2025-01-18 12:50:37,510 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations', 'cancel']
+2025-01-18 12:50:37,530 DEBUG    root            Running [gcloud.container.operations.cancel] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", OPERATION_ID: "operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d"]
+2025-01-18 12:50:37,531 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:50:37,932 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d?alt=json HTTP/1.1" 200 None
+2025-01-18 12:50:43,300 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:50:43,605 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "POST /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d:cancel?alt=json HTTP/1.1" 400 None
+2025-01-18 12:50:43,608 DEBUG    root            Chosen display Format:default
+2025-01-18 12:50:43,616 DEBUG    root            Chosen display Format:default
+2025-01-18 12:50:43,617 DEBUG    root            Chosen display Format:default
+2025-01-18 12:50:43,626 DEBUG    root            Chosen display Format:default
+2025-01-18 12:50:43,617 DEBUG    root            (gcloud.container.operations.cancel) INVALID_ARGUMENT: Only node upgrade operations can be cancelled.
+- '@type': type.googleapis.com/google.rpc.RequestInfo
+  requestId: '0x6bc38e85a46414ea'
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/operations/cancel.py", line 74, in Run
+    adapter.CancelOperation(op_ref)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 5585, in CancelOperation
+    return self.client.projects_locations_operations.Cancel(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/container/v1/container_v1_client.py", line 1043, in Cancel
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpBadRequestError: HttpError accessing <https://container.googleapis.com/v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d:cancel?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Sat, 18 Jan 2025 03:50:43 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 400}>, content <{
+  "error": {
+    "code": 400,
+    "message": "Only node upgrade operations can be cancelled.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.RequestInfo",
+        "requestId": "0x6bc38e85a46414ea"
+      }
+    ]
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/operations/cancel.py", line 79, in Run
+    raise exceptions.HttpException(error)
+googlecloudsdk.calliope.exceptions.HttpException: INVALID_ARGUMENT: Only node upgrade operations can be cancelled.
+- '@type': type.googleapis.com/google.rpc.RequestInfo
+  requestId: '0x6bc38e85a46414ea'
+2025-01-18 12:50:43,627 ERROR    root            (gcloud.container.operations.cancel) INVALID_ARGUMENT: Only node upgrade operations can be cancelled.
+- '@type': type.googleapis.com/google.rpc.RequestInfo
+  requestId: '0x6bc38e85a46414ea'

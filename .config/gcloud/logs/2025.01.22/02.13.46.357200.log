@@ -1,0 +1,40 @@
+2025-01-22 02:13:46,418 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 02:13:46,423 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_services']
+2025-01-22 02:13:46,472 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-services', 'get_health']
+2025-01-22 02:13:46,474 DEBUG    root            Running [gcloud.compute.backend-services.get-health] with arguments: [--global: "True", BACKEND_SERVICE_NAME: "app-one-service"]
+2025-01-22 02:13:46,650 DEBUG    root            Chosen display Format:default
+2025-01-22 02:13:46,650 INFO     root            Display format: "default"
+2025-01-22 02:13:46,662 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 02:13:47,304 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/backendServices/app-one-service?alt=json HTTP/1.1" 404 None
+2025-01-22 02:13:47,316 DEBUG    root            Chosen display Format:list[title="Could not fetch resource:",always-display-title]
+2025-01-22 02:13:47,317 DEBUG    root            (gcloud.compute.backend-services.get-health) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/backendServices/app-one-service' was not found
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 937, in Run
+    ).Display()
+      ^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/display.py", line 507, in Display
+    self._printer.Print(self._resources)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_printer_base.py", line 301, in Print
+    for resource in resources:
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/client.py", line 170, in GetHealth
+    backend_service = self.Get()
+                      ^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/client.py", line 155, in Get
+    responses = self._compute_client.MakeRequests(requests)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 145, in MakeRequests
+    utils.RaiseToolException(
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 139, in RaiseToolException
+    RaiseException(problems, calliope_exceptions.ToolException, error_message)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 148, in RaiseException
+    raise exception(
+googlecloudsdk.calliope.exceptions.ToolException: Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/backendServices/app-one-service' was not found
+
+2025-01-22 02:13:47,327 ERROR    root            (gcloud.compute.backend-services.get-health) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/backendServices/app-one-service' was not found
+

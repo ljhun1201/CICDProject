@@ -1,0 +1,28 @@
+2025-01-19 03:49:34,260 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2025-01-19 03:49:34,262 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2025-01-19 03:49:34,263 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "json"]
+2025-01-19 03:49:34,271 DEBUG    root            Chosen display Format:default json
+2025-01-19 03:49:34,271 INFO     root            Display format: "default json"
+2025-01-19 03:49:34,278 INFO     ___FILE_ONLY___ {
+  "configuration": {
+    "active_configuration": "default",
+    "properties": {
+      "core": {
+        "account": "1201ljhun@gmail.com",
+        "disable_usage_reporting": "True",
+        "project": "peppy-arcadia-432311-g5"
+      }
+    }
+  },
+  "credential": {
+    "access_token": "ya29.a0ARW5m74FD-hid9U_VQsDIKnbYjcjiUUxzRa7rKiHeBJ6r96_-TWwoJnxYYUoBVqn5xg8bijJJtyghRlGLaUqq1xJ09MRViZeJ5PFFBMJQ6y2MnkJTSUMMSHyA1b9wTjqKU6eOhLDUz9c48YbxYdfTGZKYWd0McbDCrja1pmdwI8IMHkaCgYKAb0SARISFQHGX2MiqPTW_9PMYQF-74QQIaG6Vw0182",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRkMTI1ZDVmNDYyZmJjNjAxNGFlZGFiODFkZGYzYmNlZGFiNzA4NDciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA1MDk2MzU3NDMwMjQzNjQxMTQxIiwiZW1haWwiOiIxMjAxbGpodW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJDLTRyOE5rZGJLZTI4TlZrOWR5RTNRIiwiaWF0IjoxNzM3MjI0MTc1LCJleHAiOjE3MzcyMjc3NzV9.D6kGDN-YVpo4djHD66NEjjHfUA48anDNNKH9raNrWw92hDmDHR7yIDyUNslyfvkbwuVRVXcyffVZTXs4IwP7UccOKrEhzraOLQFXbH8g09e3hl7kdSxsZ3XqQGUYGfQ5KuITFEAHS53ODKd07Zo2KvILY6AwgI-RPWeplypxO23jmIbhCPZ_ZP_sH8jcUxXLNl4Vbh59zAY-MpID7SOuU-RKrEEqAGGptjss8i8O0cPPPP89NcJxtWGSctj2Vwt8t8XglGS054IZVboJ9PvrlK_n0CgFgsONc6UjB28-RdbNNED2c91m97N_yC9s8BBHtz068AH-qk65QyaPl3xJpQ",
+    "token_expiry": "2025-01-18T19:16:14Z"
+  },
+  "sentinels": {
+    "config_sentinel": "/home/ubuntu/.config/gcloud/config_sentinel"
+  }
+}
+2025-01-19 03:49:34,278 INFO     ___FILE_ONLY___ 
+
+2025-01-19 03:49:34,278 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,64 @@
+2025-01-18 12:23:12,525 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-01-18 12:23:12,527 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'list']
+2025-01-18 12:23:12,551 DEBUG    root            Running [gcloud.container.clusters.list] with arguments: [--project: "peppy-arcadia-432311-g5"]
+2025-01-18 12:23:12,553 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:23:13,124 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/-/clusters?alt=json HTTP/1.1" 200 None
+2025-01-18 12:23:13,131 DEBUG    root            Chosen display Format:
+    table(
+        name,
+        zone:label=LOCATION,
+        master_version():label=MASTER_VERSION,
+        endpoint:label=MASTER_IP,
+        nodePools[0].config.machineType,
+        currentNodeVersion:label=NODE_VERSION,
+        firstof(currentNodeCount,initialNodeCount):label=NUM_NODES,
+        status
+    )
+
+2025-01-18 12:23:13,131 INFO     root            Display format: "
+    table(
+        name,
+        zone:label=LOCATION,
+        master_version():label=MASTER_VERSION,
+        endpoint:label=MASTER_IP,
+        nodePools[0].config.machineType,
+        currentNodeVersion:label=NODE_VERSION,
+        firstof(currentNodeCount,initialNodeCount):label=NUM_NODES,
+        status
+    )
+"
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ NAME
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___         
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ LOCATION
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___          
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ MASTER_VERSION
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___       
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ MASTER_IP
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___      
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ MACHINE_TYPE
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ NODE_VERSION
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___         
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ NUM_NODES
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ STATUS
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ 1.30.8-gke.1051000
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ 34.22.81.204
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ e2-medium
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___      
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ 1.30.8-gke.1051000
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___   
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___ 4
+2025-01-18 12:23:13,140 INFO     ___FILE_ONLY___           
+2025-01-18 12:23:13,141 INFO     ___FILE_ONLY___ RECONCILING
+2025-01-18 12:23:13,141 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:23:13,141 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,65 @@
+2025-01-18 12:47:46,795 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-01-18 12:47:46,796 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'update']
+2025-01-18 12:47:46,893 DEBUG    root            Running [gcloud.container.clusters.update] with arguments: [--region: "asia-northeast3", --update-addons: "OrderedDict([('HttpLoadBalancing', False)])", NAME: "gcp-dr-gke"]
+2025-01-18 12:47:46,894 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:47:47,031 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke?alt=json HTTP/1.1" 200 None
+2025-01-18 12:47:47,040 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:47:47,281 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "PUT /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke?alt=json HTTP/1.1" 400 None
+2025-01-18 12:47:47,283 DEBUG    root            Chosen display Format:default
+2025-01-18 12:47:47,290 DEBUG    root            Chosen display Format:default
+2025-01-18 12:47:47,290 DEBUG    root            Chosen display Format:default
+2025-01-18 12:47:47,291 DEBUG    root            (gcloud.container.clusters.update) FAILED_PRECONDITION: Operation operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d is currently upgrading cluster gcp-dr-gke. Please wait and try again once it is done.
+- '@type': type.googleapis.com/google.rpc.RequestInfo
+  requestId: '0x656e663495e3f554'
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: container.googleapis.com
+  reason: CLUSTER_ALREADY_HAS_OPERATION
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/clusters/update.py", line 903, in Run
+    op_ref = adapter.UpdateCluster(cluster_ref, options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 4546, in UpdateCluster
+    op = self.client.projects_locations_clusters.Update(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/container/v1/container_v1_client.py", line 979, in Update
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpBadRequestError: HttpError accessing <https://container.googleapis.com/v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Sat, 18 Jan 2025 03:47:47 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 400}>, content <{
+  "error": {
+    "code": 400,
+    "message": "Operation operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d is currently upgrading cluster gcp-dr-gke. Please wait and try again once it is done.",
+    "status": "FAILED_PRECONDITION",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.RequestInfo",
+        "requestId": "0x656e663495e3f554"
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "CLUSTER_ALREADY_HAS_OPERATION",
+        "domain": "container.googleapis.com"
+      }
+    ]
+  }
+}
+>
+2025-01-18 12:47:47,303 ERROR    root            (gcloud.container.clusters.update) FAILED_PRECONDITION: Operation operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d is currently upgrading cluster gcp-dr-gke. Please wait and try again once it is done.
+- '@type': type.googleapis.com/google.rpc.RequestInfo
+  requestId: '0x656e663495e3f554'
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: container.googleapis.com
+  reason: CLUSTER_ALREADY_HAS_OPERATION

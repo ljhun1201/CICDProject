@@ -18,9 +18,9 @@ resource "google_storage_bucket_iam_binding" "all_users_read" {
 
 locals {
   files = [
-    { key = "login.html",  source = "../html/login.html" },
-    { key = "signup.html", source = "../html/signup.html" },
-    { key = "main.html",   source = "../html/main.html" }
+    { key = "login.html",  source = "../gcp-html/login.html" },
+    { key = "signup.html", source = "../gcp-html/signup.html" },
+    { key = "main.html",   source = "../gcp-html/main.html" }
   ]
 }
 
@@ -39,73 +39,6 @@ resource "google_compute_backend_bucket" "gcs_backend" {
   enable_cdn  = true
 }
 
-# App One NEG 탐지
-data "google_compute_network_endpoint_group" "app_one_neg" {
-  for_each = toset(var.zones) # 클러스터의 모든 Zone
-
-  name    = var.neg_app_one
-  zone    = each.value
-  project = var.project_id
-}
-
-# App Two NEG 탐지
-data "google_compute_network_endpoint_group" "app_two_neg" {
-  for_each = toset(var.zones) # 클러스터의 모든 Zone
-
-  name    = var.neg_app_two
-  zone    = each.value
-  project = var.project_id
-}
-
-resource "google_compute_health_check" "gke_http_health_check" {
-  name                = "gke-http-health-check"
-  check_interval_sec  = 5
-  timeout_sec         = 5
-  healthy_threshold   = 2
-  unhealthy_threshold = 2
-
-  http_health_check {
-    port = 80
-    request_path = "/healthz"
-  }
-}
-
-resource "google_compute_backend_service" "app_one_backend" {
-  name            = "app-one-backend"
-  protocol        = "HTTP"
-  timeout_sec     = 30
-  health_checks   = [google_compute_health_check.gke_http_health_check.self_link]
-  
-  dynamic "backend" {
-    for_each = data.google_compute_network_endpoint_group.app_one_neg
-    content {
-      group = backend.value.id
-      balancing_mode = "RATE"
-      max_rate_per_endpoint = 50
-    }
-  }
-
-  depends_on = [data.google_compute_network_endpoint_group.app_one_neg]
-}
-
-resource "google_compute_backend_service" "app_two_backend" {
-  name            = "app-two-backend"
-  protocol        = "HTTP"
-  timeout_sec     = 30
-  health_checks   = [google_compute_health_check.gke_http_health_check.self_link]
-  
-  dynamic "backend" {
-    for_each = data.google_compute_network_endpoint_group.app_one_neg
-    content {
-      group = backend.value.id
-      balancing_mode = "RATE"
-      max_rate_per_endpoint = 50
-    }
-  }
-
-  depends_on = [data.google_compute_network_endpoint_group.app_two_neg]
-}
-
 resource "google_compute_url_map" "lb_url_map" {
   name            = "lb-url-map"
   default_service = google_compute_backend_bucket.gcs_backend.self_link
@@ -118,16 +51,6 @@ resource "google_compute_url_map" "lb_url_map" {
   path_matcher {
     name            = "web-paths"
     default_service = google_compute_backend_bucket.gcs_backend.self_link
-
-    path_rule {
-      paths   = ["/app-one/*"]
-      service = google_compute_backend_service.app_one_backend.self_link
-    }
-
-    path_rule {
-      paths   = ["/app-two/*"]
-      service = google_compute_backend_service.app_two_backend.self_link
-    }
 
     path_rule {
       paths   = ["/*"]

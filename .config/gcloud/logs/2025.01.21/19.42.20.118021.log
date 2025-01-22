@@ -1,0 +1,11 @@
+2025-01-21 19:42:20,141 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-21 19:42:20,143 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding_rules']
+2025-01-21 19:42:20,154 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding-rules', 'delete']
+2025-01-21 19:42:20,158 DEBUG    root            Running [gcloud.compute.forwarding-rules.delete] with arguments: [NAME:1: "['lb-https-forwarding-rule']"]
+2025-01-21 19:42:20,324 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-21 19:42:21,271 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-01-21 19:42:23,174 INFO     ___FILE_ONLY___ 
+
+Command killed by keyboard interrupt
+
+

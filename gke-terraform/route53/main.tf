@@ -24,3 +24,11 @@ resource "aws_route53_record" "www_a_record" {
   ttl     = 300
   records = [var.lb_ip_address]
 }
+
+resource "aws_route53_record" "api_a_record" {
+  zone_id = data.aws_route53_zone.main_zone.zone_id
+  name    = "api.ljhun.shop"
+  type    = "A"
+  ttl     = 300
+  records = [var.ingress_ip] 
+}

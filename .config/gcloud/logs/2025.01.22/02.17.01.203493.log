@@ -1,0 +1,78 @@
+2025-01-22 02:17:01,282 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 02:17:01,286 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network_endpoint_groups']
+2025-01-22 02:17:01,301 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network-endpoint-groups', 'describe']
+2025-01-22 02:17:01,305 DEBUG    root            Running [gcloud.compute.network-endpoint-groups.describe] with arguments: [--zone: "asia-northeast3-a", NAME: "k8s1-08fdd539-default-app-one-service-80-103e9dca"]
+2025-01-22 02:17:01,523 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 02:17:01,924 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a/networkEndpointGroups/k8s1-08fdd539-default-app-one-service-80-103e9dca?alt=json HTTP/1.1" 200 None
+2025-01-22 02:17:01,929 DEBUG    root            Chosen display Format:default
+2025-01-22 02:17:01,930 INFO     root            Display format: "default"
+2025-01-22 02:17:02,009 INFO     ___FILE_ONLY___ creationTimestamp
+2025-01-22 02:17:02,009 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,009 INFO     ___FILE_ONLY___  '
+2025-01-22 02:17:02,009 INFO     ___FILE_ONLY___ 2025-01-21T08:37:49.839-08:00
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ '
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ description
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___  '
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ {"cluster-uid":"864ca44b-fe5a-4177-a1b0-1468346b84f4","namespace":"default","service-name":"app-one-service","port":"80"}
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ '
+2025-01-22 02:17:02,010 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ id
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___  '
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ 3815884910080717746
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ '
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ kind
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,011 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ compute#networkEndpointGroup
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ name
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-one-service-80-103e9dca
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,012 INFO     ___FILE_ONLY___ network
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ networkEndpointType
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ selfLink
+2025-01-22 02:17:02,013 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a/networkEndpointGroups/k8s1-08fdd539-default-app-one-service-80-103e9dca
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ size
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ 1
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,014 INFO     ___FILE_ONLY___ subnetwork
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ zone
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ :
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___  
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a
+2025-01-22 02:17:02,015 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:17:02,016 DEBUG    root            SDK update checks are disabled.

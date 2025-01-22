@@ -1,0 +1,147 @@
+2025-01-22 15:40:55,615 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 15:40:55,625 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-01-22 15:40:55,629 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'subnets']
+2025-01-22 15:40:55,654 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'subnets', 'describe']
+2025-01-22 15:40:55,657 DEBUG    root            Running [gcloud.compute.networks.subnets.describe] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", NAME: "private-subnet"]
+2025-01-22 15:40:55,854 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 15:40:56,175 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet?alt=json HTTP/1.1" 200 None
+2025-01-22 15:40:56,180 DEBUG    root            Chosen display Format:default
+2025-01-22 15:40:56,181 INFO     root            Display format: "default"
+2025-01-22 15:40:56,221 INFO     ___FILE_ONLY___ creationTimestamp
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___  '
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___ 2025-01-21T21:34:16.184-08:00
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___ '
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,228 INFO     ___FILE_ONLY___ enableFlowLogs
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ false
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ fingerprint
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ 98zoZCm0VZQ=
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ gatewayAddress
+2025-01-22 15:40:56,229 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 10.0.1.1
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ id
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___  '
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 7975901958525238711
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ '
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ ipCidrRange
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 10.0.1.0/24
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ kind
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,230 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ compute#subnetwork
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ logConfig
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___   
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ enable
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ false
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ name
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,231 INFO     ___FILE_ONLY___ private-subnet
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ network
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ privateIpGoogleAccess
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ true
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ privateIpv6GoogleAccess
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,232 INFO     ___FILE_ONLY___ DISABLE_GOOGLE_ACCESS
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ purpose
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ PRIVATE
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ region
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ secondaryIpRanges
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,233 INFO     ___FILE_ONLY___ -
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ ipCidrRange
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ 10.4.0.0/14
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___   
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ rangeName
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ pods
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ -
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ ipCidrRange
+2025-01-22 15:40:56,234 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ 10.2.0.0/16
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___   
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ rangeName
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ services
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ selfLink
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet
+2025-01-22 15:40:56,235 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,236 INFO     ___FILE_ONLY___ stackType
+2025-01-22 15:40:56,236 INFO     ___FILE_ONLY___ :
+2025-01-22 15:40:56,236 INFO     ___FILE_ONLY___  
+2025-01-22 15:40:56,236 INFO     ___FILE_ONLY___ IPV4_ONLY
+2025-01-22 15:40:56,236 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:40:56,236 DEBUG    root            SDK update checks are disabled.

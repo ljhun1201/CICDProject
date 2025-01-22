@@ -1,0 +1,50 @@
+2025-01-18 01:14:19,397 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts']
+2025-01-18 01:14:19,406 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'docker']
+2025-01-18 01:14:19,408 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'docker', 'images']
+2025-01-18 01:14:19,432 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'docker', 'images', 'list']
+2025-01-18 01:14:19,433 DEBUG    root            Running [gcloud.artifacts.docker.images.list] with arguments: [--project: "peppy-arcadia-432311-g5", IMAGE_PATH: "app-images"]
+2025-01-18 01:14:19,434 DEBUG    root            (gcloud.artifacts.docker.images.list) Invalid Docker string.
+
+A valid Docker repository has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID
+
+A valid image has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID/IMAGE
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/docker_util.py", line 178, in ParseDockerImagePath
+    docker_repo = _ParseInput(img_path)
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/docker_util.py", line 165, in _ParseInput
+    raise ar_exceptions.InvalidInputValueError()
+googlecloudsdk.api_lib.artifacts.exceptions.InvalidInputValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/artifacts/docker/images/list.py", line 124, in Run
+    repo_or_image = docker_util.ParseDockerImagePath(args.IMAGE_PATH)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/docker_util.py", line 180, in ParseDockerImagePath
+    raise ar_exceptions.InvalidInputValueError(_INVALID_IMAGE_PATH_ERROR)
+googlecloudsdk.api_lib.artifacts.exceptions.InvalidInputValueError: Invalid Docker string.
+
+A valid Docker repository has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID
+
+A valid image has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID/IMAGE
+
+2025-01-18 01:14:19,436 ERROR    root            (gcloud.artifacts.docker.images.list) Invalid Docker string.
+
+A valid Docker repository has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID
+
+A valid image has the format of
+  LOCATION-docker.DOMAIN/PROJECT-ID/REPOSITORY-ID/IMAGE
+

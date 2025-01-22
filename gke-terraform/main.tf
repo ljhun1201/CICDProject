@@ -10,7 +10,7 @@ terraform {
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = ">= 2.16.1"
+      version = ">= 2.35.1"
     }
   }
 
@@ -23,7 +23,7 @@ provider "google" {
 }
 
 provider "kubernetes" {
-  host                   = module.gke.cluster_endpoint
+  host                   = "https://${module.gke.cluster_endpoint}"
   cluster_ca_certificate = base64decode(module.gke.cluster_ca_certificate)
   token                  = data.google_client_config.default.access_token
 }
@@ -68,6 +68,8 @@ module "cloud_sql" {
 # 3) GKE Cluster
 ####################################################
 module "gke" {
+  depends_on = [ module.cloud_sql ]
+
   source = "./modules/gke"
 
   project_id   = var.project_id
@@ -93,7 +95,7 @@ module "storage_and_lb" {
   gcs_bucket_name = var.gcs_bucket_name
   zones = ["${var.region}-a", "${var.region}-b"]
   cluster_name = var.cluster_name
-  
+
   ingress_name      = module.k8s_deploy.app_ingress_name
   ingress_namespace = module.k8s_deploy.app_ingress_namespace
   neg_app_one       = module.k8s_deploy.neg_app_one
@@ -108,6 +110,7 @@ module "storage_and_lb" {
 module "k8s_deploy" {
   source = "./modules/k8s_deploy"
 
+  project_id = var.project_id
   gke_cluster_endpoint      = module.gke.cluster_endpoint
   gke_cluster_ca_certificate = module.gke.cluster_ca_certificate
   cluster_name = var.cluster_name
@@ -120,10 +123,15 @@ module "k8s_deploy" {
   domain_name   = var.domain_name
   app_one_image = var.app_one_image
   app_two_image = var.app_two_image
+
+  providers = {
+    kubernetes = kubernetes
+  }
 }
 
 module "route53" {
   source = "./route53"
 
   lb_ip_address = module.storage_and_lb.lb_ip_address
+  ingress_ip = module.k8s_deploy.ingress_ip
 }

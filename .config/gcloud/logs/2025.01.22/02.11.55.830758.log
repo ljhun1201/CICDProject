@@ -1,0 +1,129 @@
+2025-01-22 02:11:55,884 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 02:11:55,888 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network_endpoint_groups']
+2025-01-22 02:11:55,900 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network-endpoint-groups', 'list']
+2025-01-22 02:11:55,903 DEBUG    root            Running [gcloud.compute.network-endpoint-groups.list] with arguments: []
+2025-01-22 02:11:56,105 DEBUG    root            Chosen display Format:        table(
+            name,
+            uri().scope().segment(-3).yesno(no="global"):label=LOCATION,
+            networkEndpointType:label=ENDPOINT_TYPE,
+            size
+            )
+        
+2025-01-22 02:11:56,106 INFO     root            Display format: "        table(
+            name,
+            uri().scope().segment(-3).yesno(no="global"):label=LOCATION,
+            networkEndpointType:label=ENDPOINT_TYPE,
+            size
+            )
+        "
+2025-01-22 02:11:56,109 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 02:11:56,757 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/networkEndpointGroups?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ NAME
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___                                                            
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ LOCATION
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___            
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ ENDPOINT_TYPE
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___    
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ SIZE
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,799 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-one-service-80-103e9dca
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ asia-northeast3-a
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ 1
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-two-service-80-4bf82874
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ asia-northeast3-a
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,800 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 1
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-one-service-80-103e9dca
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-two-service-80-4bf82874
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,801 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-cm-acme-http-solver-rm4d6-8089-a7a6e86a
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ k8s1-ea37d763-default-cm-acme-http-solver-7r2j6-8089-bf1e7d8f
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,802 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ k8s1-ea37d763-kube-system-default-http-backend-80-6a70ddc7
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___      
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-one-service-80-103e9dca
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ asia-northeast3-b
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ 1
+2025-01-22 02:11:56,803 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ k8s1-08fdd539-default-app-two-service-80-4bf82874
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___               
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ asia-northeast3-b
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ 1
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ k8s1-ea37d763-default-cm-acme-http-solver-wwdrn-8089-04cd1576
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ asia-northeast3-b
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,804 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___ k8s1-ea37d763-kube-system-default-http-backend-80-6a70ddc7
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___      
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___ asia-northeast3-b
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___   
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___ 0
+2025-01-22 02:11:56,805 INFO     ___FILE_ONLY___ 
+
+2025-01-22 02:11:56,805 DEBUG    root            SDK update checks are disabled.

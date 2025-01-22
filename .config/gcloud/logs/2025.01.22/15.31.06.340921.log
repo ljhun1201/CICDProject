@@ -1,0 +1,1493 @@
+2025-01-22 15:31:06,351 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations']
+2025-01-22 15:31:06,354 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations', 'list']
+2025-01-22 15:31:06,440 DEBUG    root            Running [gcloud.container.operations.list] with arguments: [--project: "peppy-arcadia-432311-g5"]
+2025-01-22 15:31:06,444 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-22 15:31:07,052 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/-/operations?alt=json HTTP/1.1" 200 None
+2025-01-22 15:31:07,092 DEBUG    root            Chosen display Format:
+    table(
+        name,
+        operationType:label=TYPE,
+        zone:label=LOCATION,
+        targetLink.basename():label=TARGET,
+        statusMessage,
+        status,
+        startTime,
+        endTime
+    )
+
+2025-01-22 15:31:07,094 INFO     root            Display format: "
+    table(
+        name,
+        operationType:label=TYPE,
+        zone:label=LOCATION,
+        targetLink.basename():label=TARGET,
+        statusMessage,
+        status,
+        startTime,
+        endTime
+    )
+"
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___ NAME
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___                                                           
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___ TYPE
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___               
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___ LOCATION
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___          
+2025-01-22 15:31:07,170 INFO     ___FILE_ONLY___ TARGET
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___                
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ STATUS_MESSAGE
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ STATUS
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ START_TIME
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___                       
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ END_TIME
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___ operation-1736576150761-033d54a2-7dff-46ce-911b-cb5d36e3c33a
+2025-01-22 15:31:07,171 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,172 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,172 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,172 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,172 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,172 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___ 2025-01-11T06:15:50.76174377Z
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___ 2025-01-11T06:23:04.726313509Z
+2025-01-22 15:31:07,173 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,175 INFO     ___FILE_ONLY___                                                                                                                       
+2025-01-22 15:31:07,175 INFO     ___FILE_ONLY___ 	- requested resource is exhausted: Not all instances running in IGM after 41.31019149s. Expected 1, running 0, transitioning 1. Current errors: [IP_SPACE_EXHAUSTED]: Instance 'gke-gcp-dr-gke-default-pool-17f284b6-tc5g' creation failed: IP space of 'projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet-pods-6fe9c6b5eaa0a38c' is exhausted.
+2025-01-22 15:31:07,175 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___                                                                                                                       
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ 	- requested resource is exhausted: Not all instances running in IGM after 57.238770704s. Expected 1, running 0, transitioning 1. Current errors: [IP_SPACE_EXHAUSTED]: Instance 'gke-gcp-dr-gke-default-pool-47eca6ca-6qj9' creation failed: IP space of 'projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet-pods-6fe9c6b5eaa0a38c' is exhausted. .
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ operation-1736576973539-7b1d3724-674f-43e3-a363-009f28a494e3
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,176 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 2025-01-11T06:29:33.539680986Z
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 2025-01-11T06:30:32.089554029Z
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ operation-1736578408489-bd913557-4b66-41e6-b6f3-82cb145e63bf
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 2025-01-11T06:53:28.489327343Z
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 2025-01-11T06:59:31.686613535Z
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___ operation-1736579339919-d819fc23-1a19-4814-93ec-200d71da939c
+2025-01-22 15:31:07,177 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ 2025-01-11T07:08:59.919851451Z
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ 2025-01-11T07:09:59.521796216Z
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ operation-1736579403171-c91181c8-8d08-4137-b2c6-e46ea3106959
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,178 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 2025-01-11T07:10:03.171356877Z
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 2025-01-11T07:14:08.983738391Z
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ operation-1736579689266-13926a17-2a0d-435d-b58d-e559a9b9e35c
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 2025-01-11T07:14:49.266037259Z
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 2025-01-11T07:18:57.414727389Z
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ operation-1736579941571-5df106f1-383d-4194-8572-2faee39f5e4d
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,179 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,180 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,181 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,181 INFO     ___FILE_ONLY___ 2025-01-11T07:19:01.571059239Z
+2025-01-22 15:31:07,181 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,181 INFO     ___FILE_ONLY___ 2025-01-11T07:22:31.425445587Z
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___ operation-1736652664575-5da7032c-e690-47df-a407-11c186e7ed10
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,182 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,183 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,183 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,183 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___ 2025-01-12T03:31:04.575574727Z
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___ 2025-01-12T03:37:10.483411697Z
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,185 INFO     ___FILE_ONLY___ operation-1736653039545-fc80a3a6-d397-4d85-ba65-8d8a1ab8dcbe
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ 2025-01-12T03:37:19.545899814Z
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ 2025-01-12T03:38:19.203296918Z
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ operation-1736653102121-ba49882e-cc02-4973-b846-4dffb057c915
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,186 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ 2025-01-12T03:38:22.121151205Z
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ 2025-01-12T03:42:29.163655574Z
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ operation-1736654396552-28acdade-f641-4365-aa0d-203308a8b11b
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,187 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ 2025-01-12T03:59:56.55231596Z
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ 2025-01-12T04:22:22.420589138Z
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___ operation-1736654688952-ebef8b10-4af9-4068-9fad-d7f45e83213f
+2025-01-22 15:31:07,188 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ 2025-01-12T04:04:48.952531709Z
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ 2025-01-12T04:09:01.103490406Z
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ operation-1736655743389-369afc30-f545-4a17-8715-36e35813642d
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,189 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ 2025-01-12T04:22:23.389066185Z
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ 2025-01-12T04:25:34.14976922Z
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ operation-1736672242516-c2757805-704f-426f-8036-092711cc8e17
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,190 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ 2025-01-12T08:57:22.516640123Z
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ 2025-01-12T09:03:40.918288073Z
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ operation-1736672628567-a494dd78-de1b-4787-a35d-bd7dcd0356cc
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,191 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 2025-01-12T09:03:48.567680402Z
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 2025-01-12T09:04:52.725474177Z
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ operation-1736672701019-eeeebb9a-87bb-4e5b-88ce-9ef4299e146e
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 2025-01-12T09:05:01.019786853Z
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 2025-01-12T09:09:05.891803613Z
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,192 INFO     ___FILE_ONLY___ operation-1736674058113-c85d198e-beef-4b8f-b000-62fb96f50289
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ 2025-01-12T09:27:38.113794404Z
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ 2025-01-12T09:50:27.742404818Z
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ operation-1736676426509-83b87950-4212-4cda-87cd-2fc6e8291b04
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,193 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 2025-01-12T10:07:06.509682533Z
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 2025-01-12T10:11:14.098175187Z
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ operation-1736676679082-f27ddbf9-0a73-4bfe-9b0c-2bf4f0ec2062
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 2025-01-12T10:11:19.082454995Z
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 2025-01-12T10:14:41.360143022Z
+2025-01-22 15:31:07,194 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ operation-1736687813189-c3a9bc36-fe48-4681-8377-592d11bcf540
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ 2025-01-12T13:16:53.189106962Z
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ 2025-01-12T13:23:17.156332569Z
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ operation-1736688209461-da61f0a5-2be5-4b4c-a128-d8b44e9af36c
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,195 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ 2025-01-12T13:23:29.461622523Z
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ 2025-01-12T13:24:26.928277245Z
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ operation-1736688272807-04a85c2a-51b3-488e-834a-2cd59dfcefcd
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ 2025-01-12T13:24:32.807779728Z
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,196 INFO     ___FILE_ONLY___ 2025-01-12T13:28:43.800902943Z
+2025-01-22 15:31:07,197 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___ operation-1736689684886-f768a483-6eda-435d-98b1-3067a8ac7eb2
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,201 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,205 INFO     ___FILE_ONLY___ 2025-01-12T13:48:04.88689539Z
+2025-01-22 15:31:07,205 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,205 INFO     ___FILE_ONLY___ 2025-01-12T14:10:54.650545066Z
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ operation-1736691281694-c94ebaa9-ec7a-4006-bf7a-f19d4d67571c
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___ 2025-01-12T14:14:41.694615637Z
+2025-01-22 15:31:07,206 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 2025-01-12T14:18:51.248475713Z
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ operation-1736691534250-5dbdcc09-0a3f-4baa-bb95-260641ddd860
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 2025-01-12T14:18:54.250934465Z
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 2025-01-12T14:22:21.857132028Z
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ operation-1736695920881-c3bb20eb-3dcb-4ec3-8d85-3d325e737c30
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 2025-01-12T15:32:00.881518158Z
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 2025-01-12T15:38:10.893571517Z
+2025-01-22 15:31:07,207 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___ operation-1736696296754-cccf53d7-1fce-46c3-8b55-301920431997
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,208 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 2025-01-12T15:38:16.75455131Z
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 2025-01-12T15:39:16.564396858Z
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ operation-1736696359865-288b86ed-b4ea-4e58-ad6d-cb45bdd221d7
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 2025-01-12T15:39:19.865889888Z
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 2025-01-12T15:43:29.377155917Z
+2025-01-22 15:31:07,209 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ operation-1736697161744-8634a1ea-0db4-4982-ab04-31095df9d851
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ 2025-01-12T15:52:41.744343022Z
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ 2025-01-12T15:56:49.70904785Z
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___ operation-1736697414236-3ef1c6c2-b288-4926-8d8a-abbf92a33349
+2025-01-22 15:31:07,210 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ 2025-01-12T15:56:54.236496352Z
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ 2025-01-12T16:00:36.037998104Z
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ operation-1737030703120-2b019204-c26c-49de-9cf6-351e8220d602
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,211 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 2025-01-16T12:31:43.120200865Z
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 2025-01-16T12:37:58.306987033Z
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ operation-1737031088168-80cb4760-e775-4ee4-8337-87e02695bafd
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 2025-01-16T12:38:08.16834002Z
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 2025-01-16T12:39:07.848983811Z
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,212 INFO     ___FILE_ONLY___ operation-1737031150448-547b9ba4-19c0-431f-adfc-62d93bec4270
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ 2025-01-16T12:39:10.448200275Z
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ 2025-01-16T12:43:17.548700248Z
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ operation-1737033133413-129698df-58ca-45fd-9122-5fbb60c07ce7
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,213 INFO     ___FILE_ONLY___ 2025-01-16T13:12:13.413384698Z
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ 2025-01-16T13:16:21.555228577Z
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ operation-1737033385818-6bb73891-b90d-4b7f-95d3-a909f9655b78
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ 2025-01-16T13:16:25.818140288Z
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ 2025-01-16T13:20:25.968742295Z
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ operation-1737117212365-7ffdc6e3-4f4a-4394-8b5d-0bcde21c2da9
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,214 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ 2025-01-17T12:33:32.365408917Z
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ 2025-01-17T12:39:45.804354745Z
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ operation-1737117597736-fe68242e-eab6-4454-adbc-b110087f8343
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,215 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 2025-01-17T12:39:57.736838479Z
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 2025-01-17T12:41:04.96129828Z
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ operation-1737117670797-5652cc18-1eae-4f51-aa58-63b14384ed6f
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 2025-01-17T12:41:10.797955419Z
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 2025-01-17T12:45:19.671311214Z
+2025-01-22 15:31:07,216 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,217 INFO     ___FILE_ONLY___ operation-1737118674879-256a4484-831f-44c2-b22c-9031d8f761ac
+2025-01-22 15:31:07,217 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,217 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,217 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,223 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ 2025-01-17T12:57:54.879140121Z
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ 2025-01-17T13:20:22.377185134Z
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___ operation-1737119874628-c0088aee-36a7-4312-9c2a-478fc51cef9a
+2025-01-22 15:31:07,224 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ 2025-01-17T13:17:54.62806088Z
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ 2025-01-17T13:21:11.32117787Z
+2025-01-22 15:31:07,225 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ operation-1737120077030-23c48ed6-76b3-4cfb-b92a-fde9029a01d7
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ 2025-01-17T13:21:17.030899473Z
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ 2025-01-17T13:24:45.201174836Z
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___ operation-1737127820044-5c4ddfa1-0095-422e-8b99-b9325aaa8013
+2025-01-22 15:31:07,226 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ 2025-01-17T15:30:20.044808288Z
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ 2025-01-17T15:36:15.889663748Z
+2025-01-22 15:31:07,227 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ operation-1737128185108-97c1ca9d-3fc9-4438-bcc4-e7090a39388f
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ 2025-01-17T15:36:25.1089396Z
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ 2025-01-17T15:37:27.745921828Z
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,228 INFO     ___FILE_ONLY___ operation-1737128257050-b9e19127-c869-4ec9-92b8-8e30e16fd9e0
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ 2025-01-17T15:37:37.050604536Z
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ 2025-01-17T15:41:47.078479931Z
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ operation-1737129537544-b0b1f501-bcd7-43dc-8913-517d6cc2e234
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,229 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 2025-01-17T15:58:57.544380999Z
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 2025-01-17T16:21:21.870156043Z
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ operation-1737151367732-aac9bb33-13c7-45a9-a885-0d33ebcf89c5
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 2025-01-17T22:02:47.732626475Z
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 2025-01-17T22:06:55.508764581Z
+2025-01-22 15:31:07,230 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ operation-1737151620341-66f758e4-9cf2-4545-ab3e-824e1a641fe9
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ 2025-01-17T22:07:00.341422017Z
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ 2025-01-17T22:10:31.541494693Z
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ operation-1737168201025-acaa754b-78b1-4fb5-9252-b16f879f436a
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,231 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ 2025-01-18T02:43:21.0259104Z
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ 2025-01-18T02:49:34.039388856Z
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ operation-1737168586100-91fe7596-9e1a-4742-b377-b94bc918893d
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,232 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 2025-01-18T02:49:46.100016228Z
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 2025-01-18T02:50:49.447820549Z
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ operation-1737168658366-a19687e1-b725-401d-b467-d8df5ffb1d03
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 2025-01-18T02:50:58.366113486Z
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 2025-01-18T02:55:05.548852678Z
+2025-01-22 15:31:07,233 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___ operation-1737169766765-80829c75-798b-440c-aa09-9a580367c9e0
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,234 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ 2025-01-18T03:09:26.765975113Z
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ 2025-01-18T03:31:56.714595255Z
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ UPDATE_CLUSTER
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,236 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ 2025-01-18T03:33:24.349907734Z
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ 2025-01-18T03:55:28.085826928Z
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ operation-1737174237935-0d3f48e5-3adb-46b6-8c23-ea962977ac07
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ UPGRADE_MASTER
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,237 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ 2025-01-18T04:23:57.935748801Z
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ 2025-01-18T04:46:17.096468992Z
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ operation-1737175604012-cdc3dfe1-608c-489f-b81c-a9f76ba89095
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ UPGRADE_NODES
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,238 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,241 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ 2025-01-18T04:46:44.012283961Z
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ 2025-01-18T05:02:38.494493642Z
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ operation-1737177945550-dc87f7e4-eab6-4bf2-93fb-d289aaa23602
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___ UPGRADE_MASTER
+2025-01-22 15:31:07,242 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,243 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,243 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,243 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,243 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,243 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___ 2025-01-18T05:25:45.550213232Z
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___ 2025-01-18T05:47:24.935643564Z
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,244 INFO     ___FILE_ONLY___ operation-1737180416021-76e2f5a8-bbe6-4a9c-a4b8-75e0db8c058a
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ 2025-01-18T06:06:56.021962533Z
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ 2025-01-18T06:11:03.377287806Z
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ operation-1737180668902-42b1c7e2-5137-4aad-9947-15e05ee7bd6a
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,245 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ 2025-01-18T06:11:08.902011456Z
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ 2025-01-18T06:14:31.530099454Z
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ operation-1737221745836-5d92551c-ed75-4cbc-8182-78354cf565f6
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,246 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 2025-01-18T17:35:45.836774726Z
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 2025-01-18T17:42:20.010953143Z
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ operation-1737222151181-f0907dbc-d16b-4dbb-9da9-d1b13e69151d
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 2025-01-18T17:42:31.181156636Z
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 2025-01-18T17:43:27.900027104Z
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,247 INFO     ___FILE_ONLY___ operation-1737222213027-2e01edfe-7c7b-4e75-b223-69948c081a77
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ 2025-01-18T17:43:33.027773535Z
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ 2025-01-18T17:47:40.722199709Z
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ operation-1737223603238-e19841c5-ad6d-49bb-a7e1-2c871505e75a
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,248 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 2025-01-18T18:06:43.238178555Z
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 2025-01-18T18:28:52.84853189Z
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ operation-1737228881611-af4293ac-5d06-4f0a-90cc-5ccc969f1857
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 2025-01-18T19:34:41.611980004Z
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 2025-01-18T19:38:48.512563432Z
+2025-01-22 15:31:07,249 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,250 INFO     ___FILE_ONLY___ operation-1737229134501-09cc0365-6052-44e9-a52f-4c5e9900ff90
+2025-01-22 15:31:07,250 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,250 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,251 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,251 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___ 2025-01-18T19:38:54.501434239Z
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___ 2025-01-18T19:42:41.648856888Z
+2025-01-22 15:31:07,253 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ operation-1737231428236-1217c342-c41f-4b00-80fb-d2852672d105
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ 2025-01-18T20:17:08.236896347Z
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ 2025-01-18T20:23:34.211091603Z
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ operation-1737231956753-189eae0c-ccb3-4f82-9432-c2906d517408
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,254 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,256 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,256 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,258 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,258 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,258 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,258 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,258 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,259 INFO     ___FILE_ONLY___ 2025-01-18T20:25:56.753867612Z
+2025-01-22 15:31:07,259 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,259 INFO     ___FILE_ONLY___ 2025-01-18T20:26:55.458949492Z
+2025-01-22 15:31:07,259 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___ operation-1737232019055-7051da34-ed04-4279-b41d-b44ed65fc88e
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,260 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 2025-01-18T20:26:59.055635962Z
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 2025-01-18T20:31:08.26513788Z
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ operation-1737232972349-38450a02-9f7e-4487-8ee8-eea4907657f7
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 2025-01-18T20:42:52.349236145Z
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 2025-01-18T21:05:02.878662364Z
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___ operation-1737236021470-a2df5587-81a1-443b-9e9c-d6b218715af1
+2025-01-22 15:31:07,261 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ 2025-01-18T21:33:41.470236708Z
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ 2025-01-18T21:37:49.711143526Z
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ operation-1737236274244-4991fb88-c417-4f1f-bf5c-2775be137c98
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,262 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 2025-01-18T21:37:54.244161636Z
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 2025-01-18T21:43:02.997388351Z
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ operation-1737441108861-f015a409-ce2e-4281-8a56-327a1a396d9b
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 2025-01-21T06:31:48.861424342Z
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 2025-01-21T06:38:22.970386054Z
+2025-01-22 15:31:07,263 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ operation-1737441514286-bf48c2cf-4eab-449a-8d3e-c97acb89f8ec
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ 2025-01-21T06:38:34.286780609Z
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ 2025-01-21T06:39:40.662769365Z
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ operation-1737441586900-bd3e14fe-81a0-4ba9-aa0f-5b87d009f6e2
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,264 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 2025-01-21T06:39:46.900453752Z
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 2025-01-21T06:43:56.424746765Z
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ operation-1737442962159-e9b31599-8a4c-4c3e-af55-b1963b1ebbdc
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 2025-01-21T07:02:42.159077417Z
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 2025-01-21T07:24:30.7114548Z
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___ operation-1737448613319-7a9d6678-dfca-430f-95a0-93da6d215a80
+2025-01-22 15:31:07,265 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ 2025-01-21T08:36:53.319006021Z
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ 2025-01-21T08:40:18.13113984Z
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___ operation-1737449384630-3b1f4d86-6233-4a87-960a-f193be24de70
+2025-01-22 15:31:07,266 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ 2025-01-21T08:49:44.630729569Z
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ 2025-01-21T08:56:12.532038296Z
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ operation-1737449780441-95fd101a-d945-4fc7-9e6e-a92525856d87
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,267 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 2025-01-21T08:56:20.441401808Z
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 2025-01-21T08:57:27.225431179Z
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ operation-1737449922493-e6c46c5a-8db9-4d11-be78-e4c9737e991b
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ UPDATE_CLUSTER
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 2025-01-21T08:58:42.493680538Z
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 2025-01-21T08:58:42.71948132Z
+2025-01-22 15:31:07,268 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___ operation-1737450942243-52830791-1906-4d67-b815-9699dbe4aa9c
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,269 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,270 INFO     ___FILE_ONLY___ 2025-01-21T09:15:42.243839057Z
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___ 2025-01-21T09:38:41.65669337Z
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___ operation-1737457642751-64e0a9cb-043e-4f46-9ee6-65429dbde72b
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,271 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 2025-01-21T11:07:22.7516361Z
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 2025-01-21T11:09:34.915459728Z
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ operation-1737458850892-57ebe404-60dc-4df6-a41f-9d7a1e5fda30
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 2025-01-21T11:27:30.892731955Z
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 2025-01-21T11:30:49.167295147Z
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,272 INFO     ___FILE_ONLY___ operation-1737468105400-d1e0f068-fa24-4e4b-b281-3bc012b177c3
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ 2025-01-21T14:01:45.400797604Z
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ 2025-01-21T14:07:36.110760331Z
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ operation-1737468704000-f5293beb-3e68-4af7-ace7-0e62318fec09
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,273 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ 2025-01-21T14:11:44.000163217Z
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ 2025-01-21T14:12:48.622020618Z
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ operation-1737468777887-67b432a4-1c76-43bb-8e97-dfe52fb3b23a
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,274 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 2025-01-21T14:12:57.887145791Z
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 2025-01-21T14:17:05.502928822Z
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ operation-1737469552762-12dadc15-b77c-45b1-9b85-bdfbf50244b8
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 2025-01-21T14:25:52.76264689Z
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 2025-01-21T14:48:55.122255804Z
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___ operation-1737475994699-aecb9c23-e654-4418-9f1b-e2ab11e1816c
+2025-01-22 15:31:07,275 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ 2025-01-21T16:13:14.699161617Z
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ 2025-01-21T16:17:24.41860974Z
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ operation-1737476531377-84f926d5-1477-4737-b733-58388a5fd878
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,276 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___ 2025-01-21T16:22:11.37740341Z
+2025-01-22 15:31:07,277 INFO     ___FILE_ONLY___    
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ 2025-01-21T16:28:35.265711403Z
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ operation-1737477023630-0d60f145-88bf-43a4-8db0-40051ca0d018
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,278 INFO     ___FILE_ONLY___ 2025-01-21T16:30:23.630773339Z
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ 2025-01-21T16:36:20.131004184Z
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ operation-1737477470522-a7c601b3-8063-4aac-8b6b-94acd99578ce
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ 2025-01-21T16:37:50.522393444Z
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ 2025-01-21T16:38:52.93130379Z
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,279 INFO     ___FILE_ONLY___ operation-1737477544171-622e2d33-175c-4a90-8cbb-7196c4ee5055
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ 2025-01-21T16:39:04.171276021Z
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ 2025-01-21T16:43:12.804690033Z
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___ operation-1737478570432-f156db17-6d08-43b8-b795-b30e9583310f
+2025-01-22 15:31:07,280 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 2025-01-21T16:56:10.432172092Z
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 2025-01-21T17:18:35.798533103Z
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ operation-1737481231201-76a97d5f-7773-426b-b8f4-f8432f7c67af
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 2025-01-21T17:40:31.201944026Z
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 2025-01-21T17:44:38.839284107Z
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ operation-1737482041174-76157dd3-adc3-482d-aa91-0f35a3a8b59f
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___ DELETE_CLUSTER
+2025-01-22 15:31:07,281 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 2025-01-21T17:54:01.174016485Z
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 2025-01-21T17:58:00.166827406Z
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ operation-1737524866133-e264b448-c73f-4f60-bf1f-1f39b647a622
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ CREATE_CLUSTER
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 2025-01-22T05:47:46.133264024Z
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 2025-01-22T05:54:07.576054043Z
+2025-01-22 15:31:07,282 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ operation-1737525252232-2b0c5990-6f82-4e3f-8d33-3176770004ce
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ CREATE_NODE_POOL
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ gcp-dr-gke-nodepool
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                          
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,283 INFO     ___FILE_ONLY___ 2025-01-22T05:54:12.232790346Z
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ 2025-01-22T05:55:17.575862407Z
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ operation-1737525326748-6d87f0b9-2a60-4874-92c8-08526c639a59
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ DELETE_NODE_POOL
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ default-pool
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                 
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ DONE
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___      
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ 2025-01-22T05:55:26.748661444Z
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ 2025-01-22T05:59:36.031420737Z
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___ operation-1737526714274-0449d890-60b5-4d12-995c-8ef24a685295
+2025-01-22 15:31:07,284 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ RESIZE_CLUSTER
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___     
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ gcp-dr-gke
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                                                                                                                   
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ RUNNING
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___   
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ 2025-01-22T06:18:34.274841576Z
+2025-01-22 15:31:07,285 INFO     ___FILE_ONLY___ 
+
+2025-01-22 15:31:07,285 DEBUG    root            SDK update checks are disabled.

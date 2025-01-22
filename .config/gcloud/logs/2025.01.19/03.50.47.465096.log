@@ -1,0 +1,64 @@
+2025-01-19 03:50:47,477 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-01-19 03:50:47,479 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2025-01-19 03:50:47,503 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", NAME: "gcp-dr-vpc"]
+2025-01-19 03:50:47,510 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2025-01-19 03:50:47,511 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-19 03:50:47,745 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc?alt=json HTTP/1.1" 404 None
+2025-01-19 03:50:47,748 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-19 03:50:48,361 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/-/clusters?alt=json HTTP/1.1" 200 None
+2025-01-19 03:50:48,365 DEBUG    root            (gcloud.container.clusters.get-credentials) ResponseError: code=404, message=Not found: projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+No cluster named 'gcp-dr-vpc' in peppy-arcadia-432311-g5.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1815, in GetCluster
+    return self.client.projects_locations_clusters.Get(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/container/v1/container_v1_client.py", line 628, in Get
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://container.googleapis.com/v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Sat, 18 Jan 2025 18:50:48 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 404}>, content <{
+  "error": {
+    "code": 404,
+    "message": "Not found: projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.RequestInfo",
+        "requestId": "0x4ea2d93901ca784f"
+      }
+    ]
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 120, in Run
+    cluster, cluster_ref = _BaseRun(args, self.context)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 41, in _BaseRun
+    cluster = adapter.GetCluster(cluster_ref)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1822, in GetCluster
+    self.CheckClusterOtherZones(cluster_ref, api_error)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1918, in CheckClusterOtherZones
+    raise not_found_error
+googlecloudsdk.api_lib.container.util.Error: ResponseError: code=404, message=Not found: projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+No cluster named 'gcp-dr-vpc' in peppy-arcadia-432311-g5.
+2025-01-19 03:50:48,372 ERROR    root            (gcloud.container.clusters.get-credentials) ResponseError: code=404, message=Not found: projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-vpc. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+No cluster named 'gcp-dr-vpc' in peppy-arcadia-432311-g5.

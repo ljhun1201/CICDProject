@@ -1,0 +1,58 @@
+2025-01-22 00:36:26,361 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 00:36:26,364 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network_endpoint_groups']
+2025-01-22 00:36:26,373 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'network-endpoint-groups', 'list']
+2025-01-22 00:36:26,376 DEBUG    root            Running [gcloud.compute.network-endpoint-groups.list] with arguments: [--filter: "name~'kube-system'"]
+2025-01-22 00:36:26,561 INFO     root            client_filter=None server_filter='name eq ".*(kube-system).*"'
+2025-01-22 00:36:26,562 DEBUG    root            Chosen display Format:        table(
+            name,
+            uri().scope().segment(-3).yesno(no="global"):label=LOCATION,
+            networkEndpointType:label=ENDPOINT_TYPE,
+            size
+            )
+        
+2025-01-22 00:36:26,563 INFO     root            Display format: "        table(
+            name,
+            uri().scope().segment(-3).yesno(no="global"):label=LOCATION,
+            networkEndpointType:label=ENDPOINT_TYPE,
+            size
+            )
+        "
+2025-01-22 00:36:26,565 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 00:36:27,333 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/networkEndpointGroups?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-01-22 00:36:27,361 INFO     ___FILE_ONLY___ NAME
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___                                                         
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ LOCATION
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___            
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ ENDPOINT_TYPE
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___    
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ SIZE
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ 
+
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ k8s1-ea37d763-kube-system-default-http-backend-80-6a70ddc7
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ asia-northeast3-a
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,362 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ 1
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ 
+
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ k8s1-ea37d763-kube-system-default-http-backend-80-6a70ddc7
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ 0
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ 
+
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ k8s1-ea37d763-kube-system-default-http-backend-80-6a70ddc7
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___ asia-northeast3-b
+2025-01-22 00:36:27,363 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,364 INFO     ___FILE_ONLY___ GCE_VM_IP_PORT
+2025-01-22 00:36:27,364 INFO     ___FILE_ONLY___   
+2025-01-22 00:36:27,364 INFO     ___FILE_ONLY___ 0
+2025-01-22 00:36:27,364 INFO     ___FILE_ONLY___ 
+
+2025-01-22 00:36:27,364 DEBUG    root            SDK update checks are disabled.

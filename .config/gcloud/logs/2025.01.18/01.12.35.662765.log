@@ -1,0 +1,8 @@
+2025-01-18 01:12:35,673 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-01-18 01:12:35,679 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'enable']
+2025-01-18 01:12:35,680 DEBUG    root            Running [gcloud.services.enable] with arguments: [--project: "peppy-arcadia-432311-g5", SERVICE:1: "['containerregistry.googleapis.com']"]
+2025-01-18 01:12:35,695 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): serviceusage.googleapis.com:443
+2025-01-18 01:12:36,284 DEBUG    urllib3.connectionpool https://serviceusage.googleapis.com:443 "POST /v1/projects/peppy-arcadia-432311-g5/services/containerregistry.googleapis.com:enable?alt=json HTTP/1.1" 200 None
+2025-01-18 01:12:36,289 DEBUG    root            Chosen display Format:none
+2025-01-18 01:12:36,290 INFO     root            Display format: "none"
+2025-01-18 01:12:36,290 DEBUG    root            SDK update checks are disabled.

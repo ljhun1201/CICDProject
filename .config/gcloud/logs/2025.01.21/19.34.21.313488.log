@@ -1,0 +1,81 @@
+2025-01-21 19:34:21,404 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-21 19:34:21,410 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses']
+2025-01-21 19:34:21,442 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'list']
+2025-01-21 19:34:21,446 DEBUG    root            Running [gcloud.compute.addresses.list] with arguments: []
+2025-01-21 19:34:21,767 DEBUG    root            Chosen display Format:        table(
+          name,
+          address_range():label=ADDRESS/RANGE,
+          address_type:label=TYPE,
+          purpose,
+          network.basename(),
+          region.basename(),
+          subnetwork.basename():label=SUBNET,
+          status
+        )
+2025-01-21 19:34:21,768 INFO     root            Display format: "        table(
+          name,
+          address_range():label=ADDRESS/RANGE,
+          address_type:label=TYPE,
+          purpose,
+          network.basename(),
+          region.basename(),
+          subnetwork.basename():label=SUBNET,
+          status
+        )"
+2025-01-21 19:34:21,772 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-21 19:34:22,525 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/addresses?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-01-21 19:34:22,587 INFO     root            cache collection=compute.addresses api_version=v1 params=['project', 'region', 'address']
+2025-01-21 19:34:22,588 INFO     root            cache collection=compute.globalAddresses api_version=v1 params=['project', 'address']
+2025-01-21 19:34:22,615 INFO     ___FILE_ONLY___ NAME
+2025-01-21 19:34:22,615 INFO     ___FILE_ONLY___                                     
+2025-01-21 19:34:22,615 INFO     ___FILE_ONLY___ ADDRESS/RANGE
+2025-01-21 19:34:22,615 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ TYPE
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___       
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ PURPOSE
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___       
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ NETWORK
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___      
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ REGION
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___            
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ SUBNET
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ STATUS
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ 
+
+2025-01-21 19:34:22,617 INFO     ___FILE_ONLY___ cloudsql-private-ip-range
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___                
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ 10.3.0.0/16
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___     
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ INTERNAL
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ VPC_PEERING
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___                            
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ RESERVED
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ 
+
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ my-ingress-ip
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___                            
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ 34.8.157.92
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___     
+2025-01-21 19:34:22,618 INFO     ___FILE_ONLY___ EXTERNAL
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___                                                     
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ RESERVED
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ 
+
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ nat-auto-ip-6217254-6-1737449463635820
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ 34.64.221.103
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ EXTERNAL
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___   
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ NAT_AUTO
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___                  
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___           
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ IN_USE
+2025-01-21 19:34:22,619 INFO     ___FILE_ONLY___ 
+
+2025-01-21 19:34:22,619 DEBUG    root            SDK update checks are disabled.

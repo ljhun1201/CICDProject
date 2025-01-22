@@ -1,0 +1,51 @@
+2025-01-18 12:50:06,255 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations']
+2025-01-18 12:50:06,256 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'operations', 'describe']
+2025-01-18 12:50:06,275 DEBUG    root            Running [gcloud.container.operations.describe] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", OPERATION_ID: "operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d"]
+2025-01-18 12:50:06,277 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-01-18 12:50:06,452 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d?alt=json HTTP/1.1" 200 None
+2025-01-18 12:50:06,454 DEBUG    root            Chosen display Format:default
+2025-01-18 12:50:06,454 INFO     root            Display format: "default"
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ name
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ operationType
+2025-01-18 12:50:06,462 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ UPDATE_CLUSTER
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ selfLink
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ https://container.googleapis.com/v1/projects/134982172036/locations/asia-northeast3/operations/operation-1737171204349-830452b6-8826-414c-a61a-c98f8c2a547d
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,463 INFO     ___FILE_ONLY___ startTime
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___  '
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ 2025-01-18T03:33:24.349907734Z
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ '
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ status
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ RUNNING
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ targetLink
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ https://container.googleapis.com/v1/projects/134982172036/locations/asia-northeast3/clusters/gcp-dr-gke
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ zone
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ :
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___  
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ asia-northeast3
+2025-01-18 12:50:06,464 INFO     ___FILE_ONLY___ 
+
+2025-01-18 12:50:06,464 DEBUG    root            SDK update checks are disabled.

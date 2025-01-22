@@ -23,7 +23,7 @@ resource "google_compute_subnetwork" "private_subnet" {
 
   secondary_ip_range {
     range_name    = "pods"
-    ip_cidr_range = "10.1.0.0/16"
+    ip_cidr_range = "10.4.0.0/14"
   }
 
   secondary_ip_range {
@@ -49,6 +49,10 @@ resource "google_compute_router_nat" "nat_config" {
   subnetwork { # 어떤 서브넷에 NAT을 적용시킬 것인가 에 대한 블록
     name                  = google_compute_subnetwork.private_subnet.name 
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"] # 해당 서브넷 내의 모든 내부 IP(사설 IP)에 대해 NAT 적용
+  }
+
+  lifecycle {
+    prevent_destroy = false  # Router 삭제 허용
   }
 }
 

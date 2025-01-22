@@ -1,0 +1,25 @@
+2025-01-18 00:27:24,923 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-18 00:27:24,924 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-01-18 00:27:24,925 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'nats']
+2025-01-18 00:27:24,929 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'nats', 'delete']
+2025-01-18 00:27:24,931 DEBUG    root            Running [gcloud.compute.routers.nats.delete] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", --router: "nat-router", NAME:1: "['cloud-nat']"]
+2025-01-18 00:27:25,010 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-18 00:27:25,353 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/nat-router?alt=json HTTP/1.1" 200 None
+2025-01-18 00:27:25,357 DEBUG    root            (gcloud.compute.routers.nats.delete) NAT `cloud-nat` not found
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/routers/nats/delete.py", line 84, in Run
+    new_object = self.Modify(args, objects[0], cleared_fields)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/routers/nats/delete.py", line 63, in Modify
+    nat = nats_utils.FindNatOrRaise(replacement, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/routers/nats/nats_utils.py", line 77, in FindNatOrRaise
+    raise NatNotFoundError(nat_name)
+googlecloudsdk.command_lib.compute.routers.nats.nats_utils.NatNotFoundError: NAT `cloud-nat` not found
+2025-01-18 00:27:25,359 ERROR    root            (gcloud.compute.routers.nats.delete) NAT `cloud-nat` not found

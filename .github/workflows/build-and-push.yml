@@ -58,7 +58,7 @@ jobs:
      run: |
        docker build -t user-login-service:latest ./backend-root/user-login-service
        docker tag user-login-service:latest 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
-       docker tag user-registration-service:latest asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest
+       docker tag user-login-service:latest asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/gcp-user-login-service:latest
 
    # 9. Docker 이미지 ECR에 푸시
    - name: Push Docker Images to ECR
