@@ -130,6 +130,7 @@ resource "aws_cloudfront_origin_request_policy" "origin_request_policy_with_host
   }
 }
 
+/*
 # CloudFront 배포 설정
 resource "aws_cloudfront_distribution" "frontend_distribution" {
   origin {
@@ -216,6 +217,143 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
     minimum_protocol_version = "TLSv1.2_2019"
   }
 }
+*/
+
+resource "aws_cloudfront_distribution" "frontend_distribution" {
+  origin {
+    domain_name = aws_s3_bucket.frontend_bucket.bucket_regional_domain_name
+    origin_id   = "S3-frontend"
+
+    s3_origin_config {
+      origin_access_identity = aws_cloudfront_origin_access_identity.s3_identity.cloudfront_access_identity_path
+    }
+  }
+
+  enabled         = true
+  is_ipv6_enabled = true
+  default_root_object = "login.html"
+  aliases             = ["ljhun.shop", "www.ljhun.shop"]
+
+  default_cache_behavior {
+    target_origin_id = "S3-frontend"
+
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
+    
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+
+    viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 0
+    default_ttl            = 3600
+    max_ttl                = 86400
+  }
+
+  # 추가 path-based rule이 필요 없으면 ordered_cache_behavior는 생략
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = data.aws_acm_certificate.ljhun_cert.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2019"
+  }
+}
+
+resource "aws_cloudfront_distribution" "backend_distribution" {
+  origin {
+    # ALB 오리진 (백엔드 Pod/Ingress)
+    domain_name = var.alb_dns_name  # ALB DNS
+    origin_id   = "ALB"
+
+    custom_origin_config {
+      origin_protocol_policy = "https-only"
+      http_port              = 80
+      https_port             = 443
+      origin_ssl_protocols   = ["TLSv1.2"]
+    }
+  }
+
+  enabled         = true
+  is_ipv6_enabled = true
+  aliases = ["api.ljhun.shop"]
+
+  # (1) Default behavior: 
+  #   - 나머지 경로(/), /admin/*, /random/* 등은 여기로 매핑
+  #   - ALB가 404 또는 API 응답
+  default_cache_behavior {
+    target_origin_id = "ALB"
+
+    allowed_methods  = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
+    cached_methods   = ["GET","HEAD"]
+
+    forwarded_values {
+      query_string = true
+      cookies {
+        forward = "all"
+      }
+    }
+
+    viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 0
+    default_ttl            = 3600
+    max_ttl                = 86400
+  }
+
+  # (2) ordered_cache_behavior: "/app-one/*" → ALB
+  ordered_cache_behavior {
+    path_pattern     = "/app-one/*"
+    target_origin_id = "ALB"
+
+    viewer_protocol_policy = "redirect-to-https"
+    allowed_methods        = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
+    cached_methods         = ["GET","HEAD"]
+
+    # 캐시/오리진 요청 정책
+    cache_policy_id          = aws_cloudfront_cache_policy.cache_policy_with_default.id
+    origin_request_policy_id = aws_cloudfront_origin_request_policy.origin_request_policy_with_host.id
+
+    min_ttl    = 0
+    default_ttl = 3600
+    max_ttl    = 86400
+  }
+
+  # (3) ordered_cache_behavior: "/app-two/*" → ALB
+  ordered_cache_behavior {
+    path_pattern     = "/app-two/*"
+    target_origin_id = "ALB"
+
+    viewer_protocol_policy = "redirect-to-https"
+    allowed_methods        = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
+    cached_methods         = ["GET","HEAD"]
+
+    cache_policy_id          = aws_cloudfront_cache_policy.cache_policy_with_default.id
+    origin_request_policy_id = aws_cloudfront_origin_request_policy.origin_request_policy_with_host.id
+
+    min_ttl    = 0
+    default_ttl = 3600
+    max_ttl    = 86400
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = data.aws_acm_certificate.ljhun_cert.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2019"
+  }
+}
 
 # CloudFront의 S3 접근 권한 설정
 resource "aws_cloudfront_origin_access_identity" "s3_identity" {
@@ -270,5 +408,17 @@ resource "aws_route53_record" "frontend_alias1" {
     name                   = aws_cloudfront_distribution.frontend_distribution.domain_name  # CloudFront 도메인 이름
     zone_id                = aws_cloudfront_distribution.frontend_distribution.hosted_zone_id  # CloudFront 호스팅 영역 ID
     evaluate_target_health = false                    # 대상 상태 평가 여부 (false로 설정)
+  }
+}
+
+resource "aws_route53_record" "backend_api_alias" {
+  zone_id = data.aws_route53_zone.ljhun_zone.zone_id
+  name    = "api.ljhun.shop"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.backend_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.backend_distribution.hosted_zone_id
+    evaluate_target_health = false
   }
 }

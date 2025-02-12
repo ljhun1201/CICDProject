@@ -408,7 +408,7 @@ provider "aws" {
 
 # 기존 ACM 인증서 조회 (동적 참조)
 data "aws_acm_certificate" "ljhun_cert" {
-  domain   = "www.ljhun.shop"     # 인증서에 등록된 도메인 이름
+  domain   = "api.ljhun.shop"     # 인증서에 등록된 도메인 이름
   statuses = ["ISSUED"]           # 발급 완료된 인증서만 조회
 }
 
@@ -456,50 +456,7 @@ resource "kubernetes_manifest" "app_ingress" {
       ingressClassName = "alb"
       rules = [
         {
-          host = "ljhun.shop"
-          http = {
-            paths = [
-              {
-                path     = "/app-one/register"
-                pathType = "Prefix"
-                backend = {
-                  service = {
-                    name = kubernetes_service.app_one_service.metadata[0].name
-                    port = {
-                      number = 80  # ClusterIP 서비스의 포트
-                    }
-                  }
-                }
-              },
-              {
-                path     = "/app-two/login"
-                pathType = "Prefix"
-                backend = {
-                  service = {
-                    name = kubernetes_service.app_two_service.metadata[0].name
-                    port = {
-                      number = 80
-                    }
-                  }
-                }
-              },
-              {
-                path     = "/healthz"
-                pathType = "Prefix"
-                backend = {
-                  service = {
-                    name = kubernetes_service.app_one_service.metadata[0].name
-                    port = {
-                      number = 80  # ClusterIP 서비스의 포트
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          host = "www.ljhun.shop"
+          host = "api.ljhun.shop"
           http = {
             paths = [
               {

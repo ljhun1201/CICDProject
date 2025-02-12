@@ -34,6 +34,10 @@ output "alb_security_group_id" {
   value = aws_security_group.alb_sg.id
 }
 
+output "db_name" {
+  value       = var.db_name
+}
+
 output "db_endpoint" {
   description = "RDS Endpoint"
   value       = replace(aws_db_instance.mydb.endpoint, ":3306", "")
@@ -42,4 +46,8 @@ output "db_endpoint" {
 output "db_password" {
   description = "RDS Password"
   value       = var.db_password
+}
+
+output "user_name" {
+  value     = var.user_name
 }

@@ -65,3 +65,25 @@ data "local_file" "alb_dns_name" {
   filename = "${path.root}/alb_dns_name.txt"
   depends_on = [null_resource.deploy_kubernetes_resources]
 }
+/*
+module "dms" {
+  source = "./modules/dms"
+
+  vpc_id             = module.network.vpc_id
+  private_subnet_ids = module.network.private_subnet_ids
+
+  gcs_bucket_name    = "my-terraform-db-info"
+  gcs_state_prefix   = "cloudsql-state"
+
+  # Cloud SQL root password (민감정보는 TF var or SSM 등에서)
+  cloudsql_password  = var.cloudsql_password
+
+  # RDS endpoint & creds
+  rds_endpoint = module.network.db_endpoint    # 예: aws_db_instance.mydb.endpoint (만약에 output 했으면)
+  rds_password = module.network.db_password    # RDS password
+  rds_name = module.network.db_name
+  rds_user_name = module.network.user_name
+
+  depends_on = [module.s3_and_cloudfront]
+}
+*/

@@ -356,8 +356,8 @@ resource "aws_db_instance" "mydb" {
   engine                 = "mysql"
   engine_version         = "8.0"
   instance_class         = "db.t3.micro"
-  db_name                = "mydb"            # 실제 DB 스키마 이름(RDS 인스턴스 생성 시 자동으로 "mydb" 데이터베이스 생성)
-  username               = "admin"
+  db_name                = var.db_name            # 실제 DB 스키마 이름(RDS 인스턴스 생성 시 자동으로 "mydb" 데이터베이스 생성)
+  username               = var.user_name
   password               = var.db_password   # Terraform 변수 사용 (예: -var="db_password=비밀번호")
   db_subnet_group_name   = aws_db_subnet_group.this.name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
