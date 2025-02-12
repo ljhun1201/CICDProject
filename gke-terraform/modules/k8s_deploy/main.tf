@@ -93,7 +93,7 @@ resource "kubernetes_deployment" "app_two" {
 
         container {
           name  = "app-two-container"
-          image = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-registration-service:latest"
+          image = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest"
           port {
             container_port = 5000
           }

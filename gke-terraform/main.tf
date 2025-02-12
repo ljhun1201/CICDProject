@@ -14,6 +14,11 @@ terraform {
     }
   }
 
+  backend "gcs" {
+    bucket = "my-terraform-db-info"    # 실제 GCS 버킷 이름
+    prefix = "cloudsql-state"          # 이 모듈에 대한 state 파일 경로
+  }
+
   required_version = ">= 1.3.0"
 }
 
@@ -82,7 +87,6 @@ module "gke" {
 ####################################################
 # 4) Storage and LB Module
 ####################################################
-
 module "storage_and_lb" {
   source = "./modules/storage_and_lb"
 

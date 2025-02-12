@@ -1,1 +1,1 @@
-k8s-default-appingre-c62cbb469f-2048149140.ap-northeast-2.elb.amazonaws.com
+k8s-default-appingre-c62cbb469f-1077115635.ap-northeast-2.elb.amazonaws.com

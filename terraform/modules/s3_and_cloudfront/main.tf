@@ -87,6 +87,13 @@ data "aws_acm_certificate" "ljhun_cert" {
   statuses = ["ISSUED"]           # 발급 완료된 인증서만 조회
 }
 
+# 기존 ACM 인증서 조회 (동적 참조)
+data "aws_acm_certificate" "ljhun_api" {
+  provider          = aws.us_east_1
+  domain   = "api.ljhun.shop"     # 인증서에 등록된 도메인 이름
+  statuses = ["ISSUED"]           # 발급 완료된 인증서만 조회
+}
+
 # CloudFront Cache Policy 리소스 생성
 resource "aws_cloudfront_cache_policy" "cache_policy_with_default" {
   name = "cache-policy-with-default"
@@ -349,7 +356,7 @@ resource "aws_cloudfront_distribution" "backend_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = data.aws_acm_certificate.ljhun_cert.arn
+    acm_certificate_arn      = data.aws_acm_certificate.ljhun_api.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2019"
   }
@@ -383,7 +390,6 @@ resource "aws_s3_bucket_policy" "frontend_bucket_policy" {
     ]
   })
 }
-
 
 # Route 53 레코드 설정 (CloudFront를 가리킴)
 resource "aws_route53_record" "frontend_alias" {

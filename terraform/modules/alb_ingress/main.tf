@@ -436,7 +436,7 @@ resource "kubernetes_manifest" "app_ingress" {
         "kubernetes.io/ingress.class"              = "alb"
         "alb.ingress.kubernetes.io/scheme"        = "internet-facing"
         "alb.ingress.kubernetes.io/listen-ports"  = "[{\"HTTP\":80}, {\"HTTPS\":443}]" # ALB의 포트
-        "alb.ingress.kubernetes.io/certificate-arn" = "arn:aws:acm:ap-northeast-2:481665107235:certificate/f4d0112f-5032-4a76-b1f4-888cd726975d"
+        "alb.ingress.kubernetes.io/certificate-arn" = "arn:aws:acm:ap-northeast-2:481665107235:certificate/d2e40628-5ff5-466a-a818-14b2d9b2475f"
         "alb.ingress.kubernetes.io/target-type"   = "ip"  # 이것을 지정하면 CNI 플러그인 형식에 따라 POD의 IP가 노드 밖으로 나오므로, NodePort 사용 X
         "alb.ingress.kubernetes.io/security-groups" = var.alb_security_group_id
         "alb.ingress.kubernetes.io/healthcheck-path" = "/healthz"  # Health Check 경로 설정

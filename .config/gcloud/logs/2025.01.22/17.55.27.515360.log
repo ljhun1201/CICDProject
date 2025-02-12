@@ -1,0 +1,48 @@
+2025-01-22 17:55:27,574 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-01-22 17:55:27,578 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target_https_proxies']
+2025-01-22 17:55:27,596 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target-https-proxies', 'list']
+2025-01-22 17:55:27,600 DEBUG    root            Running [gcloud.compute.target-https-proxies.list] with arguments: [--project: "peppy-arcadia-432311-g5"]
+2025-01-22 17:55:27,843 DEBUG    root            Chosen display Format:    table(
+      name,
+      sslCertificates.map().basename().list():label=SSL_CERTIFICATES,
+      urlMap.basename(),
+      region.basename(),
+      certificateMap.basename()
+    )
+2025-01-22 17:55:27,844 INFO     root            Display format: "    table(
+      name,
+      sslCertificates.map().basename().list():label=SSL_CERTIFICATES,
+      urlMap.basename(),
+      region.basename(),
+      certificateMap.basename()
+    )"
+2025-01-22 17:55:27,847 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-01-22 17:55:28,608 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/targetHttpsProxies?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-01-22 17:55:28,695 INFO     root            cache collection=compute.targetHttpsProxies api_version=v1 params=['project', 'targetHttpsProxy']
+2025-01-22 17:55:28,696 INFO     root            cache collection=compute.regionTargetHttpsProxies api_version=v1 params=['project', 'region', 'targetHttpsProxy']
+2025-01-22 17:55:28,746 INFO     ___FILE_ONLY___ NAME
+2025-01-22 17:55:28,746 INFO     ___FILE_ONLY___                                            
+2025-01-22 17:55:28,746 INFO     ___FILE_ONLY___ SSL_CERTIFICATES
+2025-01-22 17:55:28,746 INFO     ___FILE_ONLY___                                     
+2025-01-22 17:55:28,746 INFO     ___FILE_ONLY___ URL_MAP
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___                                         
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___ REGION
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___   
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___ CERTIFICATE_MAP
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___ 
+
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___ k8s2-ts-cygk90f3-default-app-ingress-gikp567s
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___   
+2025-01-22 17:55:28,747 INFO     ___FILE_ONLY___ k8s2-cr-cygk90f3-z3ooz0aczjiam4ed-edf8c7958e7eaf43
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___   
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ k8s2-um-cygk90f3-default-app-ingress-gikp567s
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ 
+
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ lb-https-proxy
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___                                  
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ lb-managed-cert
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___                                      
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ lb-url-map
+2025-01-22 17:55:28,748 INFO     ___FILE_ONLY___ 
+
+2025-01-22 17:55:28,749 DEBUG    root            SDK update checks are disabled.

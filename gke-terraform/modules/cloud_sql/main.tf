@@ -21,7 +21,7 @@ resource "google_sql_database" "default_db" {
 }
 
 resource "google_sql_user" "root_user" {
-  name       = "root"
+  name       = var.user_name
   instance   = google_sql_database_instance.mysql_instance.name
   password   = var.db_password
   host       = "%"

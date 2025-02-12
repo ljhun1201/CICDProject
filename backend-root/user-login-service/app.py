@@ -26,7 +26,7 @@ def get_db_connection():
         database=DB_NAME
     )
 
-@app.route('/app-two/login', methods=['POST'])
+@app.route('/app-two/login', methods=['POST', 'OPTIONS'])
 def login():
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
