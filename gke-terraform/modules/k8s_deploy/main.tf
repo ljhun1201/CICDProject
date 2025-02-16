@@ -250,14 +250,16 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-prod-key
     solvers:
-      - http01:
-          ingress:
-            class: gce
-            serviceType: NodePort 
-            podTemplate:           
-              spec:
-                nodeSelector:
-                  cloud.google.com/gke-nodepool: gcp-dr-gke-nodepool
+      - dns01:
+          route53:
+            region: "us-east-1"  # Route 53은 글로벌이지만, IAM 설정은 특정 리전 필요
+            hostedZoneID: "Z003422921ZWRSU9KTPP7"  # Route 53 Hosted Zone ID
+            accessKeyIDSecretRef:
+              name: route53-secret
+              key: access-key-id
+            secretAccessKeySecretRef:
+              name: route53-secret
+              key: secret-access-key
 EOF
   )
 }

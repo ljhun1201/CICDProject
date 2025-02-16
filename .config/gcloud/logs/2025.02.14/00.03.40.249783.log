@@ -1,0 +1,122 @@
+2025-02-14 00:03:40,257 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'node_pools']
+2025-02-14 00:03:40,260 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'node-pools', 'delete']
+2025-02-14 00:03:40,340 DEBUG    root            Running [gcloud.container.node-pools.delete] with arguments: [--cluster: "gcp-dr-gke", --quiet: "True", --region: "asia-northeast3", NAME: "default-pool"]
+2025-02-14 00:03:40,344 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:40,546 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke/nodePools/default-pool?alt=json HTTP/1.1" 200 None
+2025-02-14 00:03:40,555 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:40,923 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "DELETE /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke/nodePools/default-pool?alt=json HTTP/1.1" 200 None
+2025-02-14 00:03:40,928 INFO     ___FILE_ONLY___ Deleting node pool default-pool...
+2025-02-14 00:03:40,932 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:41,111 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:03:46,120 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:46,457 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:03:51,464 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:51,910 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:03:56,915 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:03:57,089 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:02,094 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:02,256 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:07,262 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:07,695 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:12,701 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:12,848 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:17,854 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:18,039 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:23,044 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:23,259 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:28,265 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:28,640 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:33,646 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:33,800 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:38,807 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:39,021 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:44,026 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:44,131 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:49,137 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:49,315 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:54,320 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:54,550 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:04:59,556 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:04:59,699 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:04,704 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:04,947 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:09,951 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:10,221 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:15,226 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:15,392 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:20,398 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:20,508 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:25,516 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:25,767 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:30,772 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:30,929 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:35,936 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:36,094 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:41,100 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:41,347 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:46,354 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:46,486 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:51,493 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:51,617 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:05:56,625 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:05:56,833 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:01,838 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:02,000 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:07,006 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:07,162 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:12,169 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:12,386 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:17,392 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:17,540 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:22,546 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:22,718 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:27,722 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:27,941 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:32,948 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:33,107 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:38,114 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:38,274 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:43,279 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:43,491 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:48,496 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:48,661 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:53,667 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:53,856 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:06:58,862 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:06:59,313 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:04,318 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:04,471 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:09,477 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:09,864 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:14,871 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:15,095 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:20,100 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:20,219 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:25,225 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:25,379 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:30,385 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:30,569 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:35,573 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:35,960 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:40,966 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:41,126 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:46,133 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:46,241 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:51,249 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:07:51,460 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e?alt=json HTTP/1.1" 200 None
+2025-02-14 00:07:51,465 INFO     root            Operation <Operation
+ clusterConditions: []
+ endTime: '2025-02-13T15:07:50.521472815Z'
+ name: 'operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e'
+ nodepoolConditions: []
+ operationType: OperationTypeValueValuesEnum(DELETE_NODE_POOL, 8)
+ selfLink: 'https://container.googleapis.com/v1/projects/134982172036/locations/asia-northeast3/operations/operation-1739459021000-283e81ab-3fd5-4ba3-9e82-7a1d2ad4404e'
+ startTime: '2025-02-13T15:03:41.000277349Z'
+ status: StatusValueValuesEnum(DONE, 3)
+ targetLink: 'https://container.googleapis.com/v1/projects/134982172036/locations/asia-northeast3/clusters/gcp-dr-gke/nodePools/default-pool'
+ zone: 'asia-northeast3'> finished after 2.51e+02 seconds
+2025-02-14 00:07:51,664 INFO     ___FILE_ONLY___ Deleted [https://container.googleapis.com/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3/clusters/gcp-dr-gke/nodePools/default-pool].
+
+2025-02-14 00:07:51,665 DEBUG    root            Chosen display Format:none
+2025-02-14 00:07:51,665 INFO     root            Display format: "none"
+2025-02-14 00:07:51,722 DEBUG    root            SDK update checks are disabled.

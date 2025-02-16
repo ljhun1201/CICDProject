@@ -1,0 +1,71 @@
+2025-02-14 00:51:30,037 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-02-14 00:51:30,039 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2025-02-14 00:51:30,144 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-14 00:51:30,147 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-14 00:51:30,487 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-14 00:51:30,535 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "ap-northeast3", NAME: "gcp-dr-gke"]
+2025-02-14 00:51:30,543 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2025-02-14 00:51:30,544 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-14 00:51:30,723 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/ap-northeast3/clusters/gcp-dr-gke?alt=json HTTP/1.1" 403 None
+2025-02-14 00:51:30,727 DEBUG    root            (gcloud.container.clusters.get-credentials) ResponseError: code=403, message=Permission denied on 'locations/ap-northeast3' (or it may not exist). This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1815, in GetCluster
+    return self.client.projects_locations_clusters.Get(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/container/v1/container_v1_client.py", line 628, in Get
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpForbiddenError: HttpError accessing <https://container.googleapis.com/v1/projects/peppy-arcadia-432311-g5/locations/ap-northeast3/clusters/gcp-dr-gke?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Thu, 13 Feb 2025 15:51:30 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 403}>, content <{
+  "error": {
+    "code": 403,
+    "message": "Permission denied on 'locations/ap-northeast3' (or it may not exist).",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "LOCATION_POLICY_VIOLATED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "container.googleapis.com",
+          "location": "ap-northeast3",
+          "consumer": "projects/peppy-arcadia-432311-g5"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Permission denied on 'locations/ap-northeast3' (or it may not exist)."
+      }
+    ]
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 120, in Run
+    cluster, cluster_ref = _BaseRun(args, self.context)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/container/clusters/get_credentials.py", line 41, in _BaseRun
+    cluster = adapter.GetCluster(cluster_ref)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/container/api_adapter.py", line 1824, in GetCluster
+    raise exceptions.HttpException(error, util.HTTP_ERROR_FORMAT)
+googlecloudsdk.calliope.exceptions.HttpException: ResponseError: code=403, message=Permission denied on 'locations/ap-northeast3' (or it may not exist). This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+2025-02-14 00:51:30,744 ERROR    root            (gcloud.container.clusters.get-credentials) ResponseError: code=403, message=Permission denied on 'locations/ap-northeast3' (or it may not exist). This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.

@@ -78,10 +78,10 @@ jobs:
        aws eks update-kubeconfig --name eks-cluster --region ap-northeast-2
 
    # # 12. Update EKS Deployments
-   - name: Update Deployment in EKS
-     run: |
-       kubectl set image deployment/app-one app-one-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest -n default
-       kubectl set image deployment/app-two app-two-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest -n default
+   # - name: Update Deployment in EKS
+   #  run: |
+   #    kubectl set image deployment/app-one app-one-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest -n default
+   #    kubectl set image deployment/app-two app-two-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest -n default
 
    # # 13. GKE Kubeconfig 생성 및 업데이트
    # - name: Configure kubeconfig for GKE and Update

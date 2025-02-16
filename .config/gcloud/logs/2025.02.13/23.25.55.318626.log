@@ -1,0 +1,16 @@
+2025-02-13 23:25:55,324 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-02-13 23:25:55,327 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2025-02-13 23:25:55,376 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-13 23:25:55,378 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-13 23:25:55,681 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-13 23:25:55,730 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", NAME: "gcp-dr-gke"]
+2025-02-13 23:25:55,742 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2025-02-13 23:25:55,744 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2025-02-13 23:25:55,935 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5/locations/asia-northeast3/clusters/gcp-dr-gke?alt=json HTTP/1.1" 200 None
+2025-02-13 23:25:56,049 DEBUG    root            Saved kubeconfig to /home/ubuntu/.kube/config
+2025-02-13 23:25:56,050 INFO     ___FILE_ONLY___ kubeconfig entry generated for gcp-dr-gke.
+
+2025-02-13 23:25:56,050 DEBUG    root            Chosen display Format:default
+2025-02-13 23:25:56,051 INFO     root            Display format: "default"
+2025-02-13 23:25:56,051 DEBUG    root            SDK update checks are disabled.

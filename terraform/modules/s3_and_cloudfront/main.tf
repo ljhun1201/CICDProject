@@ -1,3 +1,31 @@
+#####################################################
+# (A) Terraform & Providers
+#####################################################
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0.0"
+    }
+  }
+  required_version = ">= 1.3.0"
+}
+
+#####################################################
+# (B) Remote State to get Cloud SQL Info
+#####################################################
+data "terraform_remote_state" "gcp" {
+  backend = "gcs"
+  config = {
+    bucket = "my-terraform-db-info"  # gke/main.tf에서 선언한 것과 동일
+    prefix = "cloudsql-state"        # gke/main.tf의 prefix와 동일
+  }
+}
+
+#####################################################
+
+#####################################################
+
 resource "aws_s3_bucket" "frontend_bucket" {
   bucket = "shoppingwebfrontend"
   
@@ -397,11 +425,34 @@ resource "aws_route53_record" "frontend_alias" {
   name    = "www.ljhun.shop"        # 도메인 이름
   type    = "A"                     # 레코드 타입 (A 레코드)
 
+  set_identifier = "www-aws-front-endpoint"
+  
+  weighted_routing_policy {
+    weight = 50  
+  }
+
   alias {
     name                   = aws_cloudfront_distribution.frontend_distribution.domain_name  # CloudFront 도메인 이름
     zone_id                = aws_cloudfront_distribution.frontend_distribution.hosted_zone_id  # CloudFront 호스팅 영역 ID
     evaluate_target_health = false                    # 대상 상태 평가 여부 (false로 설정)
   }
+}
+
+resource "aws_route53_record" "frontend_alias_gcp" {
+  zone_id = data.aws_route53_zone.ljhun_zone.zone_id
+  name    = "www.ljhun.shop"
+  type    = "A"
+
+  set_identifier = "www-gcp-lb"
+  
+  weighted_routing_policy {
+    weight = 50  
+  }
+
+
+  # GCP LB IP 가져오기 (Remote State)
+  records = [data.terraform_remote_state.gcp.outputs.lb_ip_address]
+  ttl     = 300
 }
 
 # Route 53 레코드 설정 (CloudFront를 가리킴)
@@ -409,6 +460,13 @@ resource "aws_route53_record" "frontend_alias1" {
   zone_id = data.aws_route53_zone.ljhun_zone.zone_id   # Route 53 호스팅 영역 ID
   name    = "ljhun.shop"        # 도메인 이름
   type    = "A"                     # 레코드 타입 (A 레코드)
+  
+  set_identifier = "aws-front-endpoint"
+  
+  weighted_routing_policy {
+    weight = 50  
+  }
+
 
   alias {
     name                   = aws_cloudfront_distribution.frontend_distribution.domain_name  # CloudFront 도메인 이름
@@ -417,14 +475,54 @@ resource "aws_route53_record" "frontend_alias1" {
   }
 }
 
+resource "aws_route53_record" "frontend_alias1_gcp" {
+  zone_id = data.aws_route53_zone.ljhun_zone.zone_id
+  name    = "ljhun.shop"
+  type    = "A"
+
+  set_identifier = "gcp-lb"
+  
+  weighted_routing_policy {
+    weight = 50  
+  }
+
+
+  # GCP LB IP 가져오기 (Remote State)
+  records = [data.terraform_remote_state.gcp.outputs.lb_ip_address]
+  ttl     = 300
+}
+
 resource "aws_route53_record" "backend_api_alias" {
   zone_id = data.aws_route53_zone.ljhun_zone.zone_id
   name    = "api.ljhun.shop"
   type    = "A"
+
+  set_identifier = "aws-endpoint"
+  
+  weighted_routing_policy {
+    weight = 50  
+  }
+
 
   alias {
     name                   = aws_cloudfront_distribution.backend_distribution.domain_name
     zone_id                = aws_cloudfront_distribution.backend_distribution.hosted_zone_id
     evaluate_target_health = false
   }
+}
+
+resource "aws_route53_record" "backend_api_alias_gcp" {
+  zone_id = data.aws_route53_zone.ljhun_zone.id
+  name    = "api.ljhun.shop"
+  type    = "A"
+
+  set_identifier = "gcp-endpoint"
+
+  weighted_routing_policy {
+    weight = 50  
+  }
+
+
+  records = [data.terraform_remote_state.gcp.outputs.ingress_ip]
+  ttl     = 60
 }

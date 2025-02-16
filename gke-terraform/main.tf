@@ -132,10 +132,11 @@ module "k8s_deploy" {
     kubernetes = kubernetes
   }
 }
-
+/*
 module "route53" {
   source = "./route53"
 
   lb_ip_address = module.storage_and_lb.lb_ip_address
   ingress_ip = module.k8s_deploy.ingress_ip
 }
+*/
