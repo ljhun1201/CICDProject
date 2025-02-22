@@ -450,6 +450,35 @@ resource "kubernetes_manifest" "app_ingress" {
         "alb.ingress.kubernetes.io/allow-methods" = "GET,POST,PUT,DELETE,OPTIONS"
         "alb.ingress.kubernetes.io/allow-origin"  = "*"
         "alb.ingress.kubernetes.io/expose-headers" = "Authorization,Content-Type"
+
+        # 🛠 Target Group에서 404가 반환되지 않도록 하는 설정 (액션 정의)
+        "alb.ingress.kubernetes.io/actions.app-one" = <<EOT
+        {
+          "type":"forward",
+          "forwardConfig":{
+            "targetGroups":[
+              {
+                "serviceName":"app-one-service",
+                "servicePort":"80"
+              }
+            ]
+          }
+        }
+        EOT
+
+        "alb.ingress.kubernetes.io/actions.app-two" = <<EOT
+        {
+          "type":"forward",
+          "forwardConfig":{
+            "targetGroups":[
+              {
+                "serviceName":"app-two-service",
+                "servicePort":"80"
+              }
+            ]
+          }
+        }
+        EOT
       }
     }
     spec = {

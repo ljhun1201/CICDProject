@@ -426,7 +426,7 @@ resource "aws_route53_record" "frontend_alias" {
   set_identifier = "www-aws-front-endpoint"
   
   weighted_routing_policy {
-    weight = 50  
+    weight = 255 
   }
 
   alias {
@@ -444,7 +444,7 @@ resource "aws_route53_record" "frontend_alias_gcp" {
   set_identifier = "www-gcp-lb"
   
   weighted_routing_policy {
-    weight = 50  
+    weight = 1 
   }
 
 
@@ -462,7 +462,7 @@ resource "aws_route53_record" "frontend_alias1" {
   set_identifier = "aws-front-endpoint"
   
   weighted_routing_policy {
-    weight = 50  
+    weight = 255
   }
 
 
@@ -481,7 +481,7 @@ resource "aws_route53_record" "frontend_alias1_gcp" {
   set_identifier = "gcp-lb"
   
   weighted_routing_policy {
-    weight = 50  
+    weight = 1
   }
 
 
@@ -498,7 +498,7 @@ resource "aws_route53_record" "backend_api_alias" {
   set_identifier = "aws-endpoint"
   
   weighted_routing_policy {
-    weight = 50  
+    weight = 255
   }
 
   alias {
@@ -516,7 +516,7 @@ resource "aws_route53_record" "backend_api_alias_gcp" {
   set_identifier = "gcp-endpoint"
 
   weighted_routing_policy {
-    weight = 50  
+    weight = 1
   }
 
 
