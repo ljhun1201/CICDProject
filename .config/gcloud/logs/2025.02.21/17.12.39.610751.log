@@ -1,0 +1,3 @@
+2025-02-21 17:12:39,618 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2025-02-21 17:12:39,633 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'create']
+2025-02-21 17:12:39,679 ERROR    root            (gcloud.container.clusters.create) argument --enable-ip-alias: ignored explicit argument 'false'

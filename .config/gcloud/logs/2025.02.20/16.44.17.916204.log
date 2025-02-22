@@ -1,0 +1,32 @@
+2025-02-20 16:44:18,019 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 16:44:18,029 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-02-20 16:44:18,044 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'subnets']
+2025-02-20 16:44:18,067 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'subnets', 'list']
+2025-02-20 16:44:18,071 DEBUG    root            Running [gcloud.compute.networks.subnets.list] with arguments: [--filter: "network=gcp-dr-vpc"]
+2025-02-20 16:44:18,072 DEBUG    root            Chosen display Format:    table(
+      name,
+      region.basename(),
+      network.basename(),
+      ipCidrRange:label=RANGE,
+      stackType,
+      ipv6AccessType,
+      internalIpv6Prefix,
+      externalIpv6Prefix
+    )
+2025-02-20 16:44:18,073 INFO     root            Display format: "    table(
+      name,
+      region.basename(),
+      network.basename(),
+      ipCidrRange:label=RANGE,
+      stackType,
+      ipv6AccessType,
+      internalIpv6Prefix,
+      externalIpv6Prefix
+    )"
+2025-02-20 16:44:18,267 INFO     root            client_filter=None server_filter='network eq ".*\\bgcp\\-dr\\-vpc\\b.*"'
+2025-02-20 16:44:18,275 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 16:44:19,080 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/subnetworks?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-20 16:44:19,119 WARNING  root            --filter : operator evaluation is changing for consistency across Google APIs.  network=gcp-dr-vpc currently does not match but will match in the near future.  Run `gcloud topic filters` for details.
+2025-02-20 16:44:19,121 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-20 16:44:19,121 DEBUG    root            SDK update checks are disabled.

@@ -41,7 +41,7 @@ resource "google_compute_backend_bucket" "gcs_backend" {
 
 resource "google_compute_url_map" "lb_url_map" {
   name            = "lb-url-map"
-  default_service = google_compute_backend_bucket.gcs_backend.self_link
+  # default_service = google_compute_backend_bucket.gcs_backend.self_link
 
   host_rule {
     hosts        = [var.domain_name, var.www_domain_name]
@@ -56,6 +56,13 @@ resource "google_compute_url_map" "lb_url_map" {
       paths   = ["/*"]
       service = google_compute_backend_bucket.gcs_backend.self_link
     }
+  }
+
+  # HTTP 요청을 HTTPS로 리디렉션
+  default_url_redirect {
+    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+    https_redirect         = true
+    strip_query            = false 
   }
 }
 

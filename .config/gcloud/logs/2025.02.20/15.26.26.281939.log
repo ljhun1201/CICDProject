@@ -1,0 +1,50 @@
+2025-02-20 15:26:26,305 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 15:26:26,308 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-02-20 15:26:26,309 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings']
+2025-02-20 15:26:26,315 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings', 'list']
+2025-02-20 15:26:26,319 DEBUG    root            Running [gcloud.compute.networks.peerings.list] with arguments: [--network: "main-vpc", --project: "peppy-arcadia-432311-g5"]
+2025-02-20 15:26:26,319 DEBUG    root            Chosen display Format:
+        table(peerings:format="table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )")
+    
+2025-02-20 15:26:26,320 DEBUG    root            Chosen display Format:table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )
+2025-02-20 15:26:26,322 INFO     root            Display format: "
+        table(peerings:format="table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )")
+    "
+2025-02-20 15:26:26,467 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 15:26:27,092 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/networks?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 15:26:27,100 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-20 15:26:27,104 DEBUG    root            SDK update checks are disabled.

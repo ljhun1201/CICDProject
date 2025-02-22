@@ -1,0 +1,83 @@
+2025-02-19 19:29:13,700 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-19 19:29:13,701 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-19 19:29:13,704 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-19 19:29:13,706 DEBUG    root            Running [gcloud.compute.firewall-rules.list] with arguments: [--filter: "name=allow-aws-to-cloudsql", --format: "json"]
+2025-02-19 19:29:13,793 INFO     root            client_filter=None server_filter='name eq ".*\\ballow\\-aws\\-to\\-cloudsql\\b.*"'
+2025-02-19 19:29:13,793 INFO     root            client_filter=None server_filter='name eq ".*\\ballow\\-aws\\-to\\-cloudsql\\b.*"'
+2025-02-19 19:29:13,793 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    ) json
+2025-02-19 19:29:13,794 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    ) json"
+2025-02-19 19:29:13,796 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-19 19:29:14,319 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json&filter=name+eq+%22.%2A%5Cballow%5C-aws%5C-to%5C-cloudsql%5Cb.%2A%22&maxResults=500 HTTP/1.1" 200 None
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ [
+  {
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+      {
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+          "3306"
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+      }
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T00:57:26.815-08:00",
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-19 19:29:14,330 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "id": "1811527783044096537",
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    },
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "name": "allow-aws-to-cloudsql",
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql",
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-19 19:29:14,331 INFO     ___FILE_ONLY___ 
+  }
+2025-02-19 19:29:14,343 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-19 19:29:14,364 INFO     ___FILE_ONLY___ 
+]
+
+2025-02-19 19:29:14,364 DEBUG    root            SDK update checks are disabled.

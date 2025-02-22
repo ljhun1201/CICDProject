@@ -1,0 +1,15 @@
+2025-02-21 16:04:42,815 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 16:04:42,819 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_tunnels']
+2025-02-21 16:04:42,837 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-tunnels', 'list']
+2025-02-21 16:04:42,839 WARNING  root            Argument `NAME` is deprecated. Use `--filter="name=( 'NAME' ... )"` instead.
+2025-02-21 16:04:42,840 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute']
+2025-02-21 16:04:42,844 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'vpn_tunnels']
+2025-02-21 16:04:42,845 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'vpn-tunnels', 'list']
+2025-02-21 16:04:42,856 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute']
+2025-02-21 16:04:42,860 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'vpn_tunnels']
+2025-02-21 16:04:42,861 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'vpn-tunnels', 'list']
+2025-02-21 16:04:42,864 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/compute]
+2025-02-21 16:04:42,865 ERROR    root            (gcloud.compute.vpn-tunnels.list) unrecognized arguments: --region (did you mean '--regions'?) 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

@@ -331,7 +331,8 @@ resource "aws_security_group" "rds_sg" {
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"
-    security_groups  = [aws_security_group.eks_node_sg.id]
+    cidr_blocks = ["0.0.0.0/0"]
+    # security_groups  = [aws_security_group.eks_node_sg.id]
     description      = "Allow MySQL from EKS node group"
   }
 

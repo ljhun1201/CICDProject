@@ -1,0 +1,120 @@
+2025-02-20 23:09:08,832 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:09:08,833 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-20 23:09:08,837 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'describe']
+2025-02-20 23:09:08,838 DEBUG    root            Running [gcloud.compute.routers.describe] with arguments: [--format: "json", --region: "asia-northeast3", NAME: "gcp-router"]
+2025-02-20 23:09:08,924 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:09:09,217 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-20 23:09:09,224 DEBUG    root            Chosen display Format:default json
+2025-02-20 23:09:09,224 INFO     root            Display format: "default json"
+2025-02-20 23:09:09,233 INFO     ___FILE_ONLY___ {
+  "bgp": {
+    "advertiseMode": "CUSTOM",
+    "advertisedIpRanges": [
+      {
+        "description": "",
+        "range": "10.0.0.0/16"
+      },
+      {
+        "description": "",
+        "range": "10.10.0.0/24"
+      },
+      {
+        "description": "",
+        "range": "10.10.1.0/24"
+      }
+    ],
+    "asn": 65000,
+    "keepaliveInterval": 20
+  },
+  "bgpPeers": [
+    {
+      "advertiseMode": "CUSTOM",
+      "advertisedIpRanges": [
+        {
+          "description": "",
+          "range": "10.200.0.0/16"
+        },
+        {
+          "description": "",
+          "range": "10.10.0.0/24"
+        },
+        {
+          "description": "",
+          "range": "10.10.1.0/24"
+        }
+      ],
+      "advertisedRoutePriority": 100,
+      "bfd": {
+        "minReceiveInterval": 1000,
+        "minTransmitInterval": 1000,
+        "multiplier": 5,
+        "sessionInitializationMode": "DISABLED"
+      },
+      "enable": "TRUE",
+      "enableIpv4": true,
+      "enableIpv6": false,
+      "interfaceName": "aws-router-interface-2",
+      "ipAddress": "169.254.114.234",
+      "name": "aws-bgp-peer-2",
+      "peerAsn": 64512,
+      "peerIpAddress": "169.254.114.233"
+    },
+    {
+      "advertiseMode": "CUSTOM",
+      "advertisedIpRanges": [
+        {
+          "description": "",
+          "range": "10.200.0.0/16"
+        },
+        {
+          "description": "",
+          "range": "10.10.0.0/24"
+        },
+        {
+          "description": "",
+          "range": "10.10.1.0/24"
+        }
+      ],
+      "advertisedRoutePriority": 100,
+      "bfd": {
+        "minReceiveInterval": 1000,
+        "minTransmitInterval": 1000,
+        "multiplier": 5,
+        "sessionInitializationMode": "DISABLED"
+      },
+      "enable": "TRUE",
+      "enableIpv4": true,
+      "enableIpv6": false,
+      "interfaceName": "aws-router-interface-1",
+      "ipAddress": "169.254.211.82",
+      "name": "aws-bgp-peer-1",
+      "peerAsn": 64512,
+      "peerIpAddress": "169.254.211.81"
+    }
+  ],
+  "creationTimestamp": "2025-02-20T05:41:41.822-08:00",
+  "encryptedInterconnectRouter": false,
+  "id": "2008087335007850490",
+  "interfaces": [
+    {
+      "ipRange": "169.254.114.234/30",
+      "ipVersion": "IPV4",
+      "linkedVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+      "name": "aws-router-interface-2"
+    },
+    {
+      "ipRange": "169.254.211.82/30",
+      "ipVersion": "IPV4",
+      "linkedVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+      "name": "aws-router-interface-1"
+    }
+  ],
+  "kind": "compute#router",
+  "name": "gcp-router",
+  "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+  "region": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router"
+}
+2025-02-20 23:09:09,233 INFO     ___FILE_ONLY___ 
+
+2025-02-20 23:09:09,234 DEBUG    root            SDK update checks are disabled.

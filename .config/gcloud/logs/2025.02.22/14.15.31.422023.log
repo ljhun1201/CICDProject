@@ -1,0 +1,33 @@
+2025-02-22 14:15:31,433 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 14:15:31,436 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-22 14:15:31,441 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-22 14:15:31,442 DEBUG    root            Running [gcloud.compute.firewall-rules.list] with arguments: [--filter: "name~'http'"]
+2025-02-22 14:15:31,529 INFO     root            client_filter=None server_filter='name eq ".*(http).*"'
+2025-02-22 14:15:31,529 INFO     root            client_filter=None server_filter='name eq ".*(http).*"'
+2025-02-22 14:15:31,529 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-22 14:15:31,530 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-22 14:15:31,531 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 14:15:32,103 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json&filter=name+eq+%22.%2A%28http%29.%2A%22&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 14:15:32,113 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-22 14:15:32,134 INFO     ___FILE_ONLY___ 
+To show all fields of the firewall, please show in JSON format: --format=json
+To show all fields in table format, please see the examples in --help.
+
+
+2025-02-22 14:15:32,135 DEBUG    root            SDK update checks are disabled.

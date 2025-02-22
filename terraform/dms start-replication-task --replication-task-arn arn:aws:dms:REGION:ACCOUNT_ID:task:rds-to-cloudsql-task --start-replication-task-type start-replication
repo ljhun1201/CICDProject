@@ -1,0 +1,14 @@
+[
+    {
+        "Task": "cloudsql-to-rds-task",
+        "Status": "ready",
+        "Type": "cdc",
+        "TableMappings": "{\n  \"rules\": [\n    {\n      \"rule-type\": \"selection\",\n      \"rule-id\": \"1\",\n      \"rule-name\": \"include-all\",\n      \"object-locator\": {\n        \"schema-name\": \"mydb\", \n        \"table-name\": \"%\"     \n      },\n      \"rule-action\": \"include\"\n    }\n  ]\n}\n"
+    },
+    {
+        "Task": "rds-to-cloudsql-task",
+        "Status": "ready",
+        "Type": "cdc",
+        "TableMappings": "{\n  \"rules\": [\n    {\n      \"rule-type\": \"selection\",\n      \"rule-id\": \"1\",\n      \"rule-name\": \"include-all\",\n      \"object-locator\": {\n        \"schema-name\": \"mydb\",  \n        \"table-name\": \"%\"      \n      },\n      \"rule-action\": \"include\"\n    }\n  ]\n}\n"
+    }
+]

@@ -1,0 +1,88 @@
+2025-02-20 17:51:47,733 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 17:51:47,736 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-02-20 17:51:47,737 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings']
+2025-02-20 17:51:47,745 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings', 'list']
+2025-02-20 17:51:47,747 DEBUG    root            Running [gcloud.compute.networks.peerings.list] with arguments: [--network: "gcp-dr-vpc"]
+2025-02-20 17:51:47,747 DEBUG    root            Chosen display Format:
+        table(peerings:format="table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )")
+    
+2025-02-20 17:51:47,748 DEBUG    root            Chosen display Format:table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )
+2025-02-20 17:51:47,749 INFO     root            Display format: "
+        table(peerings:format="table(
+            name,
+            source_network.basename():label=NETWORK,
+            network.map().scope(projects).segment(0):label=PEER_PROJECT,
+            network.basename():label=PEER_NETWORK,
+            stackType,
+            peerMtu,
+            importCustomRoutes,
+            exportCustomRoutes,
+            state,
+            stateDetails
+        )")
+    "
+2025-02-20 17:51:47,928 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:51:48,459 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/networks?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 17:51:48,489 INFO     ___FILE_ONLY___ NAME
+2025-02-20 17:51:48,489 INFO     ___FILE_ONLY___                               
+2025-02-20 17:51:48,489 INFO     ___FILE_ONLY___ NETWORK
+2025-02-20 17:51:48,489 INFO     ___FILE_ONLY___      
+2025-02-20 17:51:48,489 INFO     ___FILE_ONLY___ PEER_PROJECT
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___            
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ PEER_NETWORK
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___        
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ STACK_TYPE
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ PEER_MTU
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ IMPORT_CUSTOM_ROUTES
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ EXPORT_CUSTOM_ROUTES
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ STATE
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___    
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ STATE_DETAILS
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___ servicenetworking-googleapis-com
+2025-02-20 17:51:48,490 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ v117afaa10309efb4p-tp
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ servicenetworking
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ IPV4_ONLY
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___              
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ True
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___                   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ True
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___                   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ ACTIVE
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ [2025-02-20T00:29:46.496-08:00]: Connected.
+2025-02-20 17:51:48,491 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:51:48,492 DEBUG    root            SDK update checks are disabled.

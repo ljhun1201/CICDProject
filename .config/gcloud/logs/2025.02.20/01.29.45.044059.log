@@ -1,0 +1,90 @@
+2025-02-20 01:29:45,066 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 01:29:45,069 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 01:29:45,097 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'create']
+2025-02-20 01:29:45,237 DEBUG    root            Running [gcloud.compute.firewall-rules.create] with arguments: [--allow: "['tcp:3306']", --network: "gcp-dr-vpc", --source-ranges: "['10.0.0.0/16', '10.0.0.0/24', '10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24']", NAME: "allow-aws-vpn"]
+2025-02-20 01:29:45,295 INFO     ___FILE_ONLY___ Creating firewall...
+2025-02-20 01:29:45,298 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:29:46,203 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json HTTP/1.1" 200 None
+2025-02-20 01:29:46,208 DEBUG    root            Operations to inspect: [(<Operation
+ id: 2393202183263467541
+ insertTime: '2025-02-19T08:29:46.458-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1739982586008-62e8143f45401-0ebc94c5-8512a42d'
+ operationType: 'insert'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982586008-62e8143f45401-0ebc94c5-8512a42d'
+ startTime: '2025-02-19T08:29:46.462-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 349563263863470101
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-vpn'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 01:29:46,214 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:29:51,359 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982586008-62e8143f45401-0ebc94c5-8512a42d/wait?alt=json HTTP/1.1" 200 None
+2025-02-20 01:29:51,363 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-19T08:29:51.529-08:00'
+ id: 2393202183263467541
+ insertTime: '2025-02-19T08:29:46.458-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1739982586008-62e8143f45401-0ebc94c5-8512a42d'
+ operationType: 'insert'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982586008-62e8143f45401-0ebc94c5-8512a42d'
+ startTime: '2025-02-19T08:29:46.462-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 349563263863470101
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-vpn'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 01:29:51,364 INFO     ___FILE_ONLY___ Created [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-vpn].
+
+2025-02-20 01:29:51,366 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:29:51,941 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-vpn?alt=json HTTP/1.1" 200 None
+2025-02-20 01:29:51,948 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-20 01:29:51,950 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-20 01:29:52,022 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___ NAME
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___            
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___ NETWORK
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___      
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___ DIRECTION
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___   
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___   
+2025-02-20 01:29:52,076 INFO     ___FILE_ONLY___ ALLOW
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___      
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ DENY
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___   
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ DISABLED
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ allow-aws-vpn
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___   
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___   
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___     
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ 1000
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___       
+2025-02-20 01:29:52,077 INFO     ___FILE_ONLY___ tcp:3306
+2025-02-20 01:29:52,078 INFO     ___FILE_ONLY___         
+2025-02-20 01:29:52,078 INFO     ___FILE_ONLY___ False
+2025-02-20 01:29:52,078 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:29:52,078 DEBUG    root            SDK update checks are disabled.

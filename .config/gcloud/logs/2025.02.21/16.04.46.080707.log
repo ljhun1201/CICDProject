@@ -1,0 +1,47 @@
+2025-02-21 16:04:46,097 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 16:04:46,098 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_tunnels']
+2025-02-21 16:04:46,104 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-tunnels', 'list']
+2025-02-21 16:04:46,106 DEBUG    root            Running [gcloud.compute.vpn-tunnels.list] with arguments: [--regions: "['asia-northeast3']"]
+2025-02-21 16:04:46,286 DEBUG    root            Chosen display Format:    table(
+      name,
+      region.basename(),
+      vpn_tunnel_gateway().basename():label=GATEWAY,
+      peerIp:label=PEER_ADDRESS
+    )
+2025-02-21 16:04:46,287 INFO     root            Display format: "    table(
+      name,
+      region.basename(),
+      vpn_tunnel_gateway().basename():label=GATEWAY,
+      peerIp:label=PEER_ADDRESS
+    )"
+2025-02-21 16:04:46,290 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 16:04:47,151 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/vpnTunnels?alt=json&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-21 16:04:47,219 INFO     root            cache collection=compute.vpnTunnels api_version=v1 params=['project', 'region', 'vpnTunnel']
+2025-02-21 16:04:47,280 INFO     ___FILE_ONLY___ NAME
+2025-02-21 16:04:47,280 INFO     ___FILE_ONLY___               
+2025-02-21 16:04:47,280 INFO     ___FILE_ONLY___ REGION
+2025-02-21 16:04:47,280 INFO     ___FILE_ONLY___            
+2025-02-21 16:04:47,280 INFO     ___FILE_ONLY___ GATEWAY
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___           
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___ PEER_ADDRESS
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___ 
+
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___ aws-to-gcp-vpn-1
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___ asia-northeast3
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___ gcp-vpn-gateway
+2025-02-21 16:04:47,281 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ 15.164.56.210
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ 
+
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ aws-to-gcp-vpn-2
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ asia-northeast3
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ gcp-vpn-gateway
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___   
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ 43.203.23.1
+2025-02-21 16:04:47,282 INFO     ___FILE_ONLY___ 
+
+2025-02-21 16:04:47,283 DEBUG    root            SDK update checks are disabled.

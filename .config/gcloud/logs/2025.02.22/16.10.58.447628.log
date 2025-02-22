@@ -1,0 +1,53 @@
+2025-02-22 16:10:58,470 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:10:58,472 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target_http_proxies']
+2025-02-22 16:10:58,480 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target-http-proxies', 'describe']
+2025-02-22 16:10:58,482 DEBUG    root            Running [gcloud.compute.target-http-proxies.describe] with arguments: [NAME: "lb-http-proxy"]
+2025-02-22 16:10:58,677 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:10:59,258 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/targetHttpProxies/lb-http-proxy?alt=json HTTP/1.1" 200 None
+2025-02-22 16:10:59,263 DEBUG    root            Chosen display Format:default
+2025-02-22 16:10:59,265 INFO     root            Display format: "default"
+2025-02-22 16:10:59,305 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-22 16:10:59,305 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,305 INFO     ___FILE_ONLY___  '
+2025-02-22 16:10:59,305 INFO     ___FILE_ONLY___ 2025-02-21T22:31:28.231-08:00
+2025-02-22 16:10:59,305 INFO     ___FILE_ONLY___ '
+2025-02-22 16:10:59,306 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,306 INFO     ___FILE_ONLY___ fingerprint
+2025-02-22 16:10:59,306 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,306 INFO     ___FILE_ONLY___  
+2025-02-22 16:10:59,306 INFO     ___FILE_ONLY___ ZBAth4Tx4WU=
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ id
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___  '
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ 6908291642719261103
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ '
+2025-02-22 16:10:59,307 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,308 INFO     ___FILE_ONLY___ kind
+2025-02-22 16:10:59,309 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,309 INFO     ___FILE_ONLY___  
+2025-02-22 16:10:59,309 INFO     ___FILE_ONLY___ compute#targetHttpProxy
+2025-02-22 16:10:59,309 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___ name
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___  
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___ lb-http-proxy
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,310 INFO     ___FILE_ONLY___ selfLink
+2025-02-22 16:10:59,311 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,311 INFO     ___FILE_ONLY___  
+2025-02-22 16:10:59,311 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/targetHttpProxies/lb-http-proxy
+2025-02-22 16:10:59,311 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,311 INFO     ___FILE_ONLY___ urlMap
+2025-02-22 16:10:59,312 INFO     ___FILE_ONLY___ :
+2025-02-22 16:10:59,312 INFO     ___FILE_ONLY___  
+2025-02-22 16:10:59,312 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/urlMaps/lb-url-map
+2025-02-22 16:10:59,312 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:59,313 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,14 @@
+2025-02-20 23:08:20,026 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:08:20,028 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-20 23:08:20,039 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'update']
+2025-02-20 23:08:20,041 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute']
+2025-02-20 23:08:20,043 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'routers']
+2025-02-20 23:08:20,043 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'routers', 'update']
+2025-02-20 23:08:20,044 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute']
+2025-02-20 23:08:20,046 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'routers']
+2025-02-20 23:08:20,046 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'routers', 'update']
+2025-02-20 23:08:20,047 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/compute]
+2025-02-20 23:08:20,048 ERROR    root            (gcloud.compute.routers.update) unrecognized arguments: --advertise-mode=CUSTOM (did you mean '--advertisement-mode'?) 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

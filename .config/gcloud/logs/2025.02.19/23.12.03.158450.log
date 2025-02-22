@@ -1,0 +1,50 @@
+2025-02-19 23:12:03,159 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2025-02-19 23:12:03,159 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2025-02-19 23:12:03,170 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'describe']
+2025-02-19 23:12:03,171 DEBUG    root            Running [gcloud.sql.instances.describe] with arguments: [--format: "value(ipAddresses)", INSTANCE: "my-cloudsql-instance"]
+2025-02-19 23:12:03,185 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-19 23:12:03,766 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/my-cloudsql-instance?alt=json HTTP/1.1" 404 None
+2025-02-19 23:12:03,769 DEBUG    root            (gcloud.sql.instances.describe) HTTPError 404: The Cloud SQL instance does not exist. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/sql/instances/describe.py", line 89, in Run
+    instance = sql_client.instances.Get(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/sqladmin/v1beta4/sqladmin_v1beta4_client.py", line 884, in Get
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpNotFoundError: HttpError accessing <https://sqladmin.googleapis.com/sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/my-cloudsql-instance?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Wed, 19 Feb 2025 14:12:04 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 404}>, content <{
+  "error": {
+    "code": 404,
+    "message": "The Cloud SQL instance does not exist.",
+    "errors": [
+      {
+        "message": "The Cloud SQL instance does not exist.",
+        "domain": "global",
+        "reason": "instanceDoesNotExist"
+      }
+    ]
+  }
+}
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/sql/instances/describe.py", line 98, in Run
+    raise calliope_exceptions.HttpException(error)
+googlecloudsdk.calliope.exceptions.HttpException: HTTPError 404: The Cloud SQL instance does not exist. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.
+2025-02-19 23:12:03,770 ERROR    root            (gcloud.sql.instances.describe) HTTPError 404: The Cloud SQL instance does not exist. This command is authenticated as 1201ljhun@gmail.com which is the active account specified by the [core/account] property.

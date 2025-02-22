@@ -1,0 +1,4 @@
+2025-02-21 16:02:24,136 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 16:02:24,138 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_tunnels']
+2025-02-21 16:02:24,145 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-tunnels', 'list']
+2025-02-21 16:02:24,146 ERROR    root            (gcloud.compute.vpn-tunnels.list) argument --regions: expected one argument

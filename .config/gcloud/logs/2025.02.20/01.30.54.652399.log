@@ -1,0 +1,46 @@
+2025-02-20 01:30:54,672 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 01:30:54,676 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 01:30:54,689 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'update']
+2025-02-20 01:30:54,829 DEBUG    root            Running [gcloud.compute.firewall-rules.update] with arguments: [--source-ranges: "['10.0.0.0/16', '10.0.0.0/24', '10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24']", NAME: "allow-aws-to-cloudsql"]
+2025-02-20 01:30:54,862 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:30:55,426 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql?alt=json HTTP/1.1" 200 None
+2025-02-20 01:30:55,433 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:30:56,452 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "PATCH /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql?alt=json HTTP/1.1" 200 None
+2025-02-20 01:30:56,457 DEBUG    root            Operations to inspect: [(<Operation
+ id: 6666850236563700143
+ insertTime: '2025-02-19T08:30:56.660-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1739982656164-62e814822d217-a4f0ec0a-46dfe64b'
+ operationType: 'patch'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982656164-62e814822d217-a4f0ec0a-46dfe64b'
+ startTime: '2025-02-19T08:30:56.664-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 2534220429335754073
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 01:30:56,460 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:31:01,367 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982656164-62e814822d217-a4f0ec0a-46dfe64b/wait?alt=json HTTP/1.1" 200 None
+2025-02-20 01:31:01,371 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-19T08:31:01.433-08:00'
+ id: 6666850236563700143
+ insertTime: '2025-02-19T08:30:56.660-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1739982656164-62e814822d217-a4f0ec0a-46dfe64b'
+ operationType: 'patch'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1739982656164-62e814822d217-a4f0ec0a-46dfe64b'
+ startTime: '2025-02-19T08:30:56.664-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 2534220429335754073
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 01:31:01,371 INFO     ___FILE_ONLY___ Updated [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql].
+
+2025-02-20 01:31:01,373 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:31:01,980 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql?alt=json HTTP/1.1" 200 None
+2025-02-20 01:31:01,985 DEBUG    root            Chosen display Format:none
+2025-02-20 01:31:01,986 INFO     root            Display format: "none"
+2025-02-20 01:31:02,007 DEBUG    root            SDK update checks are disabled.

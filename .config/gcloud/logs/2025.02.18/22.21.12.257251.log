@@ -1,0 +1,27 @@
+2025-02-18 22:21:12,274 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-18 22:21:12,277 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_gateways']
+2025-02-18 22:21:12,283 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-gateways', 'list']
+2025-02-18 22:21:12,285 DEBUG    root            Running [gcloud.compute.vpn-gateways.list] with arguments: [--filter: "name:gcp-vpn-gateway", --project: "peppy-arcadia-432311-g5", --regions: "['asia-northeast3']"]
+2025-02-18 22:21:12,421 DEBUG    root            Chosen display Format:    table(
+      name,
+      vpnInterfaces[0].ipAddress:label=INTERFACE0,
+      vpnInterfaces[1].ipAddress:label=INTERFACE1,
+      vpnInterfaces[0].ipv6Address:label=INTERFACE0_IPV6,
+      vpnInterfaces[1].ipv6Address:label=INTERFACE1_IPV6,
+      network.basename(),
+      region.basename()
+    )
+2025-02-18 22:21:12,422 INFO     root            Display format: "    table(
+      name,
+      vpnInterfaces[0].ipAddress:label=INTERFACE0,
+      vpnInterfaces[1].ipAddress:label=INTERFACE1,
+      vpnInterfaces[0].ipv6Address:label=INTERFACE0_IPV6,
+      vpnInterfaces[1].ipv6Address:label=INTERFACE1_IPV6,
+      network.basename(),
+      region.basename()
+    )"
+2025-02-18 22:21:12,425 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-18 22:21:13,383 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/vpnGateways?alt=json&filter=name+eq+%22.%2A%5Cbgcp%5C-vpn%5C-gateway%5Cb.%2A%22&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-18 22:21:13,402 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-18 22:21:13,402 DEBUG    root            SDK update checks are disabled.

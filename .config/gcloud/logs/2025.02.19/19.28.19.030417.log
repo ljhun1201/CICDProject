@@ -1,0 +1,41 @@
+2025-02-19 19:28:19,040 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2025-02-19 19:28:19,043 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc_peerings']
+2025-02-19 19:28:19,067 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'list']
+2025-02-19 19:28:19,068 DEBUG    root            Running [gcloud.services.vpc-peerings.list] with arguments: [--network: "gcp-dr-vpc"]
+2025-02-19 19:28:19,087 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): cloudresourcemanager.googleapis.com:443
+2025-02-19 19:28:20,075 DEBUG    urllib3.connectionpool https://cloudresourcemanager.googleapis.com:443 "GET /v1/projects/peppy-arcadia-432311-g5?alt=json HTTP/1.1" 200 None
+2025-02-19 19:28:20,094 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): servicenetworking.googleapis.com:443
+2025-02-19 19:28:21,357 DEBUG    urllib3.connectionpool https://servicenetworking.googleapis.com:443 "GET /v1/services/-/connections?alt=json&network=projects%2F134982172036%2Fglobal%2Fnetworks%2Fgcp-dr-vpc HTTP/1.1" 200 None
+2025-02-19 19:28:21,361 DEBUG    root            Chosen display Format:default
+2025-02-19 19:28:21,361 INFO     root            Display format: "default"
+2025-02-19 19:28:21,369 INFO     ___FILE_ONLY___ ---
+2025-02-19 19:28:21,370 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,370 INFO     ___FILE_ONLY___ network
+2025-02-19 19:28:21,370 INFO     ___FILE_ONLY___ :
+2025-02-19 19:28:21,370 INFO     ___FILE_ONLY___  
+2025-02-19 19:28:21,370 INFO     ___FILE_ONLY___ projects/134982172036/global/networks/gcp-dr-vpc
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ peering
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ :
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___  
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ servicenetworking-googleapis-com
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ reservedPeeringRanges
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ :
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ -
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___  
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ cloudsql-private-ip-range
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ service
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ :
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___  
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ services/servicenetworking.googleapis.com
+2025-02-19 19:28:21,371 INFO     ___FILE_ONLY___ 
+
+2025-02-19 19:28:21,371 DEBUG    root            SDK update checks are disabled.

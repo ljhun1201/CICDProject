@@ -1,0 +1,145 @@
+2025-02-22 16:11:47,151 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:11:47,154 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'url_maps']
+2025-02-22 16:11:47,164 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'url-maps', 'describe']
+2025-02-22 16:11:47,166 DEBUG    root            Running [gcloud.compute.url-maps.describe] with arguments: [--global: "True", URL_MAP: "lb-url-map"]
+2025-02-22 16:11:47,360 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:11:47,984 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/urlMaps/lb-url-map?alt=json HTTP/1.1" 200 None
+2025-02-22 16:11:47,991 DEBUG    root            Chosen display Format:default
+2025-02-22 16:11:47,993 INFO     root            Display format: "default"
+2025-02-22 16:11:48,033 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-22 16:11:48,034 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,034 INFO     ___FILE_ONLY___  '
+2025-02-22 16:11:48,034 INFO     ___FILE_ONLY___ 2025-02-21T22:31:16.560-08:00
+2025-02-22 16:11:48,034 INFO     ___FILE_ONLY___ '
+2025-02-22 16:11:48,034 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,035 INFO     ___FILE_ONLY___ defaultUrlRedirect
+2025-02-22 16:11:48,035 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,035 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,035 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,035 INFO     ___FILE_ONLY___ httpsRedirect
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ true
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ redirectResponseCode
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,036 INFO     ___FILE_ONLY___ MOVED_PERMANENTLY_DEFAULT
+2025-02-22 16:11:48,037 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,038 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,038 INFO     ___FILE_ONLY___ stripQuery
+2025-02-22 16:11:48,038 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,038 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,038 INFO     ___FILE_ONLY___ true
+2025-02-22 16:11:48,039 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,039 INFO     ___FILE_ONLY___ fingerprint
+2025-02-22 16:11:48,039 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___ YNNVRatWqjw=
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___ hostRules
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,040 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ hosts
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ www.ljhun.shop
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ ljhun.shop
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,041 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ pathMatcher
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ web-paths
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ id
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___  '
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ 7572121908248105435
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ '
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,042 INFO     ___FILE_ONLY___ kind
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ compute#urlMap
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ name
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ lb-url-map
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ pathMatchers
+2025-02-22 16:11:48,043 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ defaultService
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ name
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,044 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ web-paths
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ pathRules
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___   
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,045 INFO     ___FILE_ONLY___ paths
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___     
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ -
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ /*
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___     
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ service
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,046 INFO     ___FILE_ONLY___ selfLink
+2025-02-22 16:11:48,047 INFO     ___FILE_ONLY___ :
+2025-02-22 16:11:48,047 INFO     ___FILE_ONLY___  
+2025-02-22 16:11:48,047 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/urlMaps/lb-url-map
+2025-02-22 16:11:48,047 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:11:48,047 DEBUG    root            SDK update checks are disabled.

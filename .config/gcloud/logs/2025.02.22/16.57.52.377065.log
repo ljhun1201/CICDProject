@@ -1,0 +1,54 @@
+2025-02-22 16:57:52,420 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:57:52,423 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl_certificates']
+2025-02-22 16:57:52,431 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl-certificates', 'list']
+2025-02-22 16:57:52,434 DEBUG    root            Running [gcloud.compute.ssl-certificates.list] with arguments: []
+2025-02-22 16:57:52,633 DEBUG    root            Chosen display Format:    table(
+      name,
+      type,
+      creationTimestamp,
+      expireTime,
+      region.basename(),
+      managed.status:label=MANAGED_STATUS,
+      managed.domainStatus:format="yaml"
+    )
+2025-02-22 16:57:52,638 DEBUG    root            Chosen display Format:yaml
+2025-02-22 16:57:52,639 INFO     root            Display format: "    table(
+      name,
+      type,
+      creationTimestamp,
+      expireTime,
+      region.basename(),
+      managed.status:label=MANAGED_STATUS,
+      managed.domainStatus:format="yaml"
+    )"
+2025-02-22 16:57:52,643 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:57:53,340 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/sslCertificates?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-22 16:57:53,386 INFO     root            cache collection=compute.sslCertificates api_version=v1 params=['project', 'sslCertificate']
+2025-02-22 16:57:53,386 INFO     root            cache collection=compute.regionSslCertificates api_version=v1 params=['project', 'region', 'sslCertificate']
+2025-02-22 16:57:53,437 INFO     ___FILE_ONLY___ NAME
+2025-02-22 16:57:53,437 INFO     ___FILE_ONLY___              
+2025-02-22 16:57:53,437 INFO     ___FILE_ONLY___ TYPE
+2025-02-22 16:57:53,437 INFO     ___FILE_ONLY___      
+2025-02-22 16:57:53,437 INFO     ___FILE_ONLY___ CREATION_TIMESTAMP
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___              
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ EXPIRE_TIME
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___   
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ REGION
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___   
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ MANAGED_STATUS
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ lb-managed-cert
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___   
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ MANAGED
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___   
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ 2025-02-21T23:48:06.110-08:00
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___                        
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ PROVISIONING
+2025-02-22 16:57:53,438 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:57:53,439 INFO     ___FILE_ONLY___     ljhun.shop: PROVISIONING
+
+2025-02-22 16:57:53,440 INFO     ___FILE_ONLY___     www.ljhun.shop: PROVISIONING
+
+2025-02-22 16:57:53,440 DEBUG    root            SDK update checks are disabled.

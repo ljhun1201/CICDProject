@@ -1,0 +1,14 @@
+2025-02-19 20:20:07,239 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-19 20:20:07,240 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-19 20:20:07,246 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-19 20:20:07,248 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute']
+2025-02-19 20:20:07,249 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'firewall_rules']
+2025-02-19 20:20:07,250 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'firewall-rules', 'list']
+2025-02-19 20:20:07,251 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute']
+2025-02-19 20:20:07,252 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'firewall_rules']
+2025-02-19 20:20:07,253 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'firewall-rules', 'list']
+2025-02-19 20:20:07,254 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/compute]
+2025-02-19 20:20:07,254 ERROR    root            (gcloud.compute.firewall-rules.list) unrecognized arguments: -format=json (did you mean '--format'?) 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

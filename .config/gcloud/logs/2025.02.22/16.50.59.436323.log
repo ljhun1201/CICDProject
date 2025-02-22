@@ -1,0 +1,20 @@
+2025-02-22 16:50:59,458 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:50:59,461 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_buckets']
+2025-02-22 16:50:59,470 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-buckets', 'list']
+2025-02-22 16:50:59,474 DEBUG    root            Running [gcloud.compute.backend-buckets.list] with arguments: []
+2025-02-22 16:50:59,687 DEBUG    root            Chosen display Format:    table(
+      name,
+      bucketName:label=GCS_BUCKET_NAME,
+      enableCdn
+    )
+2025-02-22 16:50:59,694 INFO     root            Display format: "    table(
+      name,
+      bucketName:label=GCS_BUCKET_NAME,
+      enableCdn
+    )"
+2025-02-22 16:50:59,699 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:51:00,135 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 16:51:00,166 INFO     root            cache collection=compute.instances api_version=v1 params=['project', 'zone', 'instance']
+2025-02-22 16:51:00,225 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-22 16:51:00,226 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,17 @@
+2025-02-20 23:02:44,420 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:02:44,422 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-02-20 23:02:44,423 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings']
+2025-02-20 23:02:44,429 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings', 'list']
+2025-02-20 23:02:44,430 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute']
+2025-02-20 23:02:44,431 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'networks']
+2025-02-20 23:02:44,432 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'networks', 'peerings']
+2025-02-20 23:02:44,433 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'networks', 'peerings', 'list']
+2025-02-20 23:02:44,433 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute']
+2025-02-20 23:02:44,434 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'networks']
+2025-02-20 23:02:44,435 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'networks', 'peerings']
+2025-02-20 23:02:44,435 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'networks', 'peerings', 'list']
+2025-02-20 23:02:44,436 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/compute]
+2025-02-20 23:02:44,436 ERROR    root            (gcloud.compute.networks.peerings.list) unrecognized arguments: servicenetworking-googleapis-com 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

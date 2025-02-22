@@ -1,0 +1,42 @@
+2025-02-21 01:08:26,039 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 01:08:26,040 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-21 01:08:26,044 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'list']
+2025-02-21 01:08:26,045 DEBUG    root            Running [gcloud.compute.routes.list] with arguments: [--filter: "destRange=10.0.3.0/24"]
+2025-02-21 01:08:26,131 INFO     root            client_filter=None server_filter='destRange eq ".*\\b10\\.0\\.3\\.0/24\\b.*"'
+2025-02-21 01:08:26,132 INFO     root            client_filter=None server_filter='destRange eq ".*\\b10\\.0\\.3\\.0/24\\b.*"'
+2025-02-21 01:08:26,132 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )
+2025-02-21 01:08:26,132 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )"
+2025-02-21 01:08:26,134 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:08:26,711 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json&filter=destRange+eq+%22.%2A%5Cb10%5C.0%5C.3%5C.0%2F24%5Cb.%2A%22&maxResults=500 HTTP/1.1" 200 None
+2025-02-21 01:08:26,730 INFO     root            cache collection=compute.routes api_version=v1 params=['project', 'route']
+2025-02-21 01:08:26,769 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-21 01:08:26,769 DEBUG    root            SDK update checks are disabled.

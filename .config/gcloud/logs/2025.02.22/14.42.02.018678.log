@@ -1,0 +1,76 @@
+2025-02-22 14:42:02,029 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 14:42:02,040 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding_rules']
+2025-02-22 14:42:02,046 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding-rules', 'list']
+2025-02-22 14:42:02,047 DEBUG    root            Running [gcloud.compute.forwarding-rules.list] with arguments: [--global: "True"]
+2025-02-22 14:42:02,138 DEBUG    root            Chosen display Format:      table(
+        name,
+        region.basename(),
+        IPAddress,
+        IPProtocol,
+        firstof(
+            target,
+            backendService).scope():label=TARGET
+      )
+      
+2025-02-22 14:42:02,138 INFO     root            Display format: "      table(
+        name,
+        region.basename(),
+        IPAddress,
+        IPProtocol,
+        firstof(
+            target,
+            backendService).scope():label=TARGET
+      )
+      "
+2025-02-22 14:42:02,140 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 14:42:02,599 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/forwardingRules?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 14:42:02,612 INFO     root            cache collection=compute.globalForwardingRules api_version=v1 params=['project', 'forwardingRule']
+2025-02-22 14:42:02,612 INFO     root            cache collection=compute.forwardingRules api_version=v1 params=['project', 'region', 'forwardingRule']
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ NAME
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___                                            
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ REGION
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___   
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ IP_ADDRESS
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___       
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ IP_PROTOCOL
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___   
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ TARGET
+2025-02-22 14:42:02,633 INFO     ___FILE_ONLY___ 
+
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ k8s2-fr-x12dacqn-default-app-ingress-7crmedbp
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 34.160.195.229
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___   
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ TCP
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ k8s2-tp-x12dacqn-default-app-ingress-7crmedbp
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 
+
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ k8s2-fs-x12dacqn-default-app-ingress-7crmedbp
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 34.160.195.229
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___   
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ TCP
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ k8s2-ts-x12dacqn-default-app-ingress-7crmedbp
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 
+
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ lb-http-forwarding-rule
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___                                 
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 34.144.230.93
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___    
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ TCP
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ lb-http-proxy
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 
+
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ lb-https-forwarding-rule
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___                                
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 34.49.144.109
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___    
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ TCP
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___           
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ lb-https-proxy
+2025-02-22 14:42:02,634 INFO     ___FILE_ONLY___ 
+
+2025-02-22 14:42:02,635 DEBUG    root            SDK update checks are disabled.

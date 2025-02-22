@@ -1,0 +1,16 @@
+2025-02-20 23:08:31,227 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:08:31,228 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-20 23:08:31,233 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'update']
+2025-02-20 23:08:31,236 DEBUG    root            Running [gcloud.compute.routers.update] with arguments: [--advertisement-mode: "CUSTOM", --region: "asia-northeast3", --set-advertisement-ranges: "OrderedDict([('10.0.0.0/16', ''), ('10.10.0.0/24', ''), ('10.10.1.0/24', '')])", NAME: "gcp-router"]
+2025-02-20 23:08:31,355 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:08:31,746 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-20 23:08:31,751 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:08:32,193 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "PATCH /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-20 23:08:32,196 INFO     ___FILE_ONLY___ Updating router [gcp-router]...
+2025-02-20 23:08:33,201 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:08:35,067 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/operations/operation-1740060512011-62e9368b4c306-b09d7638-d342bd15/wait?alt=json HTTP/1.1" 200 None
+2025-02-20 23:08:35,207 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:08:35,467 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-20 23:08:35,472 DEBUG    root            Chosen display Format:none
+2025-02-20 23:08:35,473 INFO     root            Display format: "none"
+2025-02-20 23:08:35,482 DEBUG    root            SDK update checks are disabled.

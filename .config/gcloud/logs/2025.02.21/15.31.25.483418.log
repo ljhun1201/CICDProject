@@ -1,0 +1,93 @@
+2025-02-21 15:31:25,510 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 15:31:25,512 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-21 15:31:25,523 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'create']
+2025-02-21 15:31:25,608 DEBUG    root            Running [gcloud.compute.firewall-rules.create] with arguments: [--action: "ALLOW", --direction: "INGRESS", --network: "gcp-dr-vpc", --priority: "1000", --rules: "['icmp']", --source-ranges: "['10.0.0.0/16']", NAME: "allow-icmp"]
+2025-02-21 15:31:25,636 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-21 15:31:25,637 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-21 15:31:25,947 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-21 15:31:25,964 INFO     ___FILE_ONLY___ Creating firewall...
+2025-02-21 15:31:25,966 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 15:31:27,043 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json HTTP/1.1" 200 None
+2025-02-21 15:31:27,048 DEBUG    root            Operations to inspect: [(<Operation
+ id: 9090278919081665361
+ insertTime: '2025-02-20T22:31:27.073-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740119486507-62ea123dc2ae7-ebed0dc1-2eb9d4a9'
+ operationType: 'insert'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740119486507-62ea123dc2ae7-ebed0dc1-2eb9d4a9'
+ startTime: '2025-02-20T22:31:27.109-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 8406341364724638545
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-icmp'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 15:31:27,050 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 15:31:32,143 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740119486507-62ea123dc2ae7-ebed0dc1-2eb9d4a9/wait?alt=json HTTP/1.1" 200 None
+2025-02-21 15:31:32,145 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-20T22:31:32.142-08:00'
+ id: 9090278919081665361
+ insertTime: '2025-02-20T22:31:27.073-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740119486507-62ea123dc2ae7-ebed0dc1-2eb9d4a9'
+ operationType: 'insert'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740119486507-62ea123dc2ae7-ebed0dc1-2eb9d4a9'
+ startTime: '2025-02-20T22:31:27.109-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 8406341364724638545
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-icmp'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 15:31:32,146 INFO     ___FILE_ONLY___ Created [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-icmp].
+
+2025-02-21 15:31:32,147 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 15:31:32,630 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-icmp?alt=json HTTP/1.1" 200 None
+2025-02-21 15:31:32,634 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-21 15:31:32,635 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-21 15:31:32,663 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ NAME
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___         
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ NETWORK
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___      
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ DIRECTION
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ ALLOW
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ DENY
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ DISABLED
+2025-02-21 15:31:32,682 INFO     ___FILE_ONLY___ 
+
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ allow-icmp
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___   
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ INGRESS
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___     
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ 1000
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___       
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ icmp
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___          
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ False
+2025-02-21 15:31:32,683 INFO     ___FILE_ONLY___ 
+
+2025-02-21 15:31:32,683 DEBUG    root            SDK update checks are disabled.

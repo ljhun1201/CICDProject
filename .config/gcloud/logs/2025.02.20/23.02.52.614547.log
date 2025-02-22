@@ -1,0 +1,91 @@
+2025-02-20 23:02:52,626 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:02:52,635 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-20 23:02:52,640 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'list']
+2025-02-20 23:02:52,641 DEBUG    root            Running [gcloud.compute.routes.list] with arguments: [--filter: "destRange=10.0.0.0/16", --format: "json"]
+2025-02-20 23:02:52,752 INFO     root            client_filter=None server_filter='destRange eq ".*\\b10\\.0\\.0\\.0/16\\b.*"'
+2025-02-20 23:02:52,752 INFO     root            client_filter=None server_filter='destRange eq ".*\\b10\\.0\\.0\\.0/16\\b.*"'
+2025-02-20 23:02:52,752 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    ) json
+2025-02-20 23:02:52,753 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    ) json"
+2025-02-20 23:02:52,755 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 23:02:53,348 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json&filter=destRange+eq+%22.%2A%5Cb10%5C.0%5C.0%5C.0%2F16%5Cb.%2A%22&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ [
+  {
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-20T05:46:15.951-08:00",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "destRange": "10.0.0.0/16",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "id": "5841001688526916808",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "kind": "compute#route",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "name": "gcp-to-aws-route",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-route"
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-20T05:45:53.715-08:00",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "destRange": "10.0.0.0/16",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "id": "2847715095907831038",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "kind": "compute#route",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "name": "gcp-to-aws-route-backup",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "priority": 2000,
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-route-backup"
+2025-02-20 23:02:53,381 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 23:02:53,389 INFO     root            cache collection=compute.routes api_version=v1 params=['project', 'route']
+2025-02-20 23:02:53,409 INFO     ___FILE_ONLY___ 
+]
+
+2025-02-20 23:02:53,409 DEBUG    root            SDK update checks are disabled.

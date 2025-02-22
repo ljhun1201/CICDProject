@@ -1,0 +1,122 @@
+2025-02-19 23:40:26,452 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2025-02-19 23:40:26,453 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2025-02-19 23:40:26,467 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'describe']
+2025-02-19 23:40:26,468 DEBUG    root            Running [gcloud.sql.instances.describe] with arguments: [--format: "json", --project: "peppy-arcadia-432311-g5", INSTANCE: "mydb-instance"]
+2025-02-19 23:40:26,482 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-19 23:40:27,138 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance?alt=json HTTP/1.1" 200 None
+2025-02-19 23:40:27,141 DEBUG    root            Chosen display Format::(settings.userLabels:alias=labels:label=LABELS) default json
+2025-02-19 23:40:27,141 INFO     root            Display format: ":(settings.userLabels:alias=labels:label=LABELS) default json"
+2025-02-19 23:40:27,148 INFO     ___FILE_ONLY___ {
+  "backendType": "SECOND_GEN",
+  "connectionName": "peppy-arcadia-432311-g5:asia-northeast3:mydb-instance",
+  "createTime": "2025-02-19T12:36:18.780Z",
+  "databaseInstalledVersion": "MYSQL_8_0_37",
+  "databaseVersion": "MYSQL_8_0",
+  "etag": "54d5cf5ac7cd1d063a5cc60b3066cecf1e73629847d95066ed5b839ac1b64730",
+  "gceZone": "asia-northeast3-c",
+  "geminiConfig": {
+    "activeQueryEnabled": false,
+    "entitled": false,
+    "flagRecommenderEnabled": false,
+    "indexAdvisorEnabled": false
+  },
+  "includeReplicasForMajorVersionUpgrade": false,
+  "instanceType": "CLOUD_SQL_INSTANCE",
+  "ipAddresses": [
+    {
+      "ipAddress": "10.200.0.5",
+      "type": "PRIVATE"
+    }
+  ],
+  "kind": "sql#instance",
+  "maintenanceVersion": "MYSQL_8_0_37.R20241208.01_04",
+  "name": "mydb-instance",
+  "project": "peppy-arcadia-432311-g5",
+  "region": "asia-northeast3",
+  "satisfiesPzi": true,
+  "selfLink": "https://sqladmin.googleapis.com/sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance",
+  "serverCaCert": {
+    "cert": "-----BEGIN CERTIFICATE-----\nMIIDfzCCAmegAwIBAgIBADANBgkqhkiG9w0BAQsFADB3MS0wKwYDVQQuEyRhYTVi\nMGVmMy03YmQwLTQ5MDgtOGFlMC0wNWUyZDBjYTNhNjExIzAhBgNVBAMTGkdvb2ds\nZSBDbG91ZCBTUUwgU2VydmVyIENBMRQwEgYDVQQKEwtHb29nbGUsIEluYzELMAkG\nA1UEBhMCVVMwHhcNMjUwMjE5MTIzODA1WhcNMzUwMjE3MTIzOTA1WjB3MS0wKwYD\nVQQuEyRhYTViMGVmMy03YmQwLTQ5MDgtOGFlMC0wNWUyZDBjYTNhNjExIzAhBgNV\nBAMTGkdvb2dsZSBDbG91ZCBTUUwgU2VydmVyIENBMRQwEgYDVQQKEwtHb29nbGUs\nIEluYzELMAkGA1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB\nAQDGu7r784TsE0ehEiWhoEJRvDYimERTJGSo5JFqXltWH3Z0/ZPHWycxIc8H/rZR\nj+kl5nWzkJaxqJki26s2rqYVQ0rpY1Y2TPG3oaIy7Q7Qpyy3Hf3MqXnIu9YhJ59r\nyWJfmWBuQpn0QV60asfV68QWeaa1yzpQAdOyvlxtOw+29s7jueMfrus5uEQ0f5z0\nF792lIEtq70fNc9eqiwTPZUYeZUCvqzYBfSDp6y0MzAVP+T9qggSXrAjbJXQZldF\nDqlHeFkSEOQ/kZj+h6/lIJJNCguLamT679hU4E7q44ryq7xfrnKbEnX8v5jqn35c\n3DTJXbVXwSyFhvUMPg1tu32TAgMBAAGjFjAUMBIGA1UdEwEB/wQIMAYBAf8CAQAw\nDQYJKoZIhvcNAQELBQADggEBAKdftXRboAfT3b2xlQucjQR0YLw2uOM/ep9j9CkD\nsfWT2zTtXz+Vt74nJNQ4CnTrmia85Hw2T0THmDsKIApMSGoUecRJsYXj3ZAYiPPg\naTci/Rdj4F6GCeYBRxJovDv0/+SqOTUO+F7+3hbT/4dp0wCVQP/02yvfSQHGr7DC\nMsMxjZuXwH5bRPSURbfmU/7Se8LKG2Cez/QDJreeoqv6szvlVzn/6fE1ppnLg2Wq\nmRROKTT9lagV8Td+fLs2FxCkHNoXLxef+B+DRjFeVX1k2VQ/O+9n6btHnuw3AX6V\nDBrpfGOq9TOFVUyE/CKkt/XhdnIyKvLjhaM+JeAYwiR92T8=\n-----END CERTIFICATE-----",
+    "certSerialNumber": "0",
+    "commonName": "C=US,O=Google\\, Inc,CN=Google Cloud SQL Server CA,dnQualifier=aa5b0ef3-7bd0-4908-8ae0-05e2d0ca3a61",
+    "createTime": "2025-02-19T12:38:05.205Z",
+    "expirationTime": "2035-02-17T12:39:05.205Z",
+    "instance": "mydb-instance",
+    "kind": "sql#sslCert",
+    "sha1Fingerprint": "49d78a980c8f4cc0a645e30acdf9465bc7bbf088"
+  },
+  "serviceAccountEmailAddress": "p134982172036-muznvp@gcp-sa-cloud-sql.iam.gserviceaccount.com",
+  "settings": {
+    "activationPolicy": "ALWAYS",
+    "availabilityType": "ZONAL",
+    "backupConfiguration": {
+      "backupRetentionSettings": {
+        "retainedBackups": 7,
+        "retentionUnit": "COUNT"
+      },
+      "enabled": false,
+      "kind": "sql#backupConfiguration",
+      "startTime": "23:00",
+      "transactionLogRetentionDays": 7,
+      "transactionalLogStorageState": "TRANSACTIONAL_LOG_STORAGE_STATE_UNSPECIFIED"
+    },
+    "connectorEnforcement": "NOT_REQUIRED",
+    "dataDiskSizeGb": "10",
+    "dataDiskType": "PD_SSD",
+    "deletionProtectionEnabled": false,
+    "enableDataplexIntegration": false,
+    "enableGoogleMlIntegration": false,
+    "ipConfiguration": {
+      "enablePrivatePathForGoogleCloudServices": false,
+      "ipv4Enabled": false,
+      "privateNetwork": "projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+      "requireSsl": false,
+      "serverCaMode": "GOOGLE_MANAGED_INTERNAL_CA",
+      "sslMode": "ALLOW_UNENCRYPTED_AND_ENCRYPTED"
+    },
+    "kind": "sql#settings",
+    "locationPreference": {
+      "kind": "sql#locationPreference",
+      "zone": "asia-northeast3-c"
+    },
+    "pricingPlan": "PER_USE",
+    "replicationLagMaxSeconds": 31536000,
+    "replicationType": "SYNCHRONOUS",
+    "settingsVersion": "1",
+    "storageAutoResize": true,
+    "storageAutoResizeLimit": "0",
+    "tier": "db-f1-micro"
+  },
+  "sqlNetworkArchitecture": "NEW_NETWORK_ARCHITECTURE",
+  "state": "RUNNABLE",
+  "upgradableDatabaseVersions": [
+    {
+      "displayName": "MySQL 8.0.35",
+      "majorVersion": "MYSQL_8_0",
+      "name": "MYSQL_8_0_35"
+    },
+    {
+      "displayName": "MySQL 8.0.36",
+      "majorVersion": "MYSQL_8_0",
+      "name": "MYSQL_8_0_36"
+    },
+    {
+      "displayName": "MySQL 8.0.39",
+      "majorVersion": "MYSQL_8_0",
+      "name": "MYSQL_8_0_39"
+    },
+    {
+      "displayName": "MySQL 8.0.40",
+      "majorVersion": "MYSQL_8_0",
+      "name": "MYSQL_8_0_40"
+    },
+    {
+      "displayName": "MySQL 8.4",
+      "majorVersion": "MYSQL_8_4",
+      "name": "MYSQL_8_4"
+    }
+  ]
+}
+2025-02-19 23:40:27,148 INFO     ___FILE_ONLY___ 
+
+2025-02-19 23:40:27,148 DEBUG    root            SDK update checks are disabled.

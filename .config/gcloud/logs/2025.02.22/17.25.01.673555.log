@@ -1,0 +1,94 @@
+2025-02-22 17:25:01,700 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 17:25:01,703 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl_certificates']
+2025-02-22 17:25:01,717 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl-certificates', 'describe']
+2025-02-22 17:25:01,719 DEBUG    root            Running [gcloud.compute.ssl-certificates.describe] with arguments: [NAME: "lb-managed-cert"]
+2025-02-22 17:25:01,902 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 17:25:02,497 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/sslCertificates/lb-managed-cert?alt=json HTTP/1.1" 200 None
+2025-02-22 17:25:02,501 DEBUG    root            Chosen display Format:default
+2025-02-22 17:25:02,507 INFO     root            Display format: "default"
+2025-02-22 17:25:02,524 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-22 17:25:02,524 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___  '
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ 2025-02-21T23:48:06.110-08:00
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ '
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ id
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___  '
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ 2576575395353870297
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ '
+2025-02-22 17:25:02,525 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ kind
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ compute#sslCertificate
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ managed
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___   
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ domainStatus
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,526 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___     
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ ljhun.shop
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ ACTIVE
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___     
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ www.ljhun.shop
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ ACTIVE
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___   
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ domains
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,527 INFO     ___FILE_ONLY___   
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ -
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ ljhun.shop
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___   
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ -
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ www.ljhun.shop
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___   
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ status
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ PROVISIONING
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,528 INFO     ___FILE_ONLY___ name
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ lb-managed-cert
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ selfLink
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/sslCertificates/lb-managed-cert
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ type
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ :
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___  
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ MANAGED
+2025-02-22 17:25:02,529 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:25:02,530 DEBUG    root            SDK update checks are disabled.

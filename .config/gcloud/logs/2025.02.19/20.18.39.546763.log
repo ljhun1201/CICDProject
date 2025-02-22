@@ -1,0 +1,143 @@
+2025-02-19 20:18:39,577 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-19 20:18:39,579 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_tunnels']
+2025-02-19 20:18:39,591 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-tunnels', 'list']
+2025-02-19 20:18:39,593 DEBUG    root            Running [gcloud.compute.vpn-tunnels.list] with arguments: [--format: "json"]
+2025-02-19 20:18:39,680 DEBUG    root            Chosen display Format:    table(
+      name,
+      region.basename(),
+      vpn_tunnel_gateway().basename():label=GATEWAY,
+      peerIp:label=PEER_ADDRESS
+    ) json
+2025-02-19 20:18:39,681 INFO     root            Display format: "    table(
+      name,
+      region.basename(),
+      vpn_tunnel_gateway().basename():label=GATEWAY,
+      peerIp:label=PEER_ADDRESS
+    ) json"
+2025-02-19 20:18:39,682 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-19 20:18:40,411 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/vpnTunnels?alt=json&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ [
+  {
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T02:59:42.821-08:00",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "detailedStatus": "Tunnel is up and running.",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "id": "7187322387901712241",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "ikeVersion": 2,
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "kind": "compute#vpnTunnel",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "labelFingerprint": "vezUS-42LLM=",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "labels": {
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+      "goog-terraform-provisioned": "true"
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    },
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "localTrafficSelector": [
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "name": "aws-to-gcp-vpn-1",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "peerExternalGateway": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/externalVpnGateways/aws-external-gateway",
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "peerExternalGatewayInterface": 0,
+2025-02-19 20:18:40,425 INFO     ___FILE_ONLY___ 
+    "peerIp": "3.34.113.47",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "region": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "remoteTrafficSelector": [
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "router": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "sharedSecret": "*************",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "sharedSecretHash": "yhZyvBlkWauvz7efN1Xi5e9X16OX",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "status": "ESTABLISHED",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "vpnGateway": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnGateways/gcp-vpn-gateway",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "vpnGatewayInterface": 0
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+  }
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T02:59:42.698-08:00",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "detailedStatus": "Tunnel is up and running.",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "id": "7643994290411538289",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "ikeVersion": 2,
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "kind": "compute#vpnTunnel",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "labelFingerprint": "vezUS-42LLM=",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "labels": {
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+      "goog-terraform-provisioned": "true"
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    },
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "localTrafficSelector": [
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "name": "aws-to-gcp-vpn-2",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "peerExternalGateway": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/externalVpnGateways/aws-external-gateway",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "peerExternalGatewayInterface": 1,
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "peerIp": "43.203.4.177",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "region": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "remoteTrafficSelector": [
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "router": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "sharedSecret": "*************",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "sharedSecretHash": "S3bynO2-i9hZr78SOTTCsMjU_XCW",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "status": "ESTABLISHED",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "vpnGateway": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnGateways/gcp-vpn-gateway",
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+    "vpnGatewayInterface": 0
+2025-02-19 20:18:40,426 INFO     ___FILE_ONLY___ 
+  }
+2025-02-19 20:18:40,430 INFO     root            cache collection=compute.vpnTunnels api_version=v1 params=['project', 'region', 'vpnTunnel']
+2025-02-19 20:18:40,449 INFO     ___FILE_ONLY___ 
+]
+
+2025-02-19 20:18:40,450 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,166 @@
+2025-02-20 15:10:23,552 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 15:10:23,555 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_tunnels']
+2025-02-20 15:10:23,568 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-tunnels', 'describe']
+2025-02-20 15:10:23,571 DEBUG    root            Running [gcloud.compute.vpn-tunnels.describe] with arguments: [NAME: "aws-to-gcp-vpn-2"]
+2025-02-20 15:10:23,786 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 15:10:24,936 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 15:10:26,074 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 15:10:26,350 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2?alt=json HTTP/1.1" 200 None
+2025-02-20 15:10:26,355 DEBUG    root            Chosen display Format:default
+2025-02-20 15:10:26,356 INFO     root            Display format: "default"
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___  '
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ 2025-02-19T21:58:21.235-08:00
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ '
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,379 INFO     ___FILE_ONLY___ description
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___  '
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___ '
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___ detailedStatus
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,380 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ Tunnel
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ is
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ up
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ and
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ running.
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ id
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___  '
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ 8201612402712345234
+2025-02-20 15:10:26,381 INFO     ___FILE_ONLY___ '
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ ikeVersion
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ 2
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ kind
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ compute#vpnTunnel
+2025-02-20 15:10:26,382 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ labelFingerprint
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ vezUS-42LLM=
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ labels
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,383 INFO     ___FILE_ONLY___   
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ goog-terraform-provisioned
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___  '
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ true
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ '
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ localTrafficSelector
+2025-02-20 15:10:26,384 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___ -
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___ 0.0.0.0/0
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,385 INFO     ___FILE_ONLY___ name
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ aws-to-gcp-vpn-2
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ peerExternalGateway
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/externalVpnGateways/aws-external-gateway
+2025-02-20 15:10:26,386 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,387 INFO     ___FILE_ONLY___ peerExternalGatewayInterface
+2025-02-20 15:10:26,388 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,388 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,388 INFO     ___FILE_ONLY___ 1
+2025-02-20 15:10:26,394 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___ peerIp
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___ 43.201.124.227
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,395 INFO     ___FILE_ONLY___ region
+2025-02-20 15:10:26,396 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,396 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,396 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3
+2025-02-20 15:10:26,396 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,396 INFO     ___FILE_ONLY___ remoteTrafficSelector
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___ -
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___ 0.0.0.0/0
+2025-02-20 15:10:26,397 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___ router
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,398 INFO     ___FILE_ONLY___ selfLink
+2025-02-20 15:10:26,399 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,399 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,399 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2
+2025-02-20 15:10:26,399 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,399 INFO     ___FILE_ONLY___ sharedSecret
+2025-02-20 15:10:26,400 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,400 INFO     ___FILE_ONLY___  '
+2025-02-20 15:10:26,400 INFO     ___FILE_ONLY___ *************
+2025-02-20 15:10:26,400 INFO     ___FILE_ONLY___ '
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___ sharedSecretHash
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___ 6HtNr7avqJv98Ocf5LL4qVCZXhTD
+2025-02-20 15:10:26,401 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,402 INFO     ___FILE_ONLY___ status
+2025-02-20 15:10:26,402 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,402 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,402 INFO     ___FILE_ONLY___ ESTABLISHED
+2025-02-20 15:10:26,402 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,403 INFO     ___FILE_ONLY___ vpnGateway
+2025-02-20 15:10:26,403 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,412 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,413 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnGateways/gcp-vpn-gateway
+2025-02-20 15:10:26,413 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,414 INFO     ___FILE_ONLY___ vpnGatewayInterface
+2025-02-20 15:10:26,414 INFO     ___FILE_ONLY___ :
+2025-02-20 15:10:26,414 INFO     ___FILE_ONLY___  
+2025-02-20 15:10:26,414 INFO     ___FILE_ONLY___ 0
+2025-02-20 15:10:26,414 INFO     ___FILE_ONLY___ 
+
+2025-02-20 15:10:26,416 DEBUG    root            SDK update checks are disabled.

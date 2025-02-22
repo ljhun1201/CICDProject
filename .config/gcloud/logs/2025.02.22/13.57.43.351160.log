@@ -1,0 +1,45 @@
+2025-02-22 13:57:43,362 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 13:57:43,365 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_services']
+2025-02-22 13:57:43,374 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-services', 'list']
+2025-02-22 13:57:43,376 DEBUG    root            Running [gcloud.compute.backend-services.list] with arguments: []
+2025-02-22 13:57:43,464 DEBUG    root            Chosen display Format:    table(
+      name,
+      backends[].group.scoped_suffixes().list():label=BACKENDS,
+      protocol
+    )
+2025-02-22 13:57:43,465 INFO     root            Display format: "    table(
+      name,
+      backends[].group.scoped_suffixes().list():label=BACKENDS,
+      protocol
+    )"
+2025-02-22 13:57:43,466 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 13:57:44,212 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/backendServices?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ NAME
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                                                         
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ BACKENDS
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                                                                                                                                                                                                                                                                                                   
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ PROTOCOL
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ k8s-be-31977--78382c1276b91fbc
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                               
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ asia-northeast3-a/instanceGroups/k8s-ig--78382c1276b91fbc,asia-northeast3-b/instanceGroups/k8s-ig--78382c1276b91fbc,asia-northeast3-c/instanceGroups/k8s-ig--78382c1276b91fbc
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                                                                                                                              
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ HTTP
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ k8s-be-32289--78382c1276b91fbc
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                               
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ asia-northeast3-a/instanceGroups/k8s-ig--78382c1276b91fbc,asia-northeast3-b/instanceGroups/k8s-ig--78382c1276b91fbc,asia-northeast3-c/instanceGroups/k8s-ig--78382c1276b91fbc
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___                                                                                                                              
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ HTTP
+2025-02-22 13:57:44,223 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___ k8s1-78382c12-kube-system-default-http-backend-80-090786d0
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___   
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___ asia-northeast3-a/networkEndpointGroups/k8s1-78382c12-kube-system-default-http-backend-80-090786d0,asia-northeast3-b/networkEndpointGroups/k8s1-78382c12-kube-system-default-http-backend-80-090786d0,asia-northeast3-c/networkEndpointGroups/k8s1-78382c12-kube-system-default-http-backend-80-090786d0
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___   
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___ HTTP
+2025-02-22 13:57:44,224 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:57:44,224 DEBUG    root            SDK update checks are disabled.

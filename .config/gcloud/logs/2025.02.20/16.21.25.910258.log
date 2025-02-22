@@ -1,0 +1,55 @@
+2025-02-20 16:21:25,911 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2025-02-20 16:21:25,914 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2025-02-20 16:21:25,946 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'patch']
+2025-02-20 16:21:25,957 DEBUG    root            Running [gcloud.sql.instances.patch] with arguments: [--authorized-networks: "['10.0.3.0/24', '10.0.0.0/16']", INSTANCE: "mydb-instance"]
+2025-02-20 16:21:26,013 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-20 16:21:26,019 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-20 16:21:26,391 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-20 16:21:27,744 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-20 16:21:28,279 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance?alt=json HTTP/1.1" 200 None
+2025-02-20 16:21:28,287 INFO     ___FILE_ONLY___ The following message will be used for the patch API method.
+
+2025-02-20 16:21:28,289 INFO     ___FILE_ONLY___ {"name": "mydb-instance", "project": "peppy-arcadia-432311-g5", "settings": {"ipConfiguration": {"authorizedNetworks": [{"value": "10.0.3.0/24"}, {"value": "10.0.0.0/16"}]}}}
+
+2025-02-20 16:21:28,292 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-20 16:21:28,863 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "PATCH /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance?alt=json HTTP/1.1" 400 None
+2025-02-20 16:21:28,869 DEBUG    root            (gcloud.sql.instances.patch) HTTPError 400: Invalid request: You entered '10.0.3.0/24', which is already automatically included in networks authorized by Cloud SQL, and can't be added again. Learn more: https://cloud.google.com/sql/docs/mysql/authorize-networks#limitations.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/sql/instances/patch.py", line 466, in Run
+    return RunBasePatchCommand(args, self.ReleaseTrack())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/sql/instances/patch.py", line 433, in RunBasePatchCommand
+    result_operation = sql_client.instances.Patch(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/sqladmin/v1beta4/sqladmin_v1beta4_client.py", line 1014, in Patch
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpBadRequestError: HttpError accessing <https://sqladmin.googleapis.com/sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance?alt=json>: response: <{'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Thu, 20 Feb 2025 07:21:29 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked', 'status': 400}>, content <{
+  "error": {
+    "code": 400,
+    "message": "Invalid request: You entered '10.0.3.0/24', which is already automatically included in networks authorized by Cloud SQL, and can't be added again. Learn more: https://cloud.google.com/sql/docs/mysql/authorize-networks#limitations.",
+    "errors": [
+      {
+        "message": "Invalid request: You entered '10.0.3.0/24', which is already automatically included in networks authorized by Cloud SQL, and can't be added again. Learn more: https://cloud.google.com/sql/docs/mysql/authorize-networks#limitations.",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+>
+2025-02-20 16:21:28,883 ERROR    root            (gcloud.sql.instances.patch) HTTPError 400: Invalid request: You entered '10.0.3.0/24', which is already automatically included in networks authorized by Cloud SQL, and can't be added again. Learn more: https://cloud.google.com/sql/docs/mysql/authorize-networks#limitations.

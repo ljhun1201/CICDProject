@@ -1,0 +1,42 @@
+2025-02-19 23:11:13,020 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2025-02-19 23:11:13,021 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2025-02-19 23:11:13,041 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'list']
+2025-02-19 23:11:13,043 DEBUG    root            Running [gcloud.sql.instances.list] with arguments: []
+2025-02-19 23:11:13,157 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-19 23:11:13,159 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-19 23:11:13,462 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-19 23:11:13,475 DEBUG    root            Chosen display Format::(settings.userLabels:alias=labels:label=LABELS) table(name,databaseVersion,firstof(gceZone,region):label=LOCATION,settings.tier,ip_addresses.filter("type:PRIMARY").*extract(ip_address).flatten().yesno(no="-"):label=PRIMARY_ADDRESS,ip_addresses.filter("type:PRIVATE").*extract(ip_address).flatten().yesno(no="-"):label=PRIVATE_ADDRESS,state:label=STATUS)
+2025-02-19 23:11:13,476 INFO     root            Display format: ":(settings.userLabels:alias=labels:label=LABELS) table(name,databaseVersion,firstof(gceZone,region):label=LOCATION,settings.tier,ip_addresses.filter("type:PRIMARY").*extract(ip_address).flatten().yesno(no="-"):label=PRIMARY_ADDRESS,ip_addresses.filter("type:PRIVATE").*extract(ip_address).flatten().yesno(no="-"):label=PRIVATE_ADDRESS,state:label=STATUS)"
+2025-02-19 23:11:13,479 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-19 23:11:14,121 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances?alt=json&maxResults=1000 HTTP/1.1" 200 None
+2025-02-19 23:11:14,140 INFO     ___FILE_ONLY___ NAME
+2025-02-19 23:11:14,140 INFO     ___FILE_ONLY___            
+2025-02-19 23:11:14,140 INFO     ___FILE_ONLY___ DATABASE_VERSION
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ LOCATION
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___            
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ TIER
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___          
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ PRIMARY_ADDRESS
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ PRIVATE_ADDRESS
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ STATUS
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ 
+
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ mydb-instance
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ MYSQL_8_0
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___          
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ asia-northeast3-c
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ db-f1-micro
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___   
+2025-02-19 23:11:14,141 INFO     ___FILE_ONLY___ -
+2025-02-19 23:11:14,142 INFO     ___FILE_ONLY___                 
+2025-02-19 23:11:14,142 INFO     ___FILE_ONLY___ 10.200.0.5
+2025-02-19 23:11:14,142 INFO     ___FILE_ONLY___        
+2025-02-19 23:11:14,142 INFO     ___FILE_ONLY___ RUNNABLE
+2025-02-19 23:11:14,142 INFO     ___FILE_ONLY___ 
+
+2025-02-19 23:11:14,142 DEBUG    root            SDK update checks are disabled.

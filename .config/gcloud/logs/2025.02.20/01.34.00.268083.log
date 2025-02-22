@@ -1,0 +1,136 @@
+2025-02-20 01:34:00,286 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 01:34:00,288 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 01:34:00,294 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'describe']
+2025-02-20 01:34:00,296 DEBUG    root            Running [gcloud.compute.firewall-rules.describe] with arguments: [NAME: "allow-aws-to-cloudsql"]
+2025-02-20 01:34:00,427 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:34:01,077 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql?alt=json HTTP/1.1" 200 None
+2025-02-20 01:34:01,082 DEBUG    root            Chosen display Format:default
+2025-02-20 01:34:01,083 INFO     root            Display format: "default"
+2025-02-20 01:34:01,102 INFO     ___FILE_ONLY___ allowed
+2025-02-20 01:34:01,102 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ IPProtocol
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ tcp
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___   
+2025-02-20 01:34:01,103 INFO     ___FILE_ONLY___ ports
+2025-02-20 01:34:01,105 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,105 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,105 INFO     ___FILE_ONLY___   
+2025-02-20 01:34:01,105 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ '
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ 3306
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ '
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,106 INFO     ___FILE_ONLY___  '
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ 2025-02-19T04:16:54.429-08:00
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ '
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ description
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___  '
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ '
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,107 INFO     ___FILE_ONLY___ direction
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ disabled
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ false
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,108 INFO     ___FILE_ONLY___ id
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___  '
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ 2534220429335754073
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ '
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ kind
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,109 INFO     ___FILE_ONLY___ compute#firewall
+2025-02-20 01:34:01,111 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,111 INFO     ___FILE_ONLY___ logConfig
+2025-02-20 01:34:01,111 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,111 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,111 INFO     ___FILE_ONLY___   
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ enable
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ false
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ name
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ allow-aws-to-cloudsql
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,112 INFO     ___FILE_ONLY___ network
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ priority
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ 1000
+2025-02-20 01:34:01,113 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ selfLink
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ sourceRanges
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ :
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,114 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 10.0.0.0/16
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 10.0.0.0/24
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 10.0.1.0/24
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,115 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___ 10.0.2.0/24
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___ -
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___  
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___ 10.0.3.0/24
+2025-02-20 01:34:01,116 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:34:01,117 DEBUG    root            SDK update checks are disabled.

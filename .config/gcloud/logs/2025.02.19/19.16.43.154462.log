@@ -1,0 +1,11 @@
+2025-02-19 19:16:43,164 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2025-02-19 19:16:43,168 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2025-02-19 19:16:43,187 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'describe']
+2025-02-19 19:16:43,188 DEBUG    root            Running [gcloud.sql.instances.describe] with arguments: [--format: "value(ipAddresses.ipAddress, ipAddresses.type)", INSTANCE: "mydb-instance"]
+2025-02-19 19:16:43,201 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2025-02-19 19:16:43,847 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/peppy-arcadia-432311-g5/instances/mydb-instance?alt=json HTTP/1.1" 200 None
+2025-02-19 19:16:43,849 DEBUG    root            Chosen display Format::(settings.userLabels:alias=labels:label=LABELS) default value(ipAddresses.ipAddress, ipAddresses.type)
+2025-02-19 19:16:43,849 INFO     root            Display format: ":(settings.userLabels:alias=labels:label=LABELS) default value(ipAddresses.ipAddress, ipAddresses.type)"
+2025-02-19 19:16:43,857 INFO     ___FILE_ONLY___ 10.200.0.3	PRIVATE
+
+2025-02-19 19:16:43,857 DEBUG    root            SDK update checks are disabled.

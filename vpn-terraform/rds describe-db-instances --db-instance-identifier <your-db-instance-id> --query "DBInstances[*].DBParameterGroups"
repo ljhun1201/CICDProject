@@ -1,0 +1,55 @@
+{
+    "ReplicationInstances": [
+        {
+            "ReplicationInstanceIdentifier": "my-dms-instance",
+            "ReplicationInstanceClass": "dms.t3.medium",
+            "ReplicationInstanceStatus": "available",
+            "AllocatedStorage": 50,
+            "InstanceCreateTime": "2025-02-21T14:51:56.889000+09:00",
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-0c07d20187561e64b",
+                    "Status": "active"
+                }
+            ],
+            "AvailabilityZone": "ap-northeast-2a",
+            "ReplicationSubnetGroup": {
+                "ReplicationSubnetGroupIdentifier": "my-dms-subnet-group",
+                "ReplicationSubnetGroupDescription": "My DMS Subnet Group",
+                "VpcId": "vpc-003b912da94b9e72f",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-00e0e38b93685a7ea",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-northeast-2c"
+                        },
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-07760fe6293829172",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-northeast-2a"
+                        },
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "thu:08:17-thu:08:47",
+            "PendingModifiedValues": {},
+            "MultiAZ": false,
+            "EngineVersion": "3.5.3",
+            "AutoMinorVersionUpgrade": false,
+            "KmsKeyId": "arn:aws:kms:ap-northeast-2:481665107235:key/55ef1729-92e2-48f0-8c0b-aef921f84be8",
+            "ReplicationInstanceArn": "arn:aws:dms:ap-northeast-2:481665107235:rep:G5AGYZ5OZ5EHPPCK2JQO6VVDII",
+            "ReplicationInstancePrivateIpAddress": "10.0.2.208",
+            "ReplicationInstancePublicIpAddresses": [],
+            "ReplicationInstancePrivateIpAddresses": [
+                "10.0.2.208"
+            ],
+            "ReplicationInstanceIpv6Addresses": [],
+            "PubliclyAccessible": false,
+            "NetworkType": "IPV4"
+        }
+    ]
+}

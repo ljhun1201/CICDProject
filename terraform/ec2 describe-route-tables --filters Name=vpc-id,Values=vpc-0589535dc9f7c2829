@@ -1,0 +1,114 @@
+{
+    "logStreams": [
+        {
+            "logStreamName": "eni-021dc648594ccdc16-all",
+            "creationTime": 1740036797351,
+            "firstEventTimestamp": 1740036737000,
+            "lastEventTimestamp": 1740038501000,
+            "lastIngestionTime": 1740038557366,
+            "uploadSequenceToken": "49039859620616407663551659023896732826722701801758616387",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-021dc648594ccdc16-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-0232bcc65287c8d53-all",
+            "creationTime": 1740036765784,
+            "firstEventTimestamp": 1740036709000,
+            "lastEventTimestamp": 1740038086000,
+            "lastIngestionTime": 1740038149825,
+            "uploadSequenceToken": "49039859620615865948645028843496975014519208728653425542",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-0232bcc65287c8d53-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-02bf2917f5aedc6f2-all",
+            "creationTime": 1740036806317,
+            "firstEventTimestamp": 1740036756000,
+            "lastEventTimestamp": 1740038256000,
+            "lastIngestionTime": 1740038318005,
+            "uploadSequenceToken": "49039859620616089498209359950648480614284141130552666907",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-02bf2917f5aedc6f2-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-0311fa76abcefe104-all",
+            "creationTime": 1740036784130,
+            "firstEventTimestamp": 1740036739000,
+            "lastEventTimestamp": 1740038057000,
+            "lastIngestionTime": 1740038105059,
+            "uploadSequenceToken": "49039859620615806444424569535953009987062844875419642718",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-0311fa76abcefe104-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-045f85cbba29a42cb-all",
+            "creationTime": 1740036774553,
+            "firstEventTimestamp": 1740036720000,
+            "lastEventTimestamp": 1740038013000,
+            "lastIngestionTime": 1740038072586,
+            "uploadSequenceToken": "49039859620615763280403862412379869824922260774334983007",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-045f85cbba29a42cb-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-04632c046f86c1441-all",
+            "creationTime": 1740036812839,
+            "firstEventTimestamp": 1740036756000,
+            "lastEventTimestamp": 1740037416000,
+            "lastIngestionTime": 1740037469584,
+            "uploadSequenceToken": "49039859620614961753263948116538679062591175451723655964",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-04632c046f86c1441-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-05b4706c19cb0aae5-all",
+            "creationTime": 1740036779677,
+            "firstEventTimestamp": 1740036723000,
+            "lastEventTimestamp": 1740038459000,
+            "lastIngestionTime": 1740038526232,
+            "uploadSequenceToken": "49039859620616366279367238256325951852944024686672702246",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-05b4706c19cb0aae5-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-068e763fbc05605e1-all",
+            "creationTime": 1740036812052,
+            "firstEventTimestamp": 1740036750000,
+            "lastEventTimestamp": 1740037831000,
+            "lastIngestionTime": 1740037880327,
+            "uploadSequenceToken": "49039859620615507724358620800239064556650058388106079177",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-068e763fbc05605e1-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-08b8d51565867d799-all",
+            "creationTime": 1740036778722,
+            "firstEventTimestamp": 1740036717000,
+            "lastEventTimestamp": 1740038097000,
+            "lastIngestionTime": 1740038159739,
+            "uploadSequenceToken": "49039859620615879126611379055152945102930038771322940281",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-08b8d51565867d799-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-0c90ea0a0ca629c25-all",
+            "creationTime": 1740036783096,
+            "firstEventTimestamp": 1740036746000,
+            "lastEventTimestamp": 1740038330000,
+            "lastIngestionTime": 1740038367312,
+            "uploadSequenceToken": "49039859620616155038454148117495432026289618017428138764",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-0c90ea0a0ca629c25-all",
+            "storedBytes": 0
+        },
+        {
+            "logStreamName": "eni-0cd2f1001031f898b-all",
+            "creationTime": 1740036774377,
+            "firstEventTimestamp": 1740036741000,
+            "lastEventTimestamp": 1740038256000,
+            "lastIngestionTime": 1740038307549,
+            "uploadSequenceToken": "49039859620616075599801436023568120418189435479815056140",
+            "arn": "arn:aws:logs:ap-northeast-2:481665107235:log-group:vpc-flow-logs:log-stream:eni-0cd2f1001031f898b-all",
+            "storedBytes": 0
+        }
+    ]
+}

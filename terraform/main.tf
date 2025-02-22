@@ -17,7 +17,8 @@ module "s3_and_cloudfront" {
   }
   
   alb_dns_name = data.local_file.alb_dns_name.content
-
+  rds_endpoint = module.network.rds_endpoint
+  
   depends_on = [null_resource.deploy_kubernetes_resources]
 }
 
@@ -87,3 +88,22 @@ module "dms" {
   depends_on = [module.s3_and_cloudfront]
 }
 */
+output "vpc_id" {
+  value = module.network.vpc_id
+}
+
+output "private_route_table_id" {
+  value = module.network.private_route_table_id
+}
+
+output "rds_endpoint" {
+  value = module.network.rds_endpoint
+}
+
+output "private_subnet_ids" {
+  value = module.network.private_subnet_ids
+}
+
+output "private_subnet_cidrs" {
+  value = module.network.private_subnet_cidrs
+}

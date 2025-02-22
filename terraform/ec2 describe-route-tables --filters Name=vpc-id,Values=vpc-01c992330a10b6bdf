@@ -1,0 +1,47 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-02e409f58e807aa2e",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "dms-sg"
+                }
+            ],
+            "VpcId": "vpc-01c992330a10b6bdf",
+            "SecurityGroupArn": "arn:aws:ec2:ap-northeast-2:481665107235:security-group/sg-02e409f58e807aa2e",
+            "OwnerId": "481665107235",
+            "GroupName": "dms-sg",
+            "Description": "Managed by Terraform",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 3306,
+                    "ToPort": 3306,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow MySQL",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

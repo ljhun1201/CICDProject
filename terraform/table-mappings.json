@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "rule-type": "selection",
+      "rule-id": "1",
+      "rule-name": "include-users",
+      "object-locator": {
+        "schema-name": "mydb",
+        "table-name": "users"
+      },
+      "rule-action": "include"
+    }
+  ]
+}
+  

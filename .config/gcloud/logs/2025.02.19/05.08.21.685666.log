@@ -1,0 +1,54 @@
+2025-02-19 05:08:21,713 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-19 05:08:21,715 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn_gateways']
+2025-02-19 05:08:21,724 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'vpn-gateways', 'list']
+2025-02-19 05:08:21,726 DEBUG    root            Running [gcloud.compute.vpn-gateways.list] with arguments: [--filter: "name:gcp-vpn-gateway", --project: "peppy-arcadia-432311-g5", --regions: "['asia-northeast3']"]
+2025-02-19 05:08:21,752 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-19 05:08:21,753 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-19 05:08:22,070 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-19 05:08:22,166 DEBUG    root            Chosen display Format:    table(
+      name,
+      vpnInterfaces[0].ipAddress:label=INTERFACE0,
+      vpnInterfaces[1].ipAddress:label=INTERFACE1,
+      vpnInterfaces[0].ipv6Address:label=INTERFACE0_IPV6,
+      vpnInterfaces[1].ipv6Address:label=INTERFACE1_IPV6,
+      network.basename(),
+      region.basename()
+    )
+2025-02-19 05:08:22,166 INFO     root            Display format: "    table(
+      name,
+      vpnInterfaces[0].ipAddress:label=INTERFACE0,
+      vpnInterfaces[1].ipAddress:label=INTERFACE1,
+      vpnInterfaces[0].ipv6Address:label=INTERFACE0_IPV6,
+      vpnInterfaces[1].ipv6Address:label=INTERFACE1_IPV6,
+      network.basename(),
+      region.basename()
+    )"
+2025-02-19 05:08:22,167 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-19 05:08:23,186 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/vpnGateways?alt=json&filter=name+eq+%22.%2A%5Cbgcp%5C-vpn%5C-gateway%5Cb.%2A%22&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ NAME
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___              
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ INTERFACE0
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___     
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ INTERFACE1
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___      
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ INTERFACE0_IPV6
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___   
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ INTERFACE1_IPV6
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___   
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ NETWORK
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___      
+2025-02-19 05:08:23,210 INFO     ___FILE_ONLY___ REGION
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ 
+
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ gcp-vpn-gateway
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___   
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ 34.64.67.230
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___   
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ 34.64.130.236
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___                                     
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___   
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ asia-northeast3
+2025-02-19 05:08:23,211 INFO     ___FILE_ONLY___ 
+
+2025-02-19 05:08:23,211 DEBUG    root            SDK update checks are disabled.

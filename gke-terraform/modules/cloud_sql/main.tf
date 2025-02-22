@@ -9,8 +9,8 @@ resource "google_sql_database_instance" "mysql_instance" {
   settings {
     tier = "db-f1-micro"   # 테스트용 스펙
     ip_configuration {
-      ipv4_enabled    = false
-      private_network = var.vpc_self_link  # 여기서는 단순히 어떤 VPC와 peering 할 것인지 지정
+      ipv4_enabled    = false # 퍼블릭 IP 비활성화
+      private_network = var.vpc_self_link  # VPC와 peering
     }
   }
 }

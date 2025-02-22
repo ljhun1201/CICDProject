@@ -1,0 +1,69 @@
+2025-02-21 17:02:02,196 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 17:02:02,199 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-21 17:02:02,358 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'create']
+2025-02-21 17:02:02,362 DEBUG    root            Running [gcloud.compute.routes.create] with arguments: [--destination-range: "10.4.0.0/14", --network: "gcp-dr-vpc", --next-hop-vpn-tunnel: "aws-to-gcp-vpn-1", --next-hop-vpn-tunnel-region: "asia-northeast3", --priority: "1000", NAME: "pod-to-aws"]
+2025-02-21 17:02:02,679 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 17:02:03,507 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json HTTP/1.1" 200 None
+2025-02-21 17:02:03,511 DEBUG    root            Operations to inspect: [(<Operation
+ id: 5662807545569709076
+ insertTime: '2025-02-21T00:02:03.386-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740124923113-62ea267e8305b-429720e1-a3c074cf'
+ operationType: 'insert'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740124923113-62ea267e8305b-429720e1-a3c074cf'
+ startTime: '2025-02-21T00:02:03.391-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 3025765984525192212
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/pod-to-aws'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 17:02:03,514 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 17:02:09,138 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740124923113-62ea267e8305b-429720e1-a3c074cf/wait?alt=json HTTP/1.1" 200 None
+2025-02-21 17:02:09,144 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-21T00:02:08.726-08:00'
+ error: <ErrorValue
+ errors: [<ErrorsValueListEntry
+ code: 'UNSUPPORTED_OPERATION'
+ errorDetails: []
+ message: '10.4.0.0/14 hides the address space of the network (10.4.0.0/14). Cannot change the routing of packets destined for the network.'>]>
+ httpErrorMessage: 'BAD REQUEST'
+ httpErrorStatusCode: 400
+ id: 5662807545569709076
+ insertTime: '2025-02-21T00:02:03.386-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740124923113-62ea267e8305b-429720e1-a3c074cf'
+ operationType: 'insert'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740124923113-62ea267e8305b-429720e1-a3c074cf'
+ startTime: '2025-02-21T00:02:03.391-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 3025765984525192212
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/pod-to-aws'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 17:02:09,144 DEBUG    root            Chosen display Format:list[title="Could not fetch resource:",always-display-title]
+2025-02-21 17:02:09,145 DEBUG    root            (gcloud.compute.routes.create) Could not fetch resource:
+ - 10.4.0.0/14 hides the address space of the network (10.4.0.0/14). Cannot change the routing of packets destined for the network.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/routes/create.py", line 277, in Run
+    return client.MakeRequests([(client.apitools_client.routes, 'Insert',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 145, in MakeRequests
+    utils.RaiseToolException(
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 139, in RaiseToolException
+    RaiseException(problems, calliope_exceptions.ToolException, error_message)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 148, in RaiseException
+    raise exception(
+googlecloudsdk.calliope.exceptions.ToolException: Could not fetch resource:
+ - 10.4.0.0/14 hides the address space of the network (10.4.0.0/14). Cannot change the routing of packets destined for the network.
+
+2025-02-21 17:02:09,162 ERROR    root            (gcloud.compute.routes.create) Could not fetch resource:
+ - 10.4.0.0/14 hides the address space of the network (10.4.0.0/14). Cannot change the routing of packets destined for the network.
+

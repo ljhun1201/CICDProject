@@ -1,0 +1,205 @@
+2025-02-22 13:58:04,874 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 13:58:04,876 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_services']
+2025-02-22 13:58:04,891 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-services', 'get_health']
+2025-02-22 13:58:04,892 DEBUG    root            Running [gcloud.compute.backend-services.get-health] with arguments: [--global: "True", BACKEND_SERVICE_NAME: "k8s-be-31977--78382c1276b91fbc"]
+2025-02-22 13:58:04,990 DEBUG    root            Chosen display Format:default
+2025-02-22 13:58:04,990 INFO     root            Display format: "default"
+2025-02-22 13:58:04,991 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 13:58:05,550 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/backendServices/k8s-be-31977--78382c1276b91fbc?alt=json HTTP/1.1" 200 None
+2025-02-22 13:58:05,553 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 13:58:08,958 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/backendServices/k8s-be-31977--78382c1276b91fbc/getHealth?alt=json HTTP/1.1" 200 None
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ ---
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ backend
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a/instanceGroups/k8s-ig--78382c1276b91fbc
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ status
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ healthStatus
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,968 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ -
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ healthState
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ HEALTHY
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ instance
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a/instances/gke-gcp-dr-gke-gcp-dr-gke-nodepool-42f62ffd-61lk
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,969 INFO     ___FILE_ONLY___ ipAddress
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 10.10.1.8
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ port
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 31977
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ -
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ healthState
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ HEALTHY
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ instance
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-a/instances/gke-gcp-dr-gke-gcp-dr-gke-nodepool-42f62ffd-837l
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ ipAddress
+2025-02-22 13:58:08,970 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ 10.10.1.9
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ port
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ 31977
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ kind
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ compute#backendServiceGroupHealth
+2025-02-22 13:58:08,971 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:08,972 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 13:58:12,066 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/backendServices/k8s-be-31977--78382c1276b91fbc/getHealth?alt=json HTTP/1.1" 200 None
+2025-02-22 13:58:12,069 INFO     ___FILE_ONLY___ ---
+2025-02-22 13:58:12,069 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,069 INFO     ___FILE_ONLY___ backend
+2025-02-22 13:58:12,069 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-b/instanceGroups/k8s-ig--78382c1276b91fbc
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ status
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ healthStatus
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ -
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ healthState
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ HEALTHY
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ instance
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-b/instances/gke-gcp-dr-gke-gcp-dr-gke-nodepool-b2e1d5b8-sq60
+2025-02-22 13:58:12,070 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ ipAddress
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 10.10.1.6
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ port
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 31977
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ -
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ healthState
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ HEALTHY
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ instance
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-b/instances/gke-gcp-dr-gke-gcp-dr-gke-nodepool-b2e1d5b8-00bp
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,071 INFO     ___FILE_ONLY___ ipAddress
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ 10.10.1.7
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___     
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ port
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ 31977
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ kind
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ compute#backendServiceGroupHealth
+2025-02-22 13:58:12,072 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:12,073 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 13:58:14,587 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/backendServices/k8s-be-31977--78382c1276b91fbc/getHealth?alt=json HTTP/1.1" 200 None
+2025-02-22 13:58:14,589 INFO     ___FILE_ONLY___ ---
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ backend
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/zones/asia-northeast3-c/instanceGroups/k8s-ig--78382c1276b91fbc
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ status
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___   
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ kind
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ :
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___  
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ compute#backendServiceGroupHealth
+2025-02-22 13:58:14,590 INFO     ___FILE_ONLY___ 
+
+2025-02-22 13:58:14,590 DEBUG    root            SDK update checks are disabled.

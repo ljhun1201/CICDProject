@@ -1,0 +1,16 @@
+2025-02-21 01:02:32,457 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 01:02:32,458 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-21 01:02:32,468 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'update_bgp_peer']
+2025-02-21 01:02:32,470 DEBUG    root            Running [gcloud.compute.routers.update-bgp-peer] with arguments: [--advertisement-mode: "CUSTOM", --peer-name: "aws-bgp-peer-2", --region: "asia-northeast3", --set-advertisement-ranges: "OrderedDict([('10.0.0.0/16', ''), ('10.10.0.0/24', ''), ('10.10.1.0/24', ''), ('10.200.0.0/16', '')])", NAME: "gcp-router"]
+2025-02-21 01:02:32,591 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:02:32,848 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-21 01:02:32,856 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:02:33,236 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "PATCH /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-21 01:02:33,241 INFO     ___FILE_ONLY___ Updating peer [aws-bgp-peer-2] in router [gcp-router]...
+2025-02-21 01:02:34,243 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:02:34,534 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/operations/operation-1740067353116-62e950077bf10-4bca1f85-f3d700a4/wait?alt=json HTTP/1.1" 200 None
+2025-02-21 01:02:34,647 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:02:34,894 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router?alt=json HTTP/1.1" 200 None
+2025-02-21 01:02:34,899 DEBUG    root            Chosen display Format:none
+2025-02-21 01:02:34,899 INFO     root            Display format: "none"
+2025-02-21 01:02:34,937 DEBUG    root            SDK update checks are disabled.

@@ -7,7 +7,7 @@ resource "google_compute_network" "main_vpc" {
 # 예시로 public-subnet, private-subnet 을 나누어 만듦
 resource "google_compute_subnetwork" "public_subnet" {
   name                  = "public-subnet"
-  ip_cidr_range         = "10.0.0.0/24"
+  ip_cidr_range         = "10.10.0.0/24"
   network               = google_compute_network.main_vpc.self_link
   region                = var.region
   # 모든 외부 IP 허용(AWS의 igw 같은 것. 실제로 igw가 만들어짐)
@@ -16,7 +16,7 @@ resource "google_compute_subnetwork" "public_subnet" {
 
 resource "google_compute_subnetwork" "private_subnet" {
   name                  = "private-subnet"
-  ip_cidr_range         = "10.0.1.0/24"
+  ip_cidr_range         = "10.10.1.0/24"
   network               = google_compute_network.main_vpc.self_link
   region                = var.region
   private_ip_google_access = true
@@ -56,7 +56,7 @@ resource "google_compute_router_nat" "nat_config" {
   }
 }
 
-# 1) Global Address: 내부 IP 범위 예약 (예: 10.3.0.0/16)
+# 1) Global Address: 내부 IP 범위 예약 (예: 10.200.0.0/16)
 resource "google_compute_global_address" "private_ip_range" {
   name          = "cloudsql-private-ip-range"
   project       = var.project_id
@@ -64,7 +64,7 @@ resource "google_compute_global_address" "private_ip_range" {
   address_type  = "INTERNAL"
   prefix_length = 16
   network       = google_compute_network.main_vpc.self_link
-  address       = "10.3.0.0"
+  address       = "10.200.0.0"
 }
 
 # 2) Service Networking Connection (VPC Peering) --> 이제, 어떤 관리형 리소스에서 
@@ -79,6 +79,60 @@ resource "google_service_networking_connection" "private_vpc_connection" {
   reserved_peering_ranges = [
     google_compute_global_address.private_ip_range.name
   ]
+}
+
+resource "google_compute_network_peering_routes_config" "gcp_servicenetworking_routes" {
+  peering = "servicenetworking-googleapis-com"
+  network = "gcp-dr-vpc"
+
+  import_custom_routes = true # Peering된 vpc의 routing 정보를 자신의 대역으로 모두 가져옴. 이게 없으면 GCP Cloud SQL이 AWS에서 온 네트워크(10.0.0.0/16)를 학습하지 못함(모르는 트래픽이라 간주하여 차단.) → AWS에서 Cloud SQL 접근 불가능
+  export_custom_routes = true # sql 자신에게 오는 올바른 경로를 내보냄(다른 곳에서 이 경로를 인식 가능)
+}
+
+resource "google_compute_firewall" "allow_vpn_ipsec" {
+  name    = "allow-vpn-ipsec"
+  project = var.project_id
+  network = google_compute_network.main_vpc.self_link
+
+  direction = "INGRESS"
+
+  allow {
+    protocol = "udp"
+    ports    = ["500", "4500"]
+  }
+
+  source_ranges = ["0.0.0.0/0"] 
+}
+
+resource "google_compute_firewall" "allow_aws_to_cloudsql" {
+  name    = "allow-aws-to-cloudsql"
+  network = google_compute_network.main_vpc.self_link
+
+  allow {
+    protocol = "tcp"
+    ports    = ["3306"]
+  }
+
+  source_ranges = ["10.0.0.0/16"]  # AWS VPC CIDR
+}
+
+resource "google_compute_firewall" "allow_http" { 
+  name    = "allow-http-to-https"
+  network = google_compute_network.main_vpc.self_link
+
+  direction = "INGRESS"
+  priority  = 1000
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+}
+
+output "gcp_vpc_id" {
+  value = google_compute_network.main_vpc.id
 }
 
 output "vpc_self_link" {

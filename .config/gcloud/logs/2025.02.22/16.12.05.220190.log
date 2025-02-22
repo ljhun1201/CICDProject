@@ -1,0 +1,74 @@
+2025-02-22 16:12:05,239 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:12:05,250 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-22 16:12:05,260 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-22 16:12:05,264 DEBUG    root            Running [gcloud.compute.firewall-rules.list] with arguments: [--filter: "name~'http'"]
+2025-02-22 16:12:05,487 INFO     root            client_filter=None server_filter='name eq ".*(http).*"'
+2025-02-22 16:12:05,488 INFO     root            client_filter=None server_filter='name eq ".*(http).*"'
+2025-02-22 16:12:05,489 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-22 16:12:05,490 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-22 16:12:05,494 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:12:06,064 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json&filter=name+eq+%22.%2A%28http%29.%2A%22&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 16:12:06,107 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___ NAME
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___                  
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___ NETWORK
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___      
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___ DIRECTION
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___   
+2025-02-22 16:12:06,157 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___   
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ ALLOW
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___    
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ DENY
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___   
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ DISABLED
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ allow-http
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___            
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ default
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___      
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___ INGRESS
+2025-02-22 16:12:06,158 INFO     ___FILE_ONLY___     
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ 1000
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___       
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ tcp:80
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___         
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ False
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ allow-http-to-https
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___   
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___   
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ INGRESS
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___     
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ 1000
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___       
+2025-02-22 16:12:06,159 INFO     ___FILE_ONLY___ tcp:80
+2025-02-22 16:12:06,160 INFO     ___FILE_ONLY___         
+2025-02-22 16:12:06,160 INFO     ___FILE_ONLY___ False
+2025-02-22 16:12:06,160 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:12:06,160 INFO     ___FILE_ONLY___ 
+To show all fields of the firewall, please show in JSON format: --format=json
+To show all fields in table format, please see the examples in --help.
+
+
+2025-02-22 16:12:06,160 DEBUG    root            SDK update checks are disabled.

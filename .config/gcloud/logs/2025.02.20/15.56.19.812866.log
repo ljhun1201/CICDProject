@@ -1,0 +1,8 @@
+2025-02-20 15:56:19,831 DEBUG    root            Loaded Command Group: ['gcloud', 'logging']
+2025-02-20 15:56:19,877 DEBUG    root            Loaded Command Group: ['gcloud', 'logging', 'read']
+2025-02-20 15:56:19,880 DEBUG    root            Running [gcloud.logging.read] with arguments: [LOG_FILTER: "resource.type=cloudsql_database AND logName=projects/peppy-arcadia-432311-g5/logs/cloudsql.googleapis.com/mysql-general.log"]
+2025-02-20 15:56:19,924 DEBUG    root            Chosen display Format:default
+2025-02-20 15:56:19,924 INFO     root            Display format: "default"
+2025-02-20 15:56:19,927 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): logging.googleapis.com:443
+2025-02-20 15:56:20,928 DEBUG    urllib3.connectionpool https://logging.googleapis.com:443 "POST /v2/entries:list?alt=json HTTP/1.1" 200 None
+2025-02-20 15:56:20,933 DEBUG    root            SDK update checks are disabled.

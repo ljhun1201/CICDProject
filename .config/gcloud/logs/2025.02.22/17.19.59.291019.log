@@ -1,0 +1,21 @@
+2025-02-22 17:19:59,328 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 17:19:59,353 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl_policies']
+2025-02-22 17:19:59,391 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'ssl-policies', 'list']
+2025-02-22 17:19:59,394 DEBUG    root            Running [gcloud.compute.ssl-policies.list] with arguments: []
+2025-02-22 17:19:59,586 DEBUG    root            Chosen display Format:    table(
+      name,
+      region.basename(),
+      profile,
+      minTlsVersion
+    )
+2025-02-22 17:19:59,587 INFO     root            Display format: "    table(
+      name,
+      region.basename(),
+      profile,
+      minTlsVersion
+    )"
+2025-02-22 17:19:59,591 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 17:20:00,606 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/sslPolicies?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-22 17:20:00,619 INFO     ___FILE_ONLY___ Listed 0 items.
+
+2025-02-22 17:20:00,620 DEBUG    root            SDK update checks are disabled.

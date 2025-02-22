@@ -1,0 +1,34 @@
+2025-02-22 14:36:21,308 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 14:36:21,309 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'url_maps']
+2025-02-22 14:36:21,313 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'url-maps', 'describe']
+2025-02-22 14:36:21,314 DEBUG    root            Running [gcloud.compute.url-maps.describe] with arguments: [--global: "True", URL_MAP: "lb-http-to-https"]
+2025-02-22 14:36:21,405 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 14:36:21,861 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/urlMaps/lb-http-to-https?alt=json HTTP/1.1" 404 None
+2025-02-22 14:36:21,863 DEBUG    root            Chosen display Format:list[title="Could not fetch resource:",always-display-title]
+2025-02-22 14:36:21,863 DEBUG    root            (gcloud.compute.url-maps.describe) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/urlMaps/lb-http-to-https' was not found
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/url_maps/describe.py", line 77, in Run
+    return _Run(args, holder, self.URL_MAP_ARG)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/url_maps/describe.py", line 59, in _Run
+    return client.MakeRequests([(service, 'Get', request)])[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 145, in MakeRequests
+    utils.RaiseToolException(
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 139, in RaiseToolException
+    RaiseException(problems, calliope_exceptions.ToolException, error_message)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 148, in RaiseException
+    raise exception(
+googlecloudsdk.calliope.exceptions.ToolException: Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/urlMaps/lb-http-to-https' was not found
+
+2025-02-22 14:36:21,864 ERROR    root            (gcloud.compute.url-maps.describe) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/urlMaps/lb-http-to-https' was not found
+

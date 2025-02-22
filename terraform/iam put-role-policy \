@@ -1,0 +1,21 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "flow-logs-role",
+        "RoleId": "AROAXAJL2IURWQCO35AL6",
+        "Arn": "arn:aws:iam::481665107235:role/flow-logs-role",
+        "CreateDate": "2025-02-20T07:29:02+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "vpc-flow-logs.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,189 @@
+2025-02-20 00:06:09,737 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 00:06:09,746 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 00:06:09,752 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-20 00:06:09,753 DEBUG    root            Running [gcloud.compute.firewall-rules.list] with arguments: []
+2025-02-20 00:06:09,839 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-20 00:06:09,840 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-20 00:06:09,841 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 00:06:10,497 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 00:06:10,517 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-20 00:06:10,538 INFO     ___FILE_ONLY___ NAME
+2025-02-20 00:06:10,538 INFO     ___FILE_ONLY___                                
+2025-02-20 00:06:10,538 INFO     ___FILE_ONLY___ NETWORK
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ DIRECTION
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ ALLOW
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___                          
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ DENY
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___        
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ DISABLED
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ allow-aws-to-cloudsql
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___               
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___       
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ tcp:3306
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___                                  
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ allow-vpn-ipsec
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___                     
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___       
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ udp:500,udp:4500
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___                          
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ default-allow-icmp
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___                  
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ default
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,539 INFO     ___FILE_ONLY___ 65534
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ icmp
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___                                      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default-allow-internal
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___              
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 65534
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ tcp:0-65535,udp:0-65535,icmp
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___              
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default-allow-rdp
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___                   
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 65534
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ tcp:3389
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___                                  
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default-allow-ssh
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___                   
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ default
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 65534
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___      
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ tcp:22
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___                                    
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ gke-gcp-dr-gke-8ea18457-all
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___         
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,540 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___       
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ tcp,udp,icmp,esp,ah,sctp
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___                  
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gke-gcp-dr-gke-8ea18457-exkubelet
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___                                     
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ tcp:10255
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gke-gcp-dr-gke-8ea18457-inkubelet
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 999
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___        
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ tcp:10255
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___                                 
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gke-gcp-dr-gke-8ea18457-vms
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___         
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___       
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ udp:1-65535,icmp,tcp:1-65535
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___              
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ k8s-fw-l7--76252bd6b69d1d2f
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___         
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___   
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 00:06:10,541 INFO     ___FILE_ONLY___     
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___ 1000
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___       
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___ tcp:30000-32767,tcp:8080
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___                  
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___ False
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:06:10,542 INFO     ___FILE_ONLY___ 
+To show all fields of the firewall, please show in JSON format: --format=json
+To show all fields in table format, please see the examples in --help.
+
+
+2025-02-20 00:06:10,542 DEBUG    root            SDK update checks are disabled.

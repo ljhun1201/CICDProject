@@ -1,0 +1,215 @@
+2025-02-20 17:29:44,559 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 17:29:44,561 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks']
+2025-02-20 17:29:44,562 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings']
+2025-02-20 17:29:44,582 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'networks', 'peerings', 'update']
+2025-02-20 17:29:44,584 DEBUG    root            Running [gcloud.compute.networks.peerings.update] with arguments: [--export-custom-routes: "True", --import-custom-routes: "True", --network: "gcp-dr-vpc", NAME: "servicenetworking-googleapis-com"]
+2025-02-20 17:29:44,817 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:29:45,758 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "PATCH /compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc/updatePeering?alt=json HTTP/1.1" 200 None
+2025-02-20 17:29:45,762 DEBUG    root            Operations to inspect: [(<Operation
+ id: 2061346819263912214
+ insertTime: '2025-02-20T00:29:45.758-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740040185395-62e8ead253895-68befaf8-9099cee8'
+ operationType: 'updatePeering'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740040185395-62e8ead253895-68befaf8-9099cee8'
+ startTime: '2025-02-20T00:29:45.761-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 5706993391722045967
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 17:29:45,764 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:30:00,202 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740040185395-62e8ead253895-68befaf8-9099cee8/wait?alt=json HTTP/1.1" 200 None
+2025-02-20 17:30:00,206 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-20T00:30:00.222-08:00'
+ id: 2061346819263912214
+ insertTime: '2025-02-20T00:29:45.758-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740040185395-62e8ead253895-68befaf8-9099cee8'
+ operationType: 'updatePeering'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740040185395-62e8ead253895-68befaf8-9099cee8'
+ startTime: '2025-02-20T00:29:45.761-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 5706993391722045967
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 17:30:00,207 INFO     ___FILE_ONLY___ Updated [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc].
+
+2025-02-20 17:30:00,210 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:30:01,025 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc?alt=json HTTP/1.1" 200 None
+2025-02-20 17:30:01,032 DEBUG    root            Chosen display Format:default
+2025-02-20 17:30:01,033 INFO     root            Display format: "default"
+2025-02-20 17:30:01,065 INFO     ___FILE_ONLY___ ---
+2025-02-20 17:30:01,066 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,068 INFO     ___FILE_ONLY___ autoCreateSubnetworks
+2025-02-20 17:30:01,070 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,070 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,071 INFO     ___FILE_ONLY___ false
+2025-02-20 17:30:01,071 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,071 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-20 17:30:01,077 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,078 INFO     ___FILE_ONLY___  '
+2025-02-20 17:30:01,078 INFO     ___FILE_ONLY___ 2025-02-19T00:57:04.069-08:00
+2025-02-20 17:30:01,078 INFO     ___FILE_ONLY___ '
+2025-02-20 17:30:01,078 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___ id
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___  '
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___ 5706993391722045967
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___ '
+2025-02-20 17:30:01,079 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,080 INFO     ___FILE_ONLY___ kind
+2025-02-20 17:30:01,080 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,080 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,080 INFO     ___FILE_ONLY___ compute#network
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___ name
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 17:30:01,081 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,082 INFO     ___FILE_ONLY___ networkFirewallPolicyEnforcementOrder
+2025-02-20 17:30:01,082 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,082 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,082 INFO     ___FILE_ONLY___ AFTER_CLASSIC_FIREWALL
+2025-02-20 17:30:01,082 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,083 INFO     ___FILE_ONLY___ peerings
+2025-02-20 17:30:01,083 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,083 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,083 INFO     ___FILE_ONLY___ -
+2025-02-20 17:30:01,083 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___ autoCreateRoutes
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___ true
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,084 INFO     ___FILE_ONLY___ exchangeSubnetRoutes
+2025-02-20 17:30:01,094 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,094 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,094 INFO     ___FILE_ONLY___ true
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___ exportCustomRoutes
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,095 INFO     ___FILE_ONLY___ true
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___ exportSubnetRoutesWithPublicIp
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,096 INFO     ___FILE_ONLY___ false
+2025-02-20 17:30:01,097 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,097 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,097 INFO     ___FILE_ONLY___ importCustomRoutes
+2025-02-20 17:30:01,097 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,097 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___ true
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___ importSubnetRoutesWithPublicIp
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,098 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,099 INFO     ___FILE_ONLY___ false
+2025-02-20 17:30:01,099 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,099 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,099 INFO     ___FILE_ONLY___ name
+2025-02-20 17:30:01,099 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,110 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,110 INFO     ___FILE_ONLY___ servicenetworking-googleapis-com
+2025-02-20 17:30:01,110 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,110 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,110 INFO     ___FILE_ONLY___ network
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/v117afaa10309efb4p-tp/global/networks/servicenetworking
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ stackType
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ IPV4_ONLY
+2025-02-20 17:30:01,111 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ state
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ ACTIVE
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ stateDetails
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,112 INFO     ___FILE_ONLY___  '
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ [2025-02-20T00:29:46.496-08:00]:
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ Connected.
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ '
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ routingConfig
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,113 INFO     ___FILE_ONLY___ bgpBestPathSelectionMode
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ LEGACY
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___   
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ routingMode
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ REGIONAL
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ selfLink
+2025-02-20 17:30:01,114 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ selfLinkWithId
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/5706993391722045967
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,115 INFO     ___FILE_ONLY___ subnetworks
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___ :
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___ -
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/private-subnet
+2025-02-20 17:30:01,116 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,126 INFO     ___FILE_ONLY___ -
+2025-02-20 17:30:01,126 INFO     ___FILE_ONLY___  
+2025-02-20 17:30:01,127 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/subnetworks/public-subnet
+2025-02-20 17:30:01,127 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:30:01,128 DEBUG    root            SDK update checks are disabled.

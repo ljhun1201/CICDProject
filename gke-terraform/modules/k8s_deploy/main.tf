@@ -233,6 +233,8 @@ resource "helm_release" "cert_manager" {
   # 추가 세팅이 필요하면 values.yml이든 inline set이든 설정
 }
 
+
+
 resource "kubernetes_manifest" "letsencrypt_prod_issuer" {
   depends_on = [
     helm_release.cert_manager
@@ -300,7 +302,13 @@ resource "kubernetes_ingress_v1" "app_ingress" {
       "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
       "cloud.google.com/neg" = "{\"ingress\": true}"
       "ingress.kubernetes.io/backends"    = "true" # 디버깅 용도
+      /*
       "kubernetes.io/ingress.global-static-ip-name" = google_compute_global_address.ingress_static_ip.name # 필요 시, 고정 IP 할당(추가로 global_address를 만들어서 설정)
+      "nginx.ingress.kubernetes.io/cors-allow-origin" = "*"
+      "nginx.ingress.kubernetes.io/cors-allow-methods" = "GET, POST, OPTIONS"
+      "nginx.ingress.kubernetes.io/cors-allow-headers" = "Content-Type"
+      "nginx.ingress.kubernetes.io/cors-allow-credentials" = "true"
+      */
     }
   }
   spec {

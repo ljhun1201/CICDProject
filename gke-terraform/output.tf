@@ -21,3 +21,7 @@ output "lb_ip_address" {
   description = "GCS LB IP"
   value = module.storage_and_lb.lb_ip_address
 }
+
+output "gcp_vpc_id" {
+  value = module.network.gcp_vpc_id
+}

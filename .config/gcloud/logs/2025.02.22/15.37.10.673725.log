@@ -1,0 +1,11 @@
+2025-02-22 15:37:10,684 DEBUG    root            Loaded Command Group: ['gcloud', 'logging']
+2025-02-22 15:37:10,701 DEBUG    root            Loaded Command Group: ['gcloud', 'logging', 'read']
+2025-02-22 15:37:10,703 DEBUG    root            Running [gcloud.logging.read] with arguments: [--limit: "10", LOG_FILTER: "severity=ERROR AND protoPayload.methodName:"google.identity.accesscontextmanager.v1.AccessPolicyService""]
+2025-02-22 15:37:10,802 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-22 15:37:10,804 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-22 15:37:11,139 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-22 15:37:11,175 DEBUG    root            Chosen display Format:default
+2025-02-22 15:37:11,176 INFO     root            Display format: "default"
+2025-02-22 15:37:11,177 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): logging.googleapis.com:443
+2025-02-22 15:37:15,604 DEBUG    urllib3.connectionpool https://logging.googleapis.com:443 "POST /v2/entries:list?alt=json HTTP/1.1" 200 None
+2025-02-22 15:37:15,606 DEBUG    root            SDK update checks are disabled.

@@ -1,0 +1,68 @@
+2025-02-20 17:08:46,416 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 17:08:46,419 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-20 17:08:46,429 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'list']
+2025-02-20 17:08:46,432 DEBUG    root            Running [gcloud.compute.routes.list] with arguments: [--filter: "destinationRange=10.200.0.0/16"]
+2025-02-20 17:08:46,639 INFO     root            client_filter=None server_filter='destinationRange eq ".*\\b10\\.200\\.0\\.0/16\\b.*"'
+2025-02-20 17:08:46,641 INFO     root            client_filter=None server_filter='destinationRange eq ".*\\b10\\.200\\.0\\.0/16\\b.*"'
+2025-02-20 17:08:46,642 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )
+2025-02-20 17:08:46,643 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )"
+2025-02-20 17:08:46,648 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:08:47,159 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json&filter=destinationRange+eq+%22.%2A%5Cb10%5C.200%5C.0%5C.0%2F16%5Cb.%2A%22&maxResults=500 HTTP/1.1" 400 None
+2025-02-20 17:08:47,164 DEBUG    root            Chosen display Format:list[title="Some requests did not succeed:",always-display-title]
+2025-02-20 17:08:47,165 DEBUG    root            (gcloud.compute.routes.list) Some requests did not succeed:
+ - Invalid value for field 'filter': 'destinationRange eq ".*\b10\.200\.0\.0/16\b.*"'. Invalid list filter expression.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 937, in Run
+    ).Display()
+      ^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/display.py", line 507, in Display
+    self._printer.Print(self._resources)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_printer_base.py", line 301, in Print
+    for resource in resources:
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py", line 211, in __next__
+    item = self._NextItem()
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py", line 183, in _NextItem
+    return next(self._iterable)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/lister.py", line 1010, in __call__
+    utils.RaiseException(errors, ListException)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 148, in RaiseException
+    raise exception(
+googlecloudsdk.api_lib.compute.lister.ListException: Some requests did not succeed:
+ - Invalid value for field 'filter': 'destinationRange eq ".*\b10\.200\.0\.0/16\b.*"'. Invalid list filter expression.
+
+2025-02-20 17:08:47,187 ERROR    root            (gcloud.compute.routes.list) Some requests did not succeed:
+ - Invalid value for field 'filter': 'destinationRange eq ".*\b10\.200\.0\.0/16\b.*"'. Invalid list filter expression.
+

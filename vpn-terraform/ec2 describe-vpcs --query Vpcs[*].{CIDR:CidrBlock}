@@ -1,0 +1,78 @@
+{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-05d96ae4aa8c11d34",
+                    "RouteTableId": "rtb-0c86a51e834304de0",
+                    "SubnetId": "subnet-0e2472fa3391d1239",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-07c3b7877b6e0ea05",
+                    "RouteTableId": "rtb-0c86a51e834304de0",
+                    "SubnetId": "subnet-05ee3e4e7e03ed0a6",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [
+                {
+                    "GatewayId": "vgw-0f1dbbeb10c861104"
+                }
+            ],
+            "RouteTableId": "rtb-0c86a51e834304de0",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.0.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "10.200.0.0/16",
+                    "GatewayId": "vgw-0f1dbbeb10c861104",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "NatGatewayId": "nat-0468e6789d1f05034",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "10.10.0.0/24",
+                    "GatewayId": "vgw-0f1dbbeb10c861104",
+                    "Origin": "EnableVgwRoutePropagation",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "10.10.1.0/24",
+                    "GatewayId": "vgw-0f1dbbeb10c861104",
+                    "Origin": "EnableVgwRoutePropagation",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "10.200.0.0/16",
+                    "GatewayId": "vgw-0f1dbbeb10c861104",
+                    "Origin": "EnableVgwRoutePropagation",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "eks-private-route-table"
+                }
+            ],
+            "VpcId": "vpc-01c992330a10b6bdf",
+            "OwnerId": "481665107235"
+        }
+    ]
+}

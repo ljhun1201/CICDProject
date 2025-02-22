@@ -1,0 +1,33 @@
+2025-02-21 01:09:29,496 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 01:09:29,498 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-21 01:09:29,516 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'create']
+2025-02-21 01:09:29,517 DEBUG    root            Running [gcloud.compute.routes.create] with arguments: [--destination-range: "10.0.3.0/24", --network: "gcp-dr-vpc", --next-hop-vpn-tunnel: "aws-to-gcp-vpn-2", --priority: "1000", NAME: "gcp-to-aws-rds"]
+2025-02-21 01:09:29,624 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:09:30,485 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-21 01:09:31,372 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:09:31,961 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json HTTP/1.1" 409 None
+2025-02-21 01:09:31,964 DEBUG    root            Chosen display Format:list[title="Could not fetch resource:",always-display-title]
+2025-02-21 01:09:31,965 DEBUG    root            (gcloud.compute.routes.create) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds' already exists
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 934, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/compute/routes/create.py", line 277, in Run
+    return client.MakeRequests([(client.apitools_client.routes, 'Insert',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 145, in MakeRequests
+    utils.RaiseToolException(
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 139, in RaiseToolException
+    RaiseException(problems, calliope_exceptions.ToolException, error_message)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/utils.py", line 148, in RaiseException
+    raise exception(
+googlecloudsdk.calliope.exceptions.ToolException: Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds' already exists
+
+2025-02-21 01:09:31,984 ERROR    root            (gcloud.compute.routes.create) Could not fetch resource:
+ - The resource 'projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds' already exists
+

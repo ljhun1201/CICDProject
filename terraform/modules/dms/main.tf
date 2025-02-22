@@ -26,6 +26,80 @@ data "terraform_remote_state" "gcp_cloudsql" {
 # => Cloud SQL private IP
 
 #####################################################
+# Create IAM Role and permission
+#####################################################
+
+resource "aws_iam_role" "dms_vpc_role" {
+  name = "dms-vpc-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "dms.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+# AWS에서 기본적으로 요구하는 DMS VPC Management 정책 추가
+resource "aws_iam_role_policy_attachment" "dms_vpc_management_role" {
+  role       = aws_iam_role.dms_vpc_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole"
+}
+
+# DMS VPC 연동을 위한 추가 정책
+resource "aws_iam_policy" "dms_vpc_custom_policy" {
+  name        = "DMSVPCCustomPolicy"
+  description = "Custom policy for AWS DMS to access VPC resources"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "ec2:DescribeVpcs",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:CreateNetworkInterface",
+          "ec2:DeleteNetworkInterface",
+          "ec2:ModifyNetworkInterfaceAttribute",
+          "ec2:DescribeVpcEndpoints"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "ec2:AttachNetworkInterface",
+          "ec2:DetachNetworkInterface",
+          "ec2:CreateTags",
+          "ec2:DeleteTags"
+        ]
+        Resource = [
+          "arn:aws:ec2:*:*:network-interface/*",
+          "arn:aws:ec2:*:*:vpc/*",
+          "arn:aws:ec2:*:*:subnet/*",
+          "arn:aws:ec2:*:*:security-group/*"
+        ]
+      }
+    ]
+  })
+}
+
+# DMS IAM Role에 커스텀 정책 추가
+resource "aws_iam_role_policy_attachment" "dms_vpc_custom_policy_attach" {
+  role       = aws_iam_role.dms_vpc_role.name
+  policy_arn = aws_iam_policy.dms_vpc_custom_policy.arn
+}
+
+#####################################################
 # (C) VPC Subnet & Security Groups for DMS
 #####################################################
 # DMS를 놓을 Subnet Group 등 (이미 있다면 가져다 쓰기)
@@ -38,6 +112,10 @@ resource "aws_dms_replication_subnet_group" "this" {
   tags = {
     Name = "my-dms-subnet-group"
   }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.dms_vpc_custom_policy_attach
+  ]
 }
 
 resource "aws_security_group" "dms_sg" {
@@ -114,7 +192,7 @@ resource "aws_dms_endpoint" "rds_target" {
 
 # 3) Cloud SQL Endpoint (target)
 resource "aws_dms_endpoint" "cloudsql_target" {
-  endpoint_id   = "cloudsql-source-endpoint"
+  endpoint_id   = "cloudsql-target-endpoint"
   endpoint_type = "target"
   engine_name   = "mysql"
 
@@ -127,7 +205,7 @@ resource "aws_dms_endpoint" "cloudsql_target" {
 
 # 4) RDS MySQL Endpoint (source)
 resource "aws_dms_endpoint" "rds_source" {
-  endpoint_id   = "rds-target-endpoint"
+  endpoint_id   = "rds-source-endpoint"
   endpoint_type = "source"
   engine_name   = "mysql"
 
@@ -147,9 +225,9 @@ resource "aws_dms_endpoint" "rds_source" {
 # Hot Site에서는 AWS를 주 인프라로, GCP를 DR로 하고 FailOver 방식으로 Route 53 설정 뒤, DMS는 단방향 동기화 예정(양방향이 필요하긴 하겠지만, GCP는 DR이므로 Mirror Site와 같은 트랜잭션 문제는 없을 것으로 예상)
 resource "aws_dms_replication_task" "cloudsql_to_rds" {
   replication_task_id      = "cloudsql-to-rds-task"
-  replication_instance_arn = aws_dms_replication_instance.dms_instance.id
-  source_endpoint_arn      = aws_dms_endpoint.cloudsql_source.id
-  target_endpoint_arn      = aws_dms_endpoint.rds_target.id
+  replication_instance_arn = aws_dms_replication_instance.dms_instance.replication_instance_arn
+  source_endpoint_arn      = aws_dms_endpoint.cloudsql_source.endpoint_arn
+  target_endpoint_arn      = aws_dms_endpoint.rds_target.endpoint_arn
 
   migration_type           = "cdc"  # CDC or full-load-and-cdc
   table_mappings = <<EOF
@@ -160,8 +238,8 @@ resource "aws_dms_replication_task" "cloudsql_to_rds" {
       "rule-id": "1",
       "rule-name": "include-all",
       "object-locator": {
-        "schema-name": "mydb",  # 특정 데이터베이스(mydb)만 포함
-        "table-name": "%"       # 모든 테이블 포함
+        "schema-name": "mydb", 
+        "table-name": "%"     
       },
       "rule-action": "include"
     }
@@ -169,39 +247,42 @@ resource "aws_dms_replication_task" "cloudsql_to_rds" {
 }
 EOF
 
-  cdc_start_position = "now" # CDC 즉시 시작
-
   replication_task_settings = <<EOF
 {
   "TargetMetadata": {
-    "TargetSchema": "mydb",
+    "TargetSchema": "",
     "SupportLobs": true
   },
   "FullLoadSettings": {
-    "TargetTablePrepMode": "DO_NOTHING", # RDS의 테이블을 변경하지 않고 데이터만 동기화
-    "StopTaskAfterFullLoad": false # 초기에 모든 데이터를 복제한 후 변경 사항까지 계속 동기화(CDC 사용을 위해선 무조건 false)
+    "TargetTablePrepMode": "DO_NOTHING",
+    "StopTaskAfterFullLoad": false 
   },
   "ChangeProcessingTuning": {
-    "BatchApplyEnabled": true, # batch 모드(트랜잭션을 모아서 한꺼번에 commit) 적용
-    "BatchApplyPreserveTransaction": true, # 'batch 모드 적용 시'에 사용. batch 모드에서 트랜잭션을 모을 때 트랜잭션이 뒤섞이지 않도록 '트랜잭션의 경계'를 지켜줌.
-    "CommitEachTransaction": true, # 병렬 처리 과정에서 먼저 끝난 트랜잭션은 즉시 commit 되도록 함.
-    "TransactionConsistencyTimeoutInSeconds": 600 # 트랜잭션 batch(트랜잭션을 batch로 처리하는 것)를 기다려주는 시간
+    "BatchApplyEnabled": true,
+    "BatchApplyPreserveTransaction": true,
+    "CommitEachTransaction": true, 
+    "TransactionConsistencyTimeoutInSeconds": 600 
   },
   "ChangeProcessingDdlHandlingPolicy": {
-    "HandleSourceTableDropped": true, # Cloud SQL에서 테이블 삭제 시, RDS에서도 삭제
-    "HandleSourceTableTruncated": true # Cloud SQL에서 Truncate 발생 시, RDS에서도 반영
+    "HandleSourceTableDropped": true,
+    "HandleSourceTableTruncated": true 
   }
 }
 EOF
-  depends_on = [aws_dms_replication_instance.dms_instance]
+  depends_on = [
+    aws_iam_role.dms_vpc_role, 
+    aws_iam_role_policy_attachment.dms_vpc_custom_policy_attach,
+    aws_dms_replication_subnet_group.this,
+    aws_dms_replication_instance.dms_instance
+  ]
 }
 
 # 반대방향(RDS -> Cloud SQL):
 resource "aws_dms_replication_task" "rds_to_cloudsql" { 
   replication_task_id      = "rds-to-cloudsql-task"
-  replication_instance_arn = aws_dms_replication_instance.dms_instance.id
-  source_endpoint_arn      = aws_dms_endpoint.rds_source.id
-  target_endpoint_arn      = aws_dms_endpoint.cloudsql_target.id
+  replication_instance_arn = aws_dms_replication_instance.dms_instance.replication_instance_arn
+  source_endpoint_arn      = aws_dms_endpoint.rds_source.endpoint_arn
+  target_endpoint_arn      = aws_dms_endpoint.cloudsql_target.endpoint_arn
 
   migration_type           = "cdc"  # CDC or full-load-and-cdc
   table_mappings = <<EOF
@@ -212,8 +293,8 @@ resource "aws_dms_replication_task" "rds_to_cloudsql" {
       "rule-id": "1",
       "rule-name": "include-all",
       "object-locator": {
-        "schema-name": "mydb",  # 특정 데이터베이스(mydb)만 포함
-        "table-name": "%"       # 모든 테이블 포함
+        "schema-name": "mydb",  
+        "table-name": "%"      
       },
       "rule-action": "include"
     }
@@ -221,25 +302,28 @@ resource "aws_dms_replication_task" "rds_to_cloudsql" {
 }
 EOF
 
-  cdc_start_position = "now" # CDC 즉시 시작
-
   replication_task_settings = <<EOF
 {
   "TargetMetadata": {
-    "TargetSchema": "mydb",
+    "TargetSchema": "",
     "SupportLobs": true
   },
   "FullLoadSettings": {
-    "TargetTablePrepMode": "DO_NOTHING", # RDS의 테이블을 변경하지 않고 데이터만 동기화
-    "StopTaskAfterFullLoad": false # 초기에 모든 데이터를 복제한 후 변경 사항까지 계속 동기화(CDC 사용을 위해선 무조건 false)
+    "TargetTablePrepMode": "DO_NOTHING", 
+    "StopTaskAfterFullLoad": false 
   },
   "ChangeProcessingDdlHandlingPolicy": {
-    "HandleSourceTableDropped": true, # Cloud SQL에서 테이블 삭제 시, RDS에서도 삭제
-    "HandleSourceTableTruncated": true # Cloud SQL에서 Truncate 발생 시, RDS에서도 반영
+    "HandleSourceTableDropped": true,
+    "HandleSourceTableTruncated": true 
   }
 }
 EOF
-  depends_on = [aws_dms_replication_instance.dms_instance]
+  depends_on = [
+    aws_iam_role.dms_vpc_role, 
+    aws_iam_role_policy_attachment.dms_vpc_custom_policy_attach,
+    aws_dms_replication_subnet_group.this,
+    aws_dms_replication_instance.dms_instance
+  ]
 }
 
 #####################################################

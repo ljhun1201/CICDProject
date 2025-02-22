@@ -1,0 +1,58 @@
+2025-02-20 01:18:49,113 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 01:18:49,117 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses']
+2025-02-20 01:18:49,124 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'addresses', 'list']
+2025-02-20 01:18:49,125 DEBUG    root            Running [gcloud.compute.addresses.list] with arguments: [--filter: "purpose=VPC_PEERING"]
+2025-02-20 01:18:49,212 INFO     root            client_filter=None server_filter='purpose eq VPC_PEERING'
+2025-02-20 01:18:49,212 DEBUG    root            Chosen display Format:        table(
+          name,
+          address_range():label=ADDRESS/RANGE,
+          address_type:label=TYPE,
+          purpose,
+          network.basename(),
+          region.basename(),
+          subnetwork.basename():label=SUBNET,
+          status
+        )
+2025-02-20 01:18:49,213 INFO     root            Display format: "        table(
+          name,
+          address_range():label=ADDRESS/RANGE,
+          address_type:label=TYPE,
+          purpose,
+          network.basename(),
+          region.basename(),
+          subnetwork.basename():label=SUBNET,
+          status
+        )"
+2025-02-20 01:18:49,214 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 01:18:49,941 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/aggregated/addresses?alt=json&includeAllScopes=True&maxResults=500&returnPartialSuccess=True HTTP/1.1" 200 None
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ NAME
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___                        
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ ADDRESS/RANGE
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ TYPE
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___       
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ PURPOSE
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___       
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ NETWORK
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___      
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ REGION
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ SUBNET
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ STATUS
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ cloudsql-private-ip-range
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ 10.200.0.0/16
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ INTERNAL
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ VPC_PEERING
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___                   
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ RESERVED
+2025-02-20 01:18:49,952 INFO     ___FILE_ONLY___ 
+
+2025-02-20 01:18:49,952 DEBUG    root            SDK update checks are disabled.

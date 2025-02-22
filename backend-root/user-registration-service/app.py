@@ -22,7 +22,7 @@ def get_db_connection():
         database=DB_NAME
     )
 
-@app.route("/healthz")
+@app.route("/healthz", methods=["GET"])
 def health_check():
     return "OK"
 

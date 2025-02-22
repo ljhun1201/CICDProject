@@ -2,6 +2,19 @@ output "vpc_id" {
   value = aws_vpc.eks_vpc.id
 }
 
+output "private_route_table_id" {
+  value = aws_route_table.private_route_table.id
+}
+
+output "rds_endpoint" {
+  value = aws_db_instance.mydb.endpoint
+}
+
+output "private_subnet_cidrs" {
+  description = "AWS Private Subnet CIDRs"
+  value       = aws_subnet.private_subnets[*].cidr_block  # Private 서브넷들의 CIDR
+}
+
 output "private_subnet_ids" {
   value = aws_subnet.private_subnets[*].id
 }

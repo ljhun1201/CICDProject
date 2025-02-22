@@ -1,0 +1,44 @@
+2025-02-22 16:50:47,250 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:50:47,252 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_buckets']
+2025-02-22 16:50:47,268 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-buckets', 'delete']
+2025-02-22 16:50:47,270 DEBUG    root            Running [gcloud.compute.backend-buckets.delete] with arguments: [--quiet: "True", BACKEND_BUCKET_NAME:1: "['gcs-backend']"]
+2025-02-22 16:50:47,571 DEBUG    root            Chosen display Format:list[title="The following backend buckets will be deleted:",always-display-title]
+2025-02-22 16:50:47,574 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:50:48,387 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "DELETE /compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend?alt=json HTTP/1.1" 200 None
+2025-02-22 16:50:48,390 DEBUG    root            Operations to inspect: [(<Operation
+ id: 253011256587599671
+ insertTime: '2025-02-21T23:50:48.471-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740210648196-62eb65d85267b-7eb3fb81-93be7463'
+ operationType: 'delete'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740210648196-62eb65d85267b-7eb3fb81-93be7463'
+ startTime: '2025-02-21T23:50:48.474-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 2126707129062801093
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-22 16:50:48,391 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:50:56,565 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740210648196-62eb65d85267b-7eb3fb81-93be7463/wait?alt=json HTTP/1.1" 200 None
+2025-02-22 16:50:56,568 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-21T23:50:56.563-08:00'
+ id: 253011256587599671
+ insertTime: '2025-02-21T23:50:48.471-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740210648196-62eb65d85267b-7eb3fb81-93be7463'
+ operationType: 'delete'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740210648196-62eb65d85267b-7eb3fb81-93be7463'
+ startTime: '2025-02-21T23:50:48.474-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 2126707129062801093
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-22 16:50:56,568 INFO     ___FILE_ONLY___ Deleted [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets/gcs-backend].
+
+2025-02-22 16:50:56,568 DEBUG    root            Chosen display Format:none
+2025-02-22 16:50:56,569 INFO     root            Display format: "none"
+2025-02-22 16:50:56,584 INFO     root            cache collection=compute.backendBuckets api_version=v1 params=['project', 'backendBucket']
+2025-02-22 16:50:56,642 DEBUG    root            SDK update checks are disabled.

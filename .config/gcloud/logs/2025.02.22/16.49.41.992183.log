@@ -1,0 +1,35 @@
+2025-02-22 16:49:42,043 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:49:42,048 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend_buckets']
+2025-02-22 16:49:42,066 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'backend-buckets', 'list']
+2025-02-22 16:49:42,068 DEBUG    root            Running [gcloud.compute.backend-buckets.list] with arguments: []
+2025-02-22 16:49:42,253 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-22 16:49:42,258 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-22 16:49:42,721 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-22 16:49:43,042 DEBUG    root            Chosen display Format:    table(
+      name,
+      bucketName:label=GCS_BUCKET_NAME,
+      enableCdn
+    )
+2025-02-22 16:49:43,043 INFO     root            Display format: "    table(
+      name,
+      bucketName:label=GCS_BUCKET_NAME,
+      enableCdn
+    )"
+2025-02-22 16:49:43,046 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:49:43,643 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/backendBuckets?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 16:49:43,697 INFO     root            cache collection=compute.instances api_version=v1 params=['project', 'zone', 'instance']
+2025-02-22 16:49:43,781 INFO     ___FILE_ONLY___ NAME
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___          
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___ GCS_BUCKET_NAME
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___           
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___ ENABLE_CDN
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:49:43,782 INFO     ___FILE_ONLY___ gcs-backend
+2025-02-22 16:49:43,783 INFO     ___FILE_ONLY___   
+2025-02-22 16:49:43,783 INFO     ___FILE_ONLY___ shoppingwebfrontend-gcp
+2025-02-22 16:49:43,783 INFO     ___FILE_ONLY___   
+2025-02-22 16:49:43,783 INFO     ___FILE_ONLY___ True
+2025-02-22 16:49:43,783 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:49:43,784 DEBUG    root            SDK update checks are disabled.

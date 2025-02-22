@@ -1,0 +1,174 @@
+2025-02-20 00:05:22,976 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 00:05:22,978 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-20 00:05:22,990 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'get_status']
+2025-02-20 00:05:22,991 DEBUG    root            Running [gcloud.compute.routers.get-status] with arguments: [--format: "json", --project: "peppy-arcadia-432311-g5", --region: "asia-northeast3", NAME: "gcp-router"]
+2025-02-20 00:05:23,100 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 00:05:23,434 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/routers/gcp-router/getRouterStatus?alt=json HTTP/1.1" 200 None
+2025-02-20 00:05:23,450 DEBUG    root            Chosen display Format:default json
+2025-02-20 00:05:23,450 INFO     root            Display format: "default json"
+2025-02-20 00:05:23,462 INFO     ___FILE_ONLY___ {
+  "kind": "compute#routerStatusResponse",
+  "result": {
+    "bestRoutes": [
+      {
+        "asPaths": [
+          {
+            "asLists": [
+              64512
+            ],
+            "pathSegmentType": "AS_SEQUENCE"
+          }
+        ],
+        "creationTimestamp": "2025-02-19T05:39:25.105-08:00",
+        "destRange": "10.0.0.0/16",
+        "kind": "compute#route",
+        "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+        "nextHopIp": "169.254.108.161",
+        "nextHopOrigin": "INCOMPLETE",
+        "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+        "priority": 100,
+        "routeType": "BGP"
+      }
+    ],
+    "bestRoutesForRouter": [
+      {
+        "asPaths": [
+          {
+            "asLists": [
+              64512
+            ],
+            "pathSegmentType": "AS_SEQUENCE"
+          }
+        ],
+        "creationTimestamp": "2025-02-19T05:39:25.105-08:00",
+        "destRange": "10.0.0.0/16",
+        "kind": "compute#route",
+        "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+        "nextHopIp": "169.254.108.161",
+        "nextHopOrigin": "INCOMPLETE",
+        "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+        "priority": 100,
+        "routeStatus": "ACTIVE",
+        "routeType": "BGP"
+      }
+    ],
+    "bgpPeerStatus": [
+      {
+        "advertisedRoutes": [
+          {
+            "destRange": "10.2.0.0/16",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.108.162",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.10.0.0/24",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.108.162",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.10.1.0/24",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.108.162",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.4.0.0/14",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.108.162",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+            "priority": 100,
+            "routeType": "BGP"
+          }
+        ],
+        "enableIpv4": true,
+        "enableIpv6": false,
+        "ipAddress": "169.254.108.162",
+        "linkedVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1",
+        "md5AuthEnabled": false,
+        "name": "aws-bgp-peer-1",
+        "numLearnedRoutes": 1,
+        "peerIpAddress": "169.254.108.161",
+        "state": "Established",
+        "status": "UP",
+        "uptime": "1 hours, 25 minutes, 59 seconds",
+        "uptimeSeconds": "5159"
+      },
+      {
+        "advertisedRoutes": [
+          {
+            "destRange": "10.2.0.0/16",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.199.250",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.10.0.0/24",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.199.250",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.10.1.0/24",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.199.250",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+            "priority": 100,
+            "routeType": "BGP"
+          },
+          {
+            "destRange": "10.4.0.0/14",
+            "kind": "compute#route",
+            "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+            "nextHopIp": "169.254.199.250",
+            "nextHopOrigin": "INCOMPLETE",
+            "nextHopVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+            "priority": 100,
+            "routeType": "BGP"
+          }
+        ],
+        "enableIpv4": true,
+        "enableIpv6": false,
+        "ipAddress": "169.254.199.250",
+        "linkedVpnTunnel": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/regions/asia-northeast3/vpnTunnels/aws-to-gcp-vpn-2",
+        "md5AuthEnabled": false,
+        "name": "aws-bgp-peer-2",
+        "numLearnedRoutes": 1,
+        "peerIpAddress": "169.254.199.249",
+        "state": "Established",
+        "status": "UP",
+        "uptime": "1 hours, 26 minutes, 10 seconds",
+        "uptimeSeconds": "5170"
+      }
+    ],
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc"
+  }
+}
+2025-02-20 00:05:23,463 INFO     ___FILE_ONLY___ 
+
+2025-02-20 00:05:23,463 DEBUG    root            SDK update checks are disabled.

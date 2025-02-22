@@ -1,0 +1,90 @@
+2025-02-20 17:51:19,533 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 17:51:19,538 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 17:51:19,562 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'create']
+2025-02-20 17:51:19,734 DEBUG    root            Running [gcloud.compute.firewall-rules.create] with arguments: [--allow: "['tcp:3306']", --description: "Allow DMS to access Cloud SQL", --network: "gcp-dr-vpc", --source-ranges: "['10.0.3.0/24']", NAME: "allow-dms-to-cloudsql"]
+2025-02-20 17:51:19,780 INFO     ___FILE_ONLY___ Creating firewall...
+2025-02-20 17:51:19,783 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:51:20,914 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json HTTP/1.1" 200 None
+2025-02-20 17:51:20,918 DEBUG    root            Operations to inspect: [(<Operation
+ id: 923926719211721703
+ insertTime: '2025-02-20T00:51:20.876-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740041480471-62e8efa56830f-db021845-d14d174d'
+ operationType: 'insert'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740041480471-62e8efa56830f-db021845-d14d174d'
+ startTime: '2025-02-20T00:51:20.924-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 8946462510406128615
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-dms-to-cloudsql'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 17:51:20,923 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:51:26,444 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740041480471-62e8efa56830f-db021845-d14d174d/wait?alt=json HTTP/1.1" 200 None
+2025-02-20 17:51:26,449 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-20T00:51:26.272-08:00'
+ id: 923926719211721703
+ insertTime: '2025-02-20T00:51:20.876-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740041480471-62e8efa56830f-db021845-d14d174d'
+ operationType: 'insert'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740041480471-62e8efa56830f-db021845-d14d174d'
+ startTime: '2025-02-20T00:51:20.924-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 8946462510406128615
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-dms-to-cloudsql'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-20 17:51:26,449 INFO     ___FILE_ONLY___ Created [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-dms-to-cloudsql].
+
+2025-02-20 17:51:26,452 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 17:51:27,057 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-dms-to-cloudsql?alt=json HTTP/1.1" 200 None
+2025-02-20 17:51:27,060 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )
+2025-02-20 17:51:27,061 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    )"
+2025-02-20 17:51:27,107 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-20 17:51:27,163 INFO     ___FILE_ONLY___ NAME
+2025-02-20 17:51:27,164 INFO     ___FILE_ONLY___                    
+2025-02-20 17:51:27,165 INFO     ___FILE_ONLY___ NETWORK
+2025-02-20 17:51:27,165 INFO     ___FILE_ONLY___      
+2025-02-20 17:51:27,165 INFO     ___FILE_ONLY___ DIRECTION
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___ ALLOW
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___      
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___ DENY
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:27,166 INFO     ___FILE_ONLY___ DISABLED
+2025-02-20 17:51:27,167 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:51:27,167 INFO     ___FILE_ONLY___ allow-dms-to-cloudsql
+2025-02-20 17:51:27,168 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:27,168 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-20 17:51:27,168 INFO     ___FILE_ONLY___   
+2025-02-20 17:51:27,168 INFO     ___FILE_ONLY___ INGRESS
+2025-02-20 17:51:27,168 INFO     ___FILE_ONLY___     
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___ 1000
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___       
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___ tcp:3306
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___         
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___ False
+2025-02-20 17:51:27,169 INFO     ___FILE_ONLY___ 
+
+2025-02-20 17:51:27,169 DEBUG    root            SDK update checks are disabled.

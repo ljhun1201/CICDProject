@@ -1,0 +1,14 @@
+2025-02-20 23:30:00,329 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 23:30:00,331 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers']
+2025-02-20 23:30:00,339 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routers', 'update_bgp_peer']
+2025-02-20 23:30:00,342 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute']
+2025-02-20 23:30:00,344 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'routers']
+2025-02-20 23:30:00,344 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'compute', 'routers', 'update_bgp_peer']
+2025-02-20 23:30:00,346 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute']
+2025-02-20 23:30:00,347 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'routers']
+2025-02-20 23:30:00,348 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'compute', 'routers', 'update_bgp_peer']
+2025-02-20 23:30:00,349 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/compute]
+2025-02-20 23:30:00,349 ERROR    root            (gcloud.compute.routers.update-bgp-peer) unrecognized arguments: --add-advertised-routes=10.0.0.0/16 (did you mean '--add-advertisement-groups'?) 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS

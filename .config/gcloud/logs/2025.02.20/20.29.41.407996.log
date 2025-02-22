@@ -1,0 +1,861 @@
+2025-02-20 20:29:41,466 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-20 20:29:41,468 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall_rules']
+2025-02-20 20:29:41,480 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'firewall-rules', 'list']
+2025-02-20 20:29:41,482 DEBUG    root            Running [gcloud.compute.firewall-rules.list] with arguments: [--format: "json"]
+2025-02-20 20:29:41,718 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    ) json
+2025-02-20 20:29:41,719 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      direction,
+      priority,
+      allowed[].map().firewall_rule().list():label=ALLOW,
+      denied[].map().firewall_rule().list():label=DENY,
+      disabled
+    ) json"
+2025-02-20 20:29:41,722 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-20 20:29:42,202 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-20 20:29:42,234 INFO     ___FILE_ONLY___ [
+  {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+          "3306"
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T20:52:14.122-08:00",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "id": "7021478427699644945",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "name": "allow-aws-to-cloudsql",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-to-cloudsql",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.0.0/16"
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+          "3306"
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T08:29:46.454-08:00",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "id": "349563263863470101",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "name": "allow-aws-vpn",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-aws-vpn",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.0.0/16",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.0.0/24",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.1.0/24",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.2.0/24",
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+      "10.0.3.0/24"
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,235 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+          "3306"
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-20T00:51:20.803-08:00",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "description": "Allow DMS to access Cloud SQL",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "id": "8946462510406128615",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "name": "allow-dms-to-cloudsql",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-dms-to-cloudsql",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      "10.0.3.0/24"
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+          "3306"
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-20T03:06:27.772-08:00",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "id": "5861216080954569308",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "name": "allow-gcp-to-rds",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-gcp-to-rds",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      "10.200.0.0/16"
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "udp",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+          "500",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+          "4500"
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T20:52:13.948-08:00",
+2025-02-20 20:29:42,236 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "id": "475067890494278162",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "name": "allow-vpn-ipsec",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/allow-vpn-ipsec",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "icmp"
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-01-09T22:07:09.257-08:00",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "description": "Allow ICMP from anywhere",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "id": "2572712463114766306",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "name": "default-allow-icmp",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/default",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "priority": 65534,
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/default-allow-icmp",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+          "0-65535"
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "udp",
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+          "0-65535"
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,237 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "icmp"
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-01-09T22:07:09.048-08:00",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "description": "Allow internal traffic on the default network",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "id": "573817349068359650",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "name": "default-allow-internal",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/default",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "priority": 65534,
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/default-allow-internal",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      "10.128.0.0/9"
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+          "3389"
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-01-09T22:07:09.187-08:00",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "description": "Allow RDP from anywhere",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "id": "9184302169873778658",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "name": "default-allow-rdp",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/default",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "priority": 65534,
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/default-allow-rdp",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+          "22"
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,238 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-01-09T22:07:09.118-08:00",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "description": "Allow SSH from anywhere",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "id": "5119106725037541346",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "name": "default-allow-ssh",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/default",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "priority": 65534,
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/default-allow-ssh",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "ah"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "sctp"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "udp"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "icmp"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "esp"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T21:09:38.597-08:00",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "id": "1709542225527638013",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "name": "gke-gcp-dr-gke-7651161c-all",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/gke-gcp-dr-gke-7651161c-all",
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      "10.4.0.0/14"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    "targetTags": [
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,239 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T21:09:38.633-08:00",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "denied": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+          "10255"
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "id": "1295215045539203069",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "name": "gke-gcp-dr-gke-7651161c-exkubelet",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/gke-gcp-dr-gke-7651161c-exkubelet",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      "0.0.0.0/0"
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "targetTags": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,240 INFO     ___FILE_ONLY___ 
+          "10255"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T21:09:38.596-08:00",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "id": "2453369173227276285",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "name": "gke-gcp-dr-gke-7651161c-inkubelet",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "priority": 999,
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/gke-gcp-dr-gke-7651161c-inkubelet",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      "10.4.0.0/14"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "sourceTags": [
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "targetTags": [
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "icmp"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+          "1-65535"
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      },
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,241 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "udp",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+          "1-65535"
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T21:09:38.992-08:00",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "description": "",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "id": "6780049567143102461",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "name": "gke-gcp-dr-gke-7651161c-vms",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/gke-gcp-dr-gke-7651161c-vms",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      "10.10.1.0/24"
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "targetTags": [
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ ,
+  {
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "allowed": [
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      {
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+        "IPProtocol": "tcp",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+        "ports": [
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+          "30000-32767",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+          "8080"
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+        ]
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      }
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2025-02-19T21:15:39.078-08:00",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "description": "GCE L7 firewall rule",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "direction": "INGRESS",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "disabled": false,
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "id": "4097354363462943892",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "kind": "compute#firewall",
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+    "logConfig": {
+2025-02-20 20:29:42,242 INFO     ___FILE_ONLY___ 
+      "enable": false
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    },
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "name": "k8s-fw-l7--f206552e6b4efbcd",
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "network": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/networks/gcp-dr-vpc",
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "priority": 1000,
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/firewalls/k8s-fw-l7--f206552e6b4efbcd",
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "sourceRanges": [
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+      "130.211.0.0/22",
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+      "35.191.0.0/16"
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    ],
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    "targetTags": [
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+      "gke-gcp-dr-gke-7651161c-node"
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+    ]
+2025-02-20 20:29:42,243 INFO     ___FILE_ONLY___ 
+  }
+2025-02-20 20:29:42,253 INFO     root            cache collection=compute.firewalls api_version=v1 params=['project', 'firewall']
+2025-02-20 20:29:42,277 INFO     ___FILE_ONLY___ 
+]
+
+2025-02-20 20:29:42,277 DEBUG    root            SDK update checks are disabled.

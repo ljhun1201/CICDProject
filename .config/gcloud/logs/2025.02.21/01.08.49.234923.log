@@ -1,0 +1,97 @@
+2025-02-21 01:08:49,262 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-21 01:08:49,263 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes']
+2025-02-21 01:08:49,280 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'routes', 'create']
+2025-02-21 01:08:49,281 DEBUG    root            Running [gcloud.compute.routes.create] with arguments: [--destination-range: "10.0.3.0/24", --network: "gcp-dr-vpc", --next-hop-vpn-tunnel: "aws-to-gcp-vpn-1", --priority: "1000", NAME: "gcp-to-aws-rds"]
+2025-02-21 01:08:49,400 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:08:50,262 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/regions?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-21 01:08:57,656 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:08:58,559 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/routes?alt=json HTTP/1.1" 200 None
+2025-02-21 01:08:58,562 DEBUG    root            Operations to inspect: [(<Operation
+ id: 8865835911151807861
+ insertTime: '2025-02-20T08:08:58.388-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740067737977-62e95176843fa-4bc832c3-4093a332'
+ operationType: 'insert'
+ progress: 0
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740067737977-62e95176843fa-4bc832c3-4093a332'
+ startTime: '2025-02-20T08:08:58.430-08:00'
+ status: StatusValueValuesEnum(RUNNING, 2)
+ targetId: 1423192744403856757
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 01:08:58,563 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:09:15,220 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "POST /compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740067737977-62e95176843fa-4bc832c3-4093a332/wait?alt=json HTTP/1.1" 200 None
+2025-02-21 01:09:15,224 DEBUG    root            Operations to inspect: [(<Operation
+ endTime: '2025-02-20T08:09:15.054-08:00'
+ id: 8865835911151807861
+ insertTime: '2025-02-20T08:08:58.388-08:00'
+ kind: 'compute#operation'
+ name: 'operation-1740067737977-62e95176843fa-4bc832c3-4093a332'
+ operationType: 'insert'
+ progress: 100
+ selfLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/operations/operation-1740067737977-62e95176843fa-4bc832c3-4093a332'
+ startTime: '2025-02-20T08:08:58.430-08:00'
+ status: StatusValueValuesEnum(DONE, 0)
+ targetId: 1423192744403856757
+ targetLink: 'https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds'
+ user: '1201ljhun@gmail.com'
+ warnings: []>, 3)]
+2025-02-21 01:09:15,224 INFO     ___FILE_ONLY___ Created [https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds].
+
+2025-02-21 01:09:15,225 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-21 01:09:15,808 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/routes/gcp-to-aws-rds?alt=json HTTP/1.1" 200 None
+2025-02-21 01:09:15,810 DEBUG    root            Chosen display Format:    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )
+2025-02-21 01:09:15,811 INFO     root            Display format: "    table(
+      name,
+      network.basename(),
+      destRange,
+      firstof(
+          nextHopInstance,
+          nextHopGateway,
+          nextHopIp,
+          nextHopVpnTunnel,
+          nextHopPeering,
+          nextHopNetwork,
+          nextHopHub).scope()
+        :label=NEXT_HOP,
+      priority
+    )"
+2025-02-21 01:09:15,839 INFO     root            cache collection=compute.routes api_version=v1 params=['project', 'route']
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ NAME
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___             
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ NETWORK
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___      
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ DEST_RANGE
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___    
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ NEXT_HOP
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___                                      
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ PRIORITY
+2025-02-21 01:09:15,871 INFO     ___FILE_ONLY___ 
+
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ gcp-to-aws-rds
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___   
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ gcp-dr-vpc
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___   
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ 10.0.3.0/24
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___   
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ asia-northeast3/vpnTunnels/aws-to-gcp-vpn-1
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___   
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ 1000
+2025-02-21 01:09:15,872 INFO     ___FILE_ONLY___ 
+
+2025-02-21 01:09:15,872 DEBUG    root            SDK update checks are disabled.

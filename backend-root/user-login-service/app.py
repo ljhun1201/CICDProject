@@ -70,7 +70,7 @@ def login():
         if conn:
             conn.close()
 
-@app.route("/healthz")
+@app.route("/healthz", methods=["GET"])
 def health_check():
     return "OK", 200
 

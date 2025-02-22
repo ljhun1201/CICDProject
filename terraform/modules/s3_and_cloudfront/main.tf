@@ -164,7 +164,6 @@ resource "aws_cloudfront_origin_request_policy" "origin_request_policy_with_host
     cookie_behavior = "all"
   }
 }
-
 /*
 # CloudFront 배포 설정
 resource "aws_cloudfront_distribution" "frontend_distribution" {
@@ -253,7 +252,6 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
   }
 }
 */
-
 resource "aws_cloudfront_distribution" "frontend_distribution" {
   origin {
     domain_name = aws_s3_bucket.frontend_bucket.bucket_regional_domain_name
@@ -503,7 +501,6 @@ resource "aws_route53_record" "backend_api_alias" {
     weight = 50  
   }
 
-
   alias {
     name                   = aws_cloudfront_distribution.backend_distribution.domain_name
     zone_id                = aws_cloudfront_distribution.backend_distribution.hosted_zone_id
@@ -525,4 +522,153 @@ resource "aws_route53_record" "backend_api_alias_gcp" {
 
   records = [data.terraform_remote_state.gcp.outputs.ingress_ip]
   ttl     = 60
+}
+
+# -------------------------------------------------------------------------
+
+# ALB 헬스 체크
+resource "aws_route53_health_check" "alb_health_check" {
+  fqdn              = var.alb_dns_name
+  port              = 443
+  type              = "HTTPS"
+  resource_path     = "/healthz"
+  request_interval  = 30
+  failure_threshold = 3
+}
+
+# EKS 헬스 체크 (ALB를 통해 EKS 서비스 확인)
+resource "aws_route53_health_check" "eks_health_check1" {
+  fqdn              = var.alb_dns_name
+  port              = 443
+  type              = "HTTPS"
+  resource_path     = "/app-one/register"
+  request_interval  = 30
+  failure_threshold = 3
+}
+
+# EKS 헬스 체크 (ALB를 통해 EKS 서비스 확인)
+resource "aws_route53_health_check" "eks_health_check2" {
+  fqdn              = var.alb_dns_name
+  port              = 443
+  type              = "HTTPS"
+  resource_path     = "/app-two/login"
+  request_interval  = 30
+  failure_threshold = 3
+}
+
+# RDS 헬스 체크 (ALB를 통해 EKS 서비스 확인)
+resource "aws_route53_health_check" "rds_health_check" {
+  fqdn              = "mydb-instance.cxwqcoa0so3k.ap-northeast-2.rds.amazonaws.com"  # RDS 엔드포인트
+  port              = 3306
+  type              = "TCP"
+  request_interval  = 30
+  failure_threshold = 3
+}
+
+# Terraform이 lambda_function.py를 ZIP 파일로 자동 압축하도록 설정.
+# path.module: 현재 실행 중인 Terraform 코드 파일이 있는 디렉터리
+data "archive_file" "lambda_zip" {
+  type        = "zip"
+  source_dir  = "${path.module}/lambda_function" # lambda_function 폴더를 ZIP으로 압축
+  output_path = "${path.module}/lambda_function.zip" # 이것으로 압축
+}
+
+# Lambda가 Route 53 가중치를 변경하도록 헬스 체크 정보를 주입
+resource "aws_lambda_function" "update_route53_lambda" {
+  function_name = "update-route53-weights"
+  role          = aws_iam_role.lambda_exec.arn
+  handler       = "lambda_function.lambda_handler"
+  runtime       = "python3.9"
+  timeout       = 10
+  memory_size   = 128
+  filename      = data.archive_file.lambda_zip.output_path
+  source_code_hash = data.archive_file.lambda_zip.output_base64sha256
+
+  # GUI에서 코드 업로드 → Terraform은 환경 변수만 관리
+  environment {
+    variables = {
+      ALB_HEALTH_CHECK_ID   = aws_route53_health_check.alb_health_check.id
+      EKS_HEALTH_CHECK1_ID  = aws_route53_health_check.eks_health_check1.id
+      EKS_HEALTH_CHECK2_ID  = aws_route53_health_check.eks_health_check2.id
+      RDS_HEALTH_CHECK_ID   = aws_route53_health_check.rds_health_check.id
+      ROUTE53_ZONE_ID       = data.aws_route53_zone.ljhun_zone.id
+
+      # ✅ 백엔드 API (api.ljhun.shop) - 가중치 변경 대상
+      AWS_API_RECORD_ID     = "aws-endpoint"
+      GCP_API_RECORD_ID     = "gcp-endpoint"
+
+      ROUTE53_API_DOMAIN    = "api.ljhun.shop"
+
+      GCP_API_IP            = data.terraform_remote_state.gcp.outputs.ingress_ip
+    }
+  }
+}
+
+# Lambda가 Route 53을 변경할 수 있도록 권한 부여
+
+resource "aws_iam_role" "lambda_exec" {
+  name = "lambda_exec_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Service = "lambda.amazonaws.com"
+      }
+      Action = "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_policy" "lambda_policy" {
+  name        = "lambda_route53_policy"
+  description = "Allow Lambda to update Route 53"
+  policy      = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect   = "Allow",
+        Action   = [
+          "route53:ChangeResourceRecordSets",
+          "route53:GetHealthCheckStatus"
+        ],
+        Resource = "*"
+      },
+      {
+        Effect   = "Allow",
+        Action   = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_policy_attach" {
+  role       = aws_iam_role.lambda_exec.name
+  policy_arn = aws_iam_policy.lambda_policy.arn
+}
+
+# Lambda를 주기적으로 실행
+
+resource "aws_cloudwatch_event_rule" "lambda_schedule" {
+  name                = "lambda-execution-rule"
+  schedule_expression = "rate(1 minute)"  # 1분마다 실행 (조절 가능)
+}
+
+resource "aws_cloudwatch_event_target" "lambda_target" {
+  rule      = aws_cloudwatch_event_rule.lambda_schedule.name
+  arn       = aws_lambda_function.update_route53_lambda.arn
+}
+
+resource "aws_lambda_permission" "allow_eventbridge" {
+  statement_id  = "AllowExecutionFromEventBridge"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.update_route53_lambda.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.lambda_schedule.arn
 }

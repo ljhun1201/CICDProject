@@ -1,0 +1,77 @@
+2025-02-22 17:57:19,005 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 17:57:19,008 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target_https_proxies']
+2025-02-22 17:57:19,019 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'target-https-proxies', 'describe']
+2025-02-22 17:57:19,021 DEBUG    root            Running [gcloud.compute.target-https-proxies.describe] with arguments: [NAME: "lb-https-proxy"]
+2025-02-22 17:57:19,053 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2025-02-22 17:57:19,055 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-22 17:57:19,545 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-02-22 17:57:19,753 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 17:57:20,405 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/targetHttpsProxies/lb-https-proxy?alt=json HTTP/1.1" 200 None
+2025-02-22 17:57:20,409 DEBUG    root            Chosen display Format:default
+2025-02-22 17:57:20,410 INFO     root            Display format: "default"
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___ creationTimestamp
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___  '
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___ 2025-02-21T23:51:56.541-08:00
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___ '
+2025-02-22 17:57:20,432 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ fingerprint
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ 0wdF5sxfaZc=
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ id
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___  '
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ 7031102727855029491
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ '
+2025-02-22 17:57:20,433 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ kind
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ compute#targetHttpsProxy
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ name
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,434 INFO     ___FILE_ONLY___ lb-https-proxy
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ quicOverride
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ NONE
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ selfLink
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,435 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/targetHttpsProxies/lb-https-proxy
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ sslCertificates
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ -
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/sslCertificates/lb-managed-cert
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ tlsEarlyData
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ DISABLED
+2025-02-22 17:57:20,436 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,437 INFO     ___FILE_ONLY___ urlMap
+2025-02-22 17:57:20,437 INFO     ___FILE_ONLY___ :
+2025-02-22 17:57:20,437 INFO     ___FILE_ONLY___  
+2025-02-22 17:57:20,437 INFO     ___FILE_ONLY___ https://www.googleapis.com/compute/v1/projects/peppy-arcadia-432311-g5/global/urlMaps/lb-url-map
+2025-02-22 17:57:20,437 INFO     ___FILE_ONLY___ 
+
+2025-02-22 17:57:20,437 DEBUG    root            SDK update checks are disabled.

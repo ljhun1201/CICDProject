@@ -1,0 +1,58 @@
+2025-02-22 16:10:04,795 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2025-02-22 16:10:04,798 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding_rules']
+2025-02-22 16:10:04,811 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'forwarding-rules', 'list']
+2025-02-22 16:10:04,815 DEBUG    root            Running [gcloud.compute.forwarding-rules.list] with arguments: [--global: "True"]
+2025-02-22 16:10:05,004 DEBUG    root            Chosen display Format:      table(
+        name,
+        region.basename(),
+        IPAddress,
+        IPProtocol,
+        firstof(
+            target,
+            backendService).scope():label=TARGET
+      )
+      
+2025-02-22 16:10:05,005 INFO     root            Display format: "      table(
+        name,
+        region.basename(),
+        IPAddress,
+        IPProtocol,
+        firstof(
+            target,
+            backendService).scope():label=TARGET
+      )
+      "
+2025-02-22 16:10:05,010 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): compute.googleapis.com:443
+2025-02-22 16:10:05,532 DEBUG    urllib3.connectionpool https://compute.googleapis.com:443 "GET /compute/v1/projects/peppy-arcadia-432311-g5/global/forwardingRules?alt=json&maxResults=500 HTTP/1.1" 200 None
+2025-02-22 16:10:05,574 INFO     root            cache collection=compute.globalForwardingRules api_version=v1 params=['project', 'forwardingRule']
+2025-02-22 16:10:05,574 INFO     root            cache collection=compute.forwardingRules api_version=v1 params=['project', 'region', 'forwardingRule']
+2025-02-22 16:10:05,626 INFO     ___FILE_ONLY___ NAME
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___                       
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___ REGION
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___   
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___ IP_ADDRESS
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___      
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___ IP_PROTOCOL
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___   
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___ TARGET
+2025-02-22 16:10:05,627 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___ lb-http-forwarding-rule
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___            
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___ 34.149.208.65
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___   
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___ TCP
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___           
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___ lb-http-proxy
+2025-02-22 16:10:05,628 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___ lb-https-forwarding-rule
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___           
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___ 34.36.117.186
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___   
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___ TCP
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___           
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___ lb-https-proxy
+2025-02-22 16:10:05,629 INFO     ___FILE_ONLY___ 
+
+2025-02-22 16:10:05,630 DEBUG    root            SDK update checks are disabled.
