@@ -26,12 +26,13 @@ def get_db_connection():
 def health_check():
     app.logger.info(f"Health check received from: {request.headers.get('X-Forwarded-For', 'unknown')}")
     app.logger.info(f"User-Agent: {request.headers.get('User-Agent', 'unknown')}")
-    return "OK"
+    app.logger.info("Responding with 200 OK")
+    return "OK", 200
 
 @app.route('/app-one/register', methods=['GET', 'POST', 'OPTIONS'])
 def register_user():
     app.logger.info(f"Request received: {request.method} {request.path}")
-    
+
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
         response.headers.add("Access-Control-Allow-Origin", "*")

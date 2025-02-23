@@ -79,6 +79,7 @@ def login():
 def health_check():
     app.logger.info(f"Health check received from: {request.headers.get('X-Forwarded-For', 'unknown')}")
     app.logger.info(f"User-Agent: {request.headers.get('User-Agent', 'unknown')}")
+    app.logger.info("Responding with 200 OK")
     return "OK", 200
 
 if __name__ == '__main__':
