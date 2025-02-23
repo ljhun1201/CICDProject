@@ -334,7 +334,7 @@ resource "aws_cloudfront_distribution" "backend_distribution" {
       }
     }
 
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "https-only"
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
@@ -345,7 +345,7 @@ resource "aws_cloudfront_distribution" "backend_distribution" {
     path_pattern     = "/app-one/*"
     target_origin_id = "ALB"
 
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "https-only"
     allowed_methods        = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
     cached_methods         = ["GET","HEAD"]
 
@@ -363,7 +363,7 @@ resource "aws_cloudfront_distribution" "backend_distribution" {
     path_pattern     = "/app-two/*"
     target_origin_id = "ALB"
 
-    viewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "https-only"
     allowed_methods        = ["GET","HEAD","OPTIONS","PUT","POST","PATCH","DELETE"]
     cached_methods         = ["GET","HEAD"]
 
@@ -528,7 +528,7 @@ resource "aws_route53_record" "backend_api_alias_gcp" {
 
 # ALB 헬스 체크
 resource "aws_route53_health_check" "alb_health_check" {
-  fqdn              = var.alb_dns_name
+  fqdn              = "api.ljhun.shop"
   port              = 443
   type              = "HTTPS"
   resource_path     = "/healthz"
@@ -538,7 +538,7 @@ resource "aws_route53_health_check" "alb_health_check" {
 
 # EKS 헬스 체크 (ALB를 통해 EKS 서비스 확인)
 resource "aws_route53_health_check" "eks_health_check1" {
-  fqdn              = var.alb_dns_name
+  fqdn              = "api.ljhun.shop"
   port              = 443
   type              = "HTTPS"
   resource_path     = "/app-one/register"
@@ -548,7 +548,7 @@ resource "aws_route53_health_check" "eks_health_check1" {
 
 # EKS 헬스 체크 (ALB를 통해 EKS 서비스 확인)
 resource "aws_route53_health_check" "eks_health_check2" {
-  fqdn              = var.alb_dns_name
+  fqdn              = "api.ljhun.shop"
   port              = 443
   type              = "HTTPS"
   resource_path     = "/app-two/login"

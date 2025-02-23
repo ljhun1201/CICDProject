@@ -26,7 +26,7 @@ def get_db_connection():
         database=DB_NAME
     )
 
-@app.route('/app-two/login', methods=['POST', 'OPTIONS'])
+@app.route('/app-two/login', methods=['GET', 'POST', 'OPTIONS'])
 def login():
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
@@ -34,6 +34,9 @@ def login():
         response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
         return response, 200
+
+    if request.method == 'GET':
+        return jsonify({"success": True, "message": "Health Check Passed"}), 200  # Route 53용 응답 추가
 
     data = request.get_json()
     app.logger.debug(f"Received data: {data}")
@@ -72,6 +75,8 @@ def login():
 
 @app.route("/healthz", methods=["GET"])
 def health_check():
+    app.logger.info(f"Health check received from: {request.headers.get('X-Forwarded-For', 'unknown')}")
+    app.logger.info(f"User-Agent: {request.headers.get('User-Agent', 'unknown')}")
     return "OK", 200
 
 if __name__ == '__main__':

@@ -24,9 +24,11 @@ def get_db_connection():
 
 @app.route("/healthz", methods=["GET"])
 def health_check():
+    app.logger.info(f"Health check received from: {request.headers.get('X-Forwarded-For', 'unknown')}")
+    app.logger.info(f"User-Agent: {request.headers.get('User-Agent', 'unknown')}")
     return "OK"
 
-@app.route('/app-one/register', methods=['POST', 'OPTIONS'])
+@app.route('/app-one/register', methods=['GET', 'POST', 'OPTIONS'])
 def register_user():
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
@@ -34,6 +36,9 @@ def register_user():
         response.headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
         return response, 200
+    
+    if request.method == 'GET':
+        return jsonify({"success": True, "message": "Health Check Passed"}), 200  # Route 53용 응답 추가
 
     data = request.get_json()
     app.logger.debug(f"Received data: {data}")

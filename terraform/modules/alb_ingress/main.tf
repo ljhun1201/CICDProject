@@ -437,48 +437,21 @@ resource "kubernetes_manifest" "app_ingress" {
         "alb.ingress.kubernetes.io/scheme"        = "internet-facing"
         "alb.ingress.kubernetes.io/listen-ports"  = "[{\"HTTP\":80}, {\"HTTPS\":443}]" # ALB의 포트
         "alb.ingress.kubernetes.io/certificate-arn" = "arn:aws:acm:ap-northeast-2:481665107235:certificate/d2e40628-5ff5-466a-a818-14b2d9b2475f"
-        "alb.ingress.kubernetes.io/target-type"   = "instance"  # ip: svc 거치지 않고 pod로 직접 라우팅이것을 지정하면 CNI 플러그인 형식에 따라 POD의 IP가 노드 밖으로 나오므로, NodePort 사용 X(즉, ALB가 svc를 거치지 않고도 POD로 직접 라우팅 가능), instance: svc를 거침
+        "alb.ingress.kubernetes.io/target-type"   = "ip"  # ip: svc 거치지 않고 pod로 직접 라우팅이것을 지정하면 CNI 플러그인 형식에 따라 POD의 IP가 노드 밖으로 나오므로, NodePort 사용 X(즉, ALB가 svc를 거치지 않고도 POD로 직접 라우팅 가능), instance: svc를 거침
         "alb.ingress.kubernetes.io/security-groups" = var.alb_security_group_id
         "alb.ingress.kubernetes.io/healthcheck-path" = "/healthz"  # Health Check 경로 설정
-        "alb.ingress.kubernetes.io/healthcheck-port" = "80"  # Health Check 포트: 80(서비스 포트로 맞추어야함, alb에서 svc로 보내는 것. --> 나머지는 svc가 알아서 pod로 라우팅해줌)
+        "alb.ingress.kubernetes.io/healthcheck-port" = "5000"  # Health Check 포트
         "alb.ingress.kubernetes.io/healthcheck-interval-seconds" = "30"  # Health Check 간격
         "alb.ingress.kubernetes.io/healthcheck-timeout-seconds" = "5"    # Health Check 타임아웃
         "alb.ingress.kubernetes.io/success-codes" = "200"                # 성공 응답 코드
+        # ALB 액세스 로그 활성화
+        "alb.ingress.kubernetes.io/load-balancer-attributes": access_logs.s3.enabled=true,access_logs.s3.bucket=alb-log-file
 
         # CORS 설정 추가
         "alb.ingress.kubernetes.io/allow-headers" = "*"
         "alb.ingress.kubernetes.io/allow-methods" = "GET,POST,PUT,DELETE,OPTIONS"
         "alb.ingress.kubernetes.io/allow-origin"  = "*"
         "alb.ingress.kubernetes.io/expose-headers" = "Authorization,Content-Type"
-
-        # 🛠 Target Group에서 404가 반환되지 않도록 하는 설정 (액션 정의)
-        "alb.ingress.kubernetes.io/actions.app-one" = <<EOT
-        {
-          "type":"forward",
-          "forwardConfig":{
-            "targetGroups":[
-              {
-                "serviceName":"app-one-service",
-                "servicePort":"80"
-              }
-            ]
-          }
-        }
-        EOT
-
-        "alb.ingress.kubernetes.io/actions.app-two" = <<EOT
-        {
-          "type":"forward",
-          "forwardConfig":{
-            "targetGroups":[
-              {
-                "serviceName":"app-two-service",
-                "servicePort":"80"
-              }
-            ]
-          }
-        }
-        EOT
       }
     }
     spec = {

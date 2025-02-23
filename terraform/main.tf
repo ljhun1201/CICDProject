@@ -44,7 +44,7 @@ cd modules/alb_ingress && terraform apply -auto-approve \
   && \
 
 # ALB가 생성될 때까지 대기
-sleep 60 && \
+sleep 300 && \
 
 # 모든 ALB 리스트를 가져와서 파일에 저장
 aws elbv2 describe-load-balancers \
