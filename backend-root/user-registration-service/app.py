@@ -30,6 +30,8 @@ def health_check():
 
 @app.route('/app-one/register', methods=['GET', 'POST', 'OPTIONS'])
 def register_user():
+    app.logger.info(f"Request received: {request.method} {request.path}")
+    
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
         response.headers.add("Access-Control-Allow-Origin", "*")

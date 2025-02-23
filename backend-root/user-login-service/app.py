@@ -28,6 +28,8 @@ def get_db_connection():
 
 @app.route('/app-two/login', methods=['GET', 'POST', 'OPTIONS'])
 def login():
+    app.logger.info(f"Request received: {request.method} {request.path}")
+
     if request.method == 'OPTIONS':
         response = jsonify({"message": "CORS preflight passed"})
         response.headers.add("Access-Control-Allow-Origin", "*")

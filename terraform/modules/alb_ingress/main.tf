@@ -445,7 +445,7 @@ resource "kubernetes_manifest" "app_ingress" {
         "alb.ingress.kubernetes.io/healthcheck-timeout-seconds" = "5"    # Health Check 타임아웃
         "alb.ingress.kubernetes.io/success-codes" = "200"                # 성공 응답 코드
         # ALB 액세스 로그 활성화
-        "alb.ingress.kubernetes.io/load-balancer-attributes": access_logs.s3.enabled=true,access_logs.s3.bucket=alb-log-file
+        "alb.ingress.kubernetes.io/load-balancer-attributes" = "access_logs.s3.enabled=true, access_logs.s3.bucket=alb-log-file"
 
         # CORS 설정 추가
         "alb.ingress.kubernetes.io/allow-headers" = "*"
