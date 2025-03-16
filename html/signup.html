@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Site Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #signup-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .textbox {
+            margin-bottom: 15px;
+        }
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .link {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .message-box {
+            display: none;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="signup-box" class="box active">
+            <h1>Sign Up-aws</h1>
+            <form id="signup-form">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="textbox">
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
+                <button class="btn" type="submit">Sign Up</button>
+                <span class="link" onclick="showLogin()">Back to Login</span>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-message" class="message-box">
+        <h2>Sign Up Successful!</h2>
+        <button onclick="redirectToLogin()">OK</button>
+    </div>
+
+    <div id="error-message" class="message-box">
+        <h2>Sign Up Failed!</h2>
+        <button onclick="redirectToLogin()">OK</button>
+    </div>
+
+    <script>
+        function showLogin() {
+            window.location.href = 'https://www.ljhun.shop';
+        }
+
+        function showSuccessMessage() {
+            document.getElementById('signup-box').classList.remove('active');
+            document.getElementById('success-message').style.display = 'block';
+        }
+
+        function showErrorMessage() {
+            document.getElementById('signup-box').classList.remove('active');
+            document.getElementById('error-message').style.display = 'block';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'https://www.ljhun.shop';
+        }
+
+        document.getElementById('signup-form').onsubmit = function(event) {
+            event.preventDefault();
+            var username = document.querySelector('[name="username"]').value;
+            var password = document.querySelector('[name="password"]').value;
+            var email = document.querySelector('[name="email"]').value;
+
+            fetch("https://api.ljhun.shop/app-one/register", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, password: password, email: email })
+            })
+            .then(response => response.json().then(data => {
+                if (response.ok && data.success) {
+                    showSuccessMessage();
+                } else {
+		    showErrorMessage();
+                }
+            }))
+            .catch(error => {
+                console.error('Error:', error);
+                showErrorMessage();
+            });
+        }
+    </script>
+</body>
+</html>

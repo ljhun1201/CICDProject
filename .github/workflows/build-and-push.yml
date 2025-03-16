@@ -1,0 +1,91 @@
+name: Build and Push to ECR and GCR
+on:
+ push:
+   branches:
+     - main
+
+permissions:
+ id-token: write
+ contents: read
+
+jobs:
+ build-and-push:
+   runs-on: ubuntu-latest
+   steps:
+   # 1. 리포지토리 클론
+   - name: Checkout repository
+     uses: actions/checkout@v2
+
+   # 2. AWS OIDC 인증 설정
+   - name: Configure AWS credentials using OIDC
+     uses: aws-actions/configure-aws-credentials@v2
+     with:
+       role-to-assume: arn:aws:iam::481665107235:role/S3WebRole
+       aws-region: ap-northeast-2
+
+   # 3. GCP 인증 설정
+   - name: Authenticate to Google Cloud
+     uses: google-github-actions/auth@v1
+     with:
+       credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+       
+   # 4. GCP CLI 설정
+   - name: 'Set up Cloud SDK'
+     uses: 'google-github-actions/setup-gcloud@v1'
+
+   # 5. ECR 로그인
+   - name: Login to Amazon ECR
+     run: |
+       aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com
+
+   # 6. GCR 로그인
+   - name: Login to GCR
+     run: |
+       gcloud auth configure-docker asia-northeast3-docker.pkg.dev
+
+   - name: Debug GCP Project ID
+     run: echo ${{ secrets.GCP_PROJECT_ID }}
+
+   # 7. Docker 이미지 빌드 및 태깅 (user-registration-service)
+   - name: Build and Tag Docker Images - User Registration Service
+     run: |
+       docker build -t user-registration-service:latest ./backend-root/user-registration-service
+       docker tag user-registration-service:latest 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest
+       docker tag user-registration-service:latest asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-registration-service:latest
+
+   # 8. Docker 이미지 빌드 및 태깅 (user-login-service)
+   - name: Build and Tag Docker Images - User Login Service
+     run: |
+       docker build -t user-login-service:latest ./backend-root/user-login-service
+       docker tag user-login-service:latest 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
+       docker tag user-login-service:latest asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest
+
+   # 9. Docker 이미지 ECR에 푸시
+   - name: Push Docker Images to ECR
+     run: |
+       docker push 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest
+       docker push 481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest
+
+   # 10. Docker 이미지 GCR에 푸시
+   - name: Push Docker Images to GCR
+     run: |
+       docker push asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-registration-service:latest
+       docker push asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest
+
+   # # 11. EKS Kubeconfig 생성
+   - name: Configure kubeconfig for EKS
+     run: |
+       aws eks update-kubeconfig --name eks-cluster --region ap-northeast-2
+
+   # # 12. Update EKS Deployments
+   # - name: Update Deployment in EKS
+   #  run: |
+   #    kubectl set image deployment/app-one app-one-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-registration-service:latest -n default
+   #    kubectl set image deployment/app-two app-two-container=481665107235.dkr.ecr.ap-northeast-2.amazonaws.com/user-login-service:latest -n default
+
+   # # 13. GKE Kubeconfig 생성 및 업데이트
+   # - name: Configure kubeconfig for GKE and Update
+   #   run: |
+   #     gcloud container clusters get-credentials gke-cluster --region asia-northeast3 --project ${{ secrets.GCP_PROJECT_ID }}
+   #     kubectl set image deployment/app-one app-one-container=asia-northeast3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/app-images/user-registration-service:latest -n default
+   #     kubectl set image deployment/app-two app-two-container=asia-northeast3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/app-images/user-login-service:latest -n default

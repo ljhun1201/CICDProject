@@ -1,0 +1,9 @@
+variable "vpc_id" {}
+variable "private_subnet_ids" {}
+variable "gcs_bucket_name" {}
+variable "gcs_state_prefix" {}
+variable "cloudsql_password" {}
+variable "rds_endpoint" {}
+variable "rds_password" {}
+variable "rds_name" {}
+variable "rds_user_name" {}

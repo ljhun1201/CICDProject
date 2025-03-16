@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Site Main</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Game Site</div>
+        <div>
+            <a href="about.html">About</a>
+            <a href="cashshop.html">Cash Shop</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome to Our Game-aws</h1>
+        <p>Explore the world of adventure and excitement.</p>
+        <a href="game.html" class="btn">Start Playing</a>
+    </div>
+</body>
+</html>
+

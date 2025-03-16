@@ -1,0 +1,7 @@
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.46
+Werkzeug==2.0.3
+pymysql==1.0.2       # MySQL 연결 라이브러리 추가
+gunicorn==20.1.0     # 프로덕션용 WSGI 서버 추가
+flask-cors==3.0.10   # CORS 지원을 위한 추가
