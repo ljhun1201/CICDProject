@@ -73,9 +73,9 @@ jobs:
        docker push asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest
 
    # # 11. EKS Kubeconfig 생성
-   - name: Configure kubeconfig for EKS
-     run: |
-       aws eks update-kubeconfig --name eks-cluster --region ap-northeast-2
+   # - name: Configure kubeconfig for EKS
+   #  run: |
+   #    aws eks update-kubeconfig --name eks-cluster --region ap-northeast-2
 
    # # 12. Update EKS Deployments
    # - name: Update Deployment in EKS
