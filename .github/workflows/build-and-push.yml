@@ -85,18 +85,24 @@ jobs:
         docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest
         docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest
 
-    # 12. EKS kubeconfig 설정
+    # 12. GKE 인증 플러그인 설치 단계 추가
+    - name: Install gke-gcloud-auth-plugin
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
+
+    # 13. EKS kubeconfig 설정
     - name: Configure kubeconfig for EKS
       run: |
         aws eks update-kubeconfig --name ${{ secrets.AWS_EKS_CLUSTER_NAME }} --region $AWS_REGION
 
-    # 13. EKS 배포 업데이트
+    # 14. EKS 배포 업데이트
     - name: Update Deployment in EKS
       run: |
         kubectl set image deployment/app-one app-one-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest -n default
         kubectl set image deployment/app-two app-two-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest -n default
 
-    # 14. GKE kubeconfig 설정 및 배포 업데이트
+    # 15. GKE kubeconfig 설정 및 배포 업데이트
     - name: Configure kubeconfig for GKE and Update
       run: |
         gcloud container clusters get-credentials ${{ secrets.GCP_GKE_CLUSTER_NAME }} --region $GCP_REGION --project ${{ secrets.GCP_PROJECT_ID }}
