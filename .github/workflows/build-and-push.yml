@@ -98,6 +98,6 @@ jobs:
     # 14. GKE kubeconfig 설정 및 배포 업데이트
     - name: Configure kubeconfig for GKE and Update
       run: |
-        gcloud container clusters get-credentials gke-cluster --region $GCP_REGION --project ${{ secrets.GCP_PROJECT_ID }}
+        gcloud container clusters get-credentials ${{ secrets.GCP_GKE_CLUSTER_NAME }} --region $GCP_REGION --project ${{ secrets.GCP_PROJECT_ID }}
         kubectl set image deployment/app-one app-one-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest -n default
         kubectl set image deployment/app-two app-two-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest -n default

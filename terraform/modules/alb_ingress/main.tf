@@ -510,3 +510,12 @@ resource "kubernetes_manifest" "app_ingress" {
     }
   }
 }
+
+# 정리 할 것: OIDC에 대하여, 외부 리소스가 AWS IAM을 사용해야 될 때, OIDC 역할을 수임하고 그 역할에 권한을 연결해야한다는 것.
+# k8s에서는 기본적으로 하나의 OIDC issuer를 가지고 있고, 이것을 기반으로 OIDC provider 생성이 가능하다는 것.
+# AWS Ingress LB에서 https 요청을 위한 acm 할당
+# AWS Ingress LB에서 target type(ip, instance)에 따른 차이
+# k8s에서 LB의 헬스체크를 위해 선행하는 liveness_probe와 readiness_probe에 대해.
+# 헷갈리지 말기: LB 내부적으로 하는 헬스 체크는 listener 정책이랑 관련 없음. LB가 내부의 모든 타깃 그룹에 헬스체크 트래픽을 보냄. listener 정책과 관련있는 것은 오직 외부에서 오는 트래픽 뿐임.
+# 오늘, 내일 내로 블로그와 ppt에(ppt 꾸미는 법 배우기.) 기록하기
+# github 에서 프로젝트 이름이나 인증 정보, ID 값 등을 제외한 어떤 자원의 '이름' 같은 경우, '목적' 등의 민감 정보가 노출되어있냐 아니냐에 따라 secrets에 등록 권장 여부가 달라짐
