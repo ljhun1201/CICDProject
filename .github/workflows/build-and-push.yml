@@ -88,8 +88,7 @@ jobs:
     # 12. GKE 인증 플러그인 설치 단계 추가
     - name: Install gke-gcloud-auth-plugin
       run: |
-        sudo apt-get update
-        sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
+        gcloud components install gke-gcloud-auth-plugin -q
 
     # 13. EKS kubeconfig 설정
     - name: Configure kubeconfig for EKS
