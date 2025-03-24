@@ -10,6 +10,7 @@ permissions:
   contents: read
 
 env:
+  USE_GKE_GCLOUD_AUTH_PLUGIN: True # 특정 gke 클러스터에서 명령 사용을 위한 자동화된 인증 플러그인
   AWS_REGION: ap-northeast-2
   GCP_REGION: asia-northeast3
   GCR_REPO_NAME: app-images
