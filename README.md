@@ -12,7 +12,7 @@
 #### 🔸 AWS
 - **Route 53**: 도메인 이름 관리
 - **CloudFront + ACM**: HTTPS 인증 및 글로벌 콘텐츠 전송
-- **ALB**: k8s deployment에 따른른 트래픽 라우팅(ingress)
+- **ALB**: k8s deployment에 따른 트래픽 라우팅(ingress)
 - **S3**: 정적 웹 프론트엔드 배포
 - **EKS**: 백엔드 서비스 배포
 - **RDS**: 사용자 데이터 저장
