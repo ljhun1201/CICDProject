@@ -510,4 +510,3 @@ resource "kubernetes_manifest" "app_ingress" {
     }
   }
 }
-

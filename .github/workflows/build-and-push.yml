@@ -26,6 +26,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    # 1+. JAR Build 추가 (회원가입 서비스)
+    - name: Build Spring Boot App - User Registration Service
+      run: |
+        cd ./backend-root/user-registration-service
+        chmod +x ./gradlew
+        ./gradlew build
+
     # 2. AWS OIDC 인증 설정
     - name: Configure AWS credentials using OIDC
       uses: aws-actions/configure-aws-credentials@v2
