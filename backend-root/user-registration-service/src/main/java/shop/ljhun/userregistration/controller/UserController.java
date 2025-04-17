@@ -42,7 +42,7 @@ public class UserController {
                 .body(Map.of("success", true, "message", "User registered successfully"));
     }
 
-    @GetMapping("/healthz")
+    @GetMapping(path = "/healthz")
     public ResponseEntity<?> generalHealthCheck(HttpServletRequest request) {
         System.out.println("Health check received from: " + request.getHeader("X-Forwarded-For"));
         System.out.println("User-Agent: " + request.getHeader("User-Agent"));

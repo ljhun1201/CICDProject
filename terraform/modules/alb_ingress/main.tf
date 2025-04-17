@@ -50,7 +50,7 @@ resource "kubernetes_deployment" "app_one" {
           name  = "app-one-container"
           image = data.aws_ecr_repository.user_registration_repo.repository_url
           port {
-            container_port = 5000
+            container_port = 8080
           }
 
           env {
@@ -78,7 +78,7 @@ resource "kubernetes_deployment" "app_one" {
           liveness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -89,7 +89,7 @@ resource "kubernetes_deployment" "app_one" {
           readiness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -128,7 +128,7 @@ resource "kubernetes_deployment" "app_two" {
           name  = "app-two-container"
           image = data.aws_ecr_repository.user_login_repo.repository_url
           port {
-            container_port = 5000
+            container_port = 8080
           }
 
           env {
@@ -152,7 +152,7 @@ resource "kubernetes_deployment" "app_two" {
           liveness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -161,7 +161,7 @@ resource "kubernetes_deployment" "app_two" {
           readiness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -248,7 +248,7 @@ resource "kubernetes_service" "app_one_service" {
 
     port {
       port        = 80
-      target_port = 5000
+      target_port = 8080
     }
 
     type = "ClusterIP"
@@ -268,7 +268,7 @@ resource "kubernetes_service" "app_two_service" {
 
     port {
       port        = 80
-      target_port = 5000
+      target_port = 8080
     }
 
     type = "ClusterIP"
@@ -446,7 +446,7 @@ resource "kubernetes_manifest" "app_ingress" {
         "alb.ingress.kubernetes.io/target-type"   = "ip"  # ip: svc를 거치지 않고 pod로 직접 라우팅, NodePort 사용 X, 이것으로 인한 svc 사용 X, 이것을 지정하면 CNI 플러그인 형식에 따라 POD의 IP가 노드 밖으로 나오므로, NodePort 사용이 안 되는 것임(즉, ALB가 svc를 거치지 않고도 POD로 직접 라우팅 가능, clusterIP의 PORT는 무시됨), instance: NodePort 사용, 즉, svc를 거침
         "alb.ingress.kubernetes.io/security-groups" = var.alb_security_group_id
         "alb.ingress.kubernetes.io/healthcheck-path" = "/healthz"  # Health Check 경로 설정(이 경우, 모든 TG로, /healthz 경로로 헬스체크 트래픽을 전송. listener 정책이랑은 관련이 없음.)
-        "alb.ingress.kubernetes.io/healthcheck-port" = "5000"  # Health Check 포트
+        "alb.ingress.kubernetes.io/healthcheck-port" = "8080"  # Health Check 포트
         "alb.ingress.kubernetes.io/healthcheck-interval-seconds" = "30"  # Health Check 간격
         "alb.ingress.kubernetes.io/healthcheck-timeout-seconds" = "5"    # Health Check 타임아웃
         "alb.ingress.kubernetes.io/success-codes" = "200"                # 성공 응답 코드

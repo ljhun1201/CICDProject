@@ -25,7 +25,7 @@ resource "kubernetes_deployment" "app_one" {
           name  = "app-one-container"
           image = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-registration-service:latest"
           port {
-            container_port = 5000
+            container_port = 8080
           }
           env {
             name  = "DB_HOST"
@@ -48,7 +48,7 @@ resource "kubernetes_deployment" "app_one" {
           liveness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -57,7 +57,7 @@ resource "kubernetes_deployment" "app_one" {
           readiness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -95,7 +95,7 @@ resource "kubernetes_deployment" "app_two" {
           name  = "app-two-container"
           image = "asia-northeast3-docker.pkg.dev/peppy-arcadia-432311-g5/app-images/user-login-service:latest"
           port {
-            container_port = 5000
+            container_port = 8080
           }
           env {
             name  = "DB_HOST"
@@ -118,7 +118,7 @@ resource "kubernetes_deployment" "app_two" {
           liveness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -127,7 +127,7 @@ resource "kubernetes_deployment" "app_two" {
           readiness_probe {
             http_get {
               path = "/healthz"
-              port = 5000
+              port = 8080
             }
             initial_delay_seconds = 5
             period_seconds        = 10
@@ -191,7 +191,7 @@ resource "kubernetes_service" "app_one_service" {
     }
     port {
       port        = 80
-      target_port = 5000
+      target_port = 8080
     }
     type = "NodePort"
   }
@@ -211,7 +211,7 @@ resource "kubernetes_service" "app_two_service" {
     }
     port {
       port        = 80
-      target_port = 5000
+      target_port = 8080
     }
     type = "NodePort"
   }
@@ -423,11 +423,11 @@ output "app_ingress_namespace" {
 }
 
 output "neg_app_one" {
-  value = "k8s1-${var.cluster_name}-default-app-one-service-5000"
+  value = "k8s1-${var.cluster_name}-default-app-one-service-8080"
 }
 
 output "neg_app_two" {
-  value = "k8s1-${var.cluster_name}-default-app-two-service-5000"
+  value = "k8s1-${var.cluster_name}-default-app-two-service-8080"
 }
 
 output "ingress_ip" {
