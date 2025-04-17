@@ -360,7 +360,7 @@ resource "kubernetes_ingress_v1" "app_ingress" {
           path_type = "Prefix"
           backend {
             service {
-              name = kubernetes_service.app_two_service.metadata[0].name
+              name = kubernetes_service.app_one_service.metadata[0].name
               port {
                 number = 80
               }
