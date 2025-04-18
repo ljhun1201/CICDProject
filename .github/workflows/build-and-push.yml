@@ -33,6 +33,13 @@ jobs:
         chmod +x ./gradlew
         ./gradlew build
 
+    # 1++. JAR Build 추가 (로그인 서비스)
+    - name: Build Spring Boot App - User Login Service
+      run: |
+        cd ./backend-root/user-login-service
+        chmod +x ./gradlew
+        ./gradlew build
+
     # 2. AWS OIDC 인증 설정
     - name: Configure AWS credentials using OIDC
       uses: aws-actions/configure-aws-credentials@v2
