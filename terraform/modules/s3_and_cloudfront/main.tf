@@ -319,7 +319,7 @@ resource "aws_route53_record" "frontend_alias" {
   allow_overwrite = true
   
   weighted_routing_policy {
-    weight = 50
+    weight = 0
   }
 
   alias {
@@ -357,7 +357,7 @@ resource "aws_route53_record" "frontend_alias1" {
   allow_overwrite = true
   
   weighted_routing_policy {
-    weight = 50
+    weight = 0
   }
 
 

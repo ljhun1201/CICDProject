@@ -217,67 +217,98 @@ resource "kubernetes_service" "app_two_service" {
   }
 }
 
-resource "helm_release" "cert_manager" {
-  name       = "cert-manager"
-  repository = "https://charts.jetstack.io"
-  chart      = "cert-manager"
-  version    = "v1.12.3"  # 원하는 버전
-  namespace  = "cert-manager"
-  create_namespace = true
+# cert-manager CRD + controller 설치를 오직 여기서만 함
+resource "null_resource" "install_cert_manager" {
+  provisioner "local-exec" {
+    command = <<EOT
+      set -e  # 에러 발생 시 스크립트 종료
 
-  set {
-    name  = "installCRDs"
-    value = "true"
+      echo "[INFO] cert-manager Helm repo 설정"
+      helm repo add jetstack https://charts.jetstack.io || true
+      helm repo update
+
+      echo "[INFO] 기존 cert-manager 제거 (있을 경우)"
+      helm uninstall cert-manager -n cert-manager || true
+      kubectl delete ns cert-manager --ignore-not-found
+
+      echo "[INFO] cert-manager 재설치 및 CRD 포함"
+      helm install cert-manager jetstack/cert-manager \
+        --namespace cert-manager \
+        --create-namespace \
+        --set crds.enabled=true
+
+      echo "[INFO] CRD가 정상적으로 등록될 때까지 대기"
+      for i in {1..30}; do
+        kubectl get crd clusterissuers.cert-manager.io && break || sleep 2
+      done
+
+      echo "[INFO] CRD 상태 확인"
+      kubectl wait --for=condition=Established --timeout=60s crd/clusterissuers.cert-manager.io
+    EOT
   }
 
-  # 추가 세팅이 필요하면 values.yml이든 inline set이든 설정
+  triggers = {
+    always_run = timestamp()
+  }
 }
 
+# 이후 ClusterIssuer, Certificate 등의 리소스 정의는 기존과 동일하게 유지
+
+# 예시로 이어지는 ClusterIssuer 및 Certificate 정의
 resource "kubernetes_secret" "route53_secret" {
+  depends_on = [
+    null_resource.install_cert_manager
+  ]
+
   metadata {
     name      = "route53-secret"
     namespace = "cert-manager"
   }
 
   data = {
-    access-key-id     = var.access-key-id   # AWS Access Key ID
-    secret-access-key = var.secret-access-key  # AWS Secret Access Key
+    access_key_id     = var.access_key_id
+    secret_access_key = var.secret_access_key
   }
+
+  type = "Opaque"
 }
 
-resource "kubernetes_manifest" "letsencrypt_prod_issuer" {
+resource "kubernetes_manifest" "letsencrypt_staging_issuer" {
   depends_on = [
-    helm_release.cert_manager
+    null_resource.install_cert_manager,
+    kubernetes_secret.route53_secret
   ]
 
   manifest = yamldecode(<<EOF
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod
+  name: letsencrypt-staging   # ⚠️ 이름도 staging으로 바꾸자
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
+    server: https://acme-staging-v02.api.letsencrypt.org/directory  # ✅ Staging 주소
     email: "1201ljhun@gmail.com"
     privateKeySecretRef:
-      name: letsencrypt-prod-key
+      name: letsencrypt-staging-key
     solvers:
       - dns01:
           route53:
-            region: "us-east-1"  # Route 53은 글로벌이지만, IAM 설정은 특정 리전 필요
-            hostedZoneID: "Z003422921ZWRSU9KTPP7"  # Route 53 Hosted Zone ID
+            region: "us-east-1"
+            hostedZoneID: "Z003422921ZWRSU9KTPP7"
             accessKeyIDSecretRef:
               name: route53-secret
-              key: access-key-id
+              key: access_key_id
             secretAccessKeySecretRef:
               name: route53-secret
-              key: secret-access-key
+              key: secret_access_key
 EOF
   )
 }
 
 resource "kubernetes_manifest" "app_ingress_certificate" {
-  depends_on = [kubernetes_manifest.letsencrypt_prod_issuer]
+  depends_on = [
+    kubernetes_manifest.letsencrypt_staging_issuer
+  ]
 
   manifest = yamldecode(<<EOF
 apiVersion: cert-manager.io/v1
@@ -286,13 +317,20 @@ metadata:
   name: app-ingress-certificate
   namespace: default
 spec:
-  secretName: app-ingress-tls   # Ingress의 spec.tls.secretName와 동일
+  secretName: app-ingress-tls
   issuerRef:
-    name: letsencrypt-prod      # 위에서 만든 ClusterIssuer
+    name: letsencrypt-staging
     kind: ClusterIssuer
+  commonName: api.ljhun.shop
   dnsNames:
-    - "api.ljhun.shop"
-    - "healthcheck.ljhun.shop"
+    - api.ljhun.shop
+    - healthcheck.ljhun.shop
+  privateKey:
+    rotationPolicy: Always
+  usages:
+    - digital signature
+    - key encipherment
+    - server auth
 EOF
   )
 }
@@ -304,17 +342,23 @@ resource "google_compute_global_address" "ingress_static_ip" {
 }
 
 resource "kubernetes_ingress_v1" "app_ingress" {
+  depends_on = [
+    kubernetes_service.app_one_service,                 # 백엔드 서비스 존재해야 연결 가능
+    kubernetes_service.app_two_service,
+    kubernetes_manifest.app_ingress_certificate         # TLS Secret 먼저 생성돼야 ingress에서 참조 가능
+  ]
+
   metadata {
     name      = "app-ingress"
     namespace = "default"
     annotations = {
       "kubernetes.io/ingress.class" = "gce"
       "kubernetes.io/ingress.allow-http" = "true"
-      "cert-manager.io/cluster-issuer" = "letsencrypt-prod"
+      # "cert-manager.io/cluster-issuer" = "letsencrypt-staging" --> 제거: 어차피 수동으로 만든 cert-manager 인증서 때문에 이것은 할 필요 없음
       "cloud.google.com/neg" = "{\"ingress\": true}"
       "ingress.kubernetes.io/backends"    = "true" # 디버깅 용도
       "kubernetes.io/ingress.global-static-ip-name" = google_compute_global_address.ingress_static_ip.name # 필요 시, 고정 IP 할당(추가로 global_address를 만들어서 설정)
-      
+
       /*
       "nginx.ingress.kubernetes.io/cors-allow-origin" = "*"
       "nginx.ingress.kubernetes.io/cors-allow-methods" = "GET, POST, OPTIONS"

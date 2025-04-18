@@ -22,8 +22,13 @@ public class UserRegistrationApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedMethods("GET", "POST", "OPTIONS");
+                    .allowedOrigins(
+                        "https://www.ljhun.shop",
+                        "https://ljhun.shop"           // ✅ 둘 다 명시!
+                    )
+                    .allowedMethods("GET", "POST", "OPTIONS")
+                    .allowedHeaders("*")
+                    .allowCredentials(true);
             }
         };
     }
