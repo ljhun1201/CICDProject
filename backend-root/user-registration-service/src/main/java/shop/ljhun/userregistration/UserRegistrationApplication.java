@@ -1,6 +1,6 @@
 // Spring Boot MVC + Repository + Service + Model 구조 (JPA 제거, 순수 JDBC 기반)
 
-// ✅ Application 진입점
+// ✅ Application 진입점(개조)
 
 package shop.ljhun.userregistration;
 

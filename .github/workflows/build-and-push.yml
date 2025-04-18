@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env:
-  USE_GKE_GCLOUD_AUTH_PLUGIN: True # 특정 gke 클러스터에서 명령 사용을 위한 자동화된 인증 플러그인
+  USE_GKE_GCLOUD_AUTH_PLUGIN: True
   AWS_REGION: ap-northeast-2
   GCP_REGION: asia-northeast3
   GCR_REPO_NAME: app-images
@@ -22,102 +22,77 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. 리포지토리 클론
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    # 1+. JAR Build 추가 (회원가입 서비스)
-    - name: Build Spring Boot App - User Registration Service
-      run: |
-        cd ./backend-root/user-registration-service
-        chmod +x ./gradlew
-        ./gradlew build
+      - name: Build Spring Boot App - User Registration Service
+        run: |
+          cd ./backend-root/user-registration-service
+          chmod +x ./gradlew
+          ./gradlew build
 
-    # 1++. JAR Build 추가 (로그인 서비스)
-    - name: Build Spring Boot App - User Login Service
-      run: |
-        cd ./backend-root/user-login-service
-        chmod +x ./gradlew
-        ./gradlew build
+      - name: Build Spring Boot App - User Login Service
+        run: |
+          cd ./backend-root/user-login-service
+          chmod +x ./gradlew
+          ./gradlew build
 
-    # 2. AWS OIDC 인증 설정
-    - name: Configure AWS credentials using OIDC
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/S3WebRole
-        aws-region: ${{ env.AWS_REGION }}
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/S3WebRole
+          aws-region: ${{ env.AWS_REGION }}
 
-    # 3. GCP 인증 설정
-    - name: Authenticate to Google Cloud
-      uses: google-github-actions/auth@v1
-      with:
-        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
-    # 4. GCP CLI 설치
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
 
-    # 5. AWS ECR 로그인
-    - name: Login to Amazon ECR
-      run: |
-        aws ecr get-login-password --region $AWS_REGION | \
-        docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region $AWS_REGION | \
+          docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com
 
-    # 6. GCR 로그인
-    - name: Login to GCR
-      run: |
-        gcloud auth configure-docker $GCP_REGION-docker.pkg.dev
+      - name: Login to GCR
+        run: |
+          gcloud auth configure-docker $GCP_REGION-docker.pkg.dev
 
-    # 7. GCP 프로젝트 ID 출력 (디버깅 용도)
-    - name: Debug GCP Project ID
-      run: |
-        echo "GCP Project: ${{ secrets.GCP_PROJECT_ID }}"
+      - name: Build and Tag Docker Images
+        run: |
+          docker build -t $IMAGE1_NAME:latest ./backend-root/user-registration-service
+          docker tag $IMAGE1_NAME:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest
+          docker tag $IMAGE1_NAME:latest $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest
+          docker build -t $IMAGE2_NAME:latest ./backend-root/user-login-service
+          docker tag $IMAGE2_NAME:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest
+          docker tag $IMAGE2_NAME:latest $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest
 
-    # 8. Docker 이미지 빌드 및 태깅 - 회원가입 서비스
-    - name: Build and Tag Docker Image - User Registration Service
-      run: |
-        docker build -t $IMAGE1_NAME:latest ./backend-root/user-registration-service
-        docker tag $IMAGE1_NAME:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest
-        docker tag $IMAGE1_NAME:latest $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest
+      - name: Push Docker Images to ECR and GCR
+        run: |
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest
+          docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest
+          docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest
 
-    # 9. Docker 이미지 빌드 및 태깅 - 로그인 서비스
-    - name: Build and Tag Docker Image - User Login Service
-      run: |
-        docker build -t $IMAGE2_NAME:latest ./backend-root/user-login-service
-        docker tag $IMAGE2_NAME:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest
-        docker tag $IMAGE2_NAME:latest $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest
+      - name: Install gke-gcloud-auth-plugin
+        run: |
+          gcloud components install gke-gcloud-auth-plugin -q
 
-    # 10. Docker 이미지 ECR에 푸시
-    - name: Push Docker Images to Amazon ECR
-      run: |
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest
+      - name: Update EKS Deployment
+        run: |
+          aws eks update-kubeconfig --name ${{ secrets.AWS_EKS_CLUSTER_NAME }} --region $AWS_REGION
+          kubectl set image deployment/app-one app-one-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest -n default
+          kubectl set image deployment/app-two app-two-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest -n default
+          kubectl rollout status deployment/app-one -n default
+          kubectl rollout status deployment/app-two -n default
 
-    # 11. Docker 이미지 GCR에 푸시
-    - name: Push Docker Images to Google GCR
-      run: |
-        docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest
-        docker push $GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest
-
-    # 12. GKE 인증 플러그인 설치 단계 추가
-    - name: Install gke-gcloud-auth-plugin
-      run: |
-        gcloud components install gke-gcloud-auth-plugin -q
-
-    # 13. EKS kubeconfig 설정
-    - name: Configure kubeconfig for EKS
-      run: |
-        aws eks update-kubeconfig --name ${{ secrets.AWS_EKS_CLUSTER_NAME }} --region $AWS_REGION
-
-    # 14. EKS 배포 업데이트
-    - name: Update Deployment in EKS
-      run: |
-        kubectl set image deployment/app-one app-one-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest -n default
-        kubectl set image deployment/app-two app-two-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest -n default
-
-    # 15. GKE kubeconfig 설정 및 배포 업데이트
-    - name: Configure kubeconfig for GKE and Update
-      run: |
-        gcloud container clusters get-credentials ${{ secrets.GCP_GKE_CLUSTER_NAME }} --region $GCP_REGION --project ${{ secrets.GCP_PROJECT_ID }}
-        kubectl set image deployment/app-one app-one-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest -n default
-        kubectl set image deployment/app-two app-two-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest -n default
+      - name: Update GKE Deployment
+        run: |
+          gcloud container clusters get-credentials ${{ secrets.GCP_GKE_CLUSTER_NAME }} --region $GCP_REGION --project ${{ secrets.GCP_PROJECT_ID }}
+          kubectl config use-context gke_${{ secrets.GCP_PROJECT_ID }}_${{ env.GCP_REGION }}_${{ secrets.GCP_GKE_CLUSTER_NAME }}
+          kubectl set image deployment/app-one app-one-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest -n default
+          kubectl set image deployment/app-two app-two-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest -n default
+          kubectl rollout status deployment/app-one -n default
+          kubectl rollout status deployment/app-two -n default

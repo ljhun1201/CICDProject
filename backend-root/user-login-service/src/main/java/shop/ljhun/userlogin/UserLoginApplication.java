@@ -1,5 +1,5 @@
 package shop.ljhun.userlogin;
-
+//(개조)
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
