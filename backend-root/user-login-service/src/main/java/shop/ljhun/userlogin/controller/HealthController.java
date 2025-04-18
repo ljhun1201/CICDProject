@@ -1,4 +1,4 @@
-package shop.ljhun.userregistration.controller;
+package shop.ljhun.userlogin.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
