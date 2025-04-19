@@ -23,8 +23,7 @@ public class UserRegistrationApplication {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                     .allowedOrigins(
-                        "https://www.ljhun.shop",
-                        "https://ljhun.shop"           // ✅ 둘 다 명시!
+                        "https://api.ljhun.shop"
                     )
                     .allowedMethods("GET", "POST", "OPTIONS")
                     .allowedHeaders("*")
