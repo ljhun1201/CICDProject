@@ -1,4 +1,4 @@
-package shop.ljhun.userregistration;
+package shop.ljhun.userlogin;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletResponse;
