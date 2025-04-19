@@ -11,7 +11,7 @@ import java.util.Map;
 
 @CrossOrigin(
     origins = { "https://www.ljhun.shop", "https://ljhun.shop" },
-    allowedHeaders = { "content-type", "authorization" },
+    allowedHeaders = "*",
     allowCredentials = "true",
     methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS }
 )
@@ -42,10 +42,5 @@ public class LoginController {
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("success", false, "error", "Invalid credentials"));
         }
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.OPTIONS)
-    public ResponseEntity<?> handleOptions() {
-        return ResponseEntity.ok(Map.of("message", "CORS preflight passed"));
     }
 }

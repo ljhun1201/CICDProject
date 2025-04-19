@@ -27,7 +27,7 @@ public class UserRegistrationApplication {
                         "https://ljhun.shop"
                     )
                     .allowedMethods("GET", "POST", "OPTIONS")
-                    .allowedHeaders("content-type", "authorization")
+                    .allowedHeaders("*")
                     .allowCredentials(true);
             }
         };

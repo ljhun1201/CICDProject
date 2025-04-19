@@ -20,10 +20,10 @@ public class UserLoginApplication {
                 registry.addMapping("/**")
                     .allowedOrigins(
                         "https://www.ljhun.shop", 
-                        "https://ljhun.shop"           // ✅ 둘 다 명시!
+                        "https://ljhun.shop"
                     )
                     .allowedMethods("GET", "POST", "OPTIONS")
-                    .allowedHeaders("content-type", "authorization")
+                    .allowedHeaders("*")
                     .allowCredentials(true);
             }
         };

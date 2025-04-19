@@ -13,7 +13,7 @@ import java.util.Map;
 
 @CrossOrigin(
     origins = { "https://www.ljhun.shop", "https://ljhun.shop" },
-    allowedHeaders = { "content-type", "authorization" },
+    allowedHeaders = "*",
     allowCredentials = "true",
     methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS }
 )
@@ -47,12 +47,12 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Map.of("success", true, "message", "User registered successfully"));
     }
-
+    /*
     @RequestMapping(value = "/register", method = RequestMethod.OPTIONS)
     public ResponseEntity<?> handleOptions() {
         return ResponseEntity.ok(Map.of("message", "CORS preflight passed"));
     }
-    /*
+
     @GetMapping(path = "/healthz")
     public ResponseEntity<?> generalHealthCheck(HttpServletRequest request) {
         System.out.println("Health check received from: " + request.getHeader("X-Forwarded-For"));
