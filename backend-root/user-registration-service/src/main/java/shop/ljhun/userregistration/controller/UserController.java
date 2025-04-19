@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@CrossOrigin(origins = {
+    "https://www.ljhun.shop",
+    "https://ljhun.shop"
+})
 @RestController
 @RequestMapping("/app-one")
 public class UserController {

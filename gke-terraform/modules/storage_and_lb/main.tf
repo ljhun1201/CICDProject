@@ -33,6 +33,17 @@ resource "google_storage_bucket_object" "html_files" {
   content_type = "text/html"
 }
 
+resource "google_storage_object_acl" "public_html_acls" {
+  for_each = google_storage_bucket_object.html_files
+
+  bucket = each.value.bucket
+  object = each.value.name
+
+  role_entity = [
+    "READER:allUsers"
+  ]
+}
+
 resource "google_compute_backend_bucket" "gcs_backend" {
   name        = "gcs-backend"
   bucket_name = google_storage_bucket.frontend_bucket.name
@@ -57,13 +68,13 @@ resource "google_compute_url_map" "lb_url_map" {
       service = google_compute_backend_bucket.gcs_backend.self_link
     }
   }
-
+  default_service = google_compute_backend_bucket.gcs_backend.self_link
   # HTTP 요청을 HTTPS로 리디렉션
-  default_url_redirect {
-    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-    https_redirect         = true
-    strip_query            = false 
-  }
+  #default_url_redirect {
+  #  redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+  #  https_redirect         = true
+  #  strip_query            = false 
+  #}
 }
 
 resource "google_compute_managed_ssl_certificate" "lb_cert" {

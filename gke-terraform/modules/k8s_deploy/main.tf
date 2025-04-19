@@ -273,7 +273,7 @@ resource "kubernetes_secret" "route53_secret" {
   type = "Opaque"
 }
 
-resource "kubernetes_manifest" "letsencrypt_staging_issuer" {
+resource "kubernetes_manifest" "letsencrypt_prod_issuer" {
   depends_on = [
     null_resource.install_cert_manager,
     kubernetes_secret.route53_secret
@@ -283,13 +283,13 @@ resource "kubernetes_manifest" "letsencrypt_staging_issuer" {
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-staging   # ⚠️ 이름도 staging으로 바꾸자
+  name: letsencrypt-prod
 spec:
   acme:
-    server: https://acme-staging-v02.api.letsencrypt.org/directory  # ✅ Staging 주소
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: "1201ljhun@gmail.com"
     privateKeySecretRef:
-      name: letsencrypt-staging-key
+      name: letsencrypt-prod-key
     solvers:
       - dns01:
           route53:
@@ -307,7 +307,7 @@ EOF
 
 resource "kubernetes_manifest" "app_ingress_certificate" {
   depends_on = [
-    kubernetes_manifest.letsencrypt_staging_issuer
+    kubernetes_manifest.letsencrypt_prod_issuer
   ]
 
   manifest = yamldecode(<<EOF
@@ -319,7 +319,7 @@ metadata:
 spec:
   secretName: app-ingress-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
   commonName: api.ljhun.shop
   dnsNames:
