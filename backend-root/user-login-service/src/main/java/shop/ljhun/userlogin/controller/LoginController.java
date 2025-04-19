@@ -9,10 +9,12 @@ import shop.ljhun.userlogin.service.UserService;
 
 import java.util.Map;
 
-@CrossOrigin(origins = {
-    "https://www.ljhun.shop", 
-    "https://ljhun.shop"
-})
+@CrossOrigin(
+    origins = { "https://www.ljhun.shop", "https://ljhun.shop" },
+    allowedHeaders = { "Content-Type", "Authorization" },
+    allowCredentials = "true",
+    methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS }
+)
 @RestController
 @RequestMapping("/app-two")
 public class LoginController {

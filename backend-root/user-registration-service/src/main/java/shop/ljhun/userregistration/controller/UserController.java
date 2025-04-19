@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@CrossOrigin(origins = {
-    "https://www.ljhun.shop", 
-    "https://ljhun.shop"
-})
+@CrossOrigin(
+    origins = { "https://www.ljhun.shop", "https://ljhun.shop" },
+    allowedHeaders = { "Content-Type", "Authorization" },
+    allowCredentials = "true",
+    methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS }
+)
 @RestController
 @RequestMapping("/app-one")
 public class UserController {
