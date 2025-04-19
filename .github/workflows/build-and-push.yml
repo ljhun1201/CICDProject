@@ -85,8 +85,8 @@ jobs:
           aws eks update-kubeconfig --name ${{ secrets.AWS_EKS_CLUSTER_NAME }} --region $AWS_REGION
           kubectl set image deployment/app-one app-one-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE1_NAME:latest -n default
           kubectl set image deployment/app-two app-two-container=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE2_NAME:latest -n default
-          kubectl rollout status deployment/app-one -n default
-          kubectl rollout status deployment/app-two -n default
+          kubectl rollout restart deployment app-one -n default
+          kubectl rollout restart deployment app-two -n default
 
       - name: Update GKE Deployment
         run: |
@@ -94,5 +94,5 @@ jobs:
           kubectl config use-context gke_${{ secrets.GCP_PROJECT_ID }}_${{ env.GCP_REGION }}_${{ secrets.GCP_GKE_CLUSTER_NAME }}
           kubectl set image deployment/app-one app-one-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE1_NAME:latest -n default
           kubectl set image deployment/app-two app-two-container=$GCP_REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$GCR_REPO_NAME/$IMAGE2_NAME:latest -n default
-          kubectl rollout status deployment/app-one -n default
-          kubectl rollout status deployment/app-two -n default
+          kubectl rollout restart deployment app-one -n default
+          kubectl rollout restart deployment app-two -n default
