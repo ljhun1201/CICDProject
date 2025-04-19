@@ -10,7 +10,8 @@ import shop.ljhun.userlogin.service.UserService;
 import java.util.Map;
 
 @CrossOrigin(origins = {
-    "https://api.ljhun.shop"
+    "https://www.ljhun.shop", 
+    "https://ljhun.shop"
 })
 @RestController
 @RequestMapping("/app-two")
