@@ -13,7 +13,7 @@ import java.util.Map;
 
 @CrossOrigin(
     origins = { "https://www.ljhun.shop", "https://ljhun.shop" },
-    allowedHeaders = { "Content-Type", "Authorization" },
+    allowedHeaders = { "content-type", "authorization" },
     allowCredentials = "true",
     methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS }
 )

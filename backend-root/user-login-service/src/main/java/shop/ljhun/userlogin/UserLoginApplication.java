@@ -23,7 +23,7 @@ public class UserLoginApplication {
                         "https://ljhun.shop"           // ✅ 둘 다 명시!
                     )
                     .allowedMethods("GET", "POST", "OPTIONS")
-                    .allowedHeaders("Content-Type", "Authorization")
+                    .allowedHeaders("content-type", "authorization")
                     .allowCredentials(true);
             }
         };
