@@ -19,11 +19,11 @@ public class UserLoginApplication {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                     .allowedOrigins(
-                        "https://www.ljhun.shop",
+                        "https://www.ljhun.shop", 
                         "https://ljhun.shop"           // ✅ 둘 다 명시!
                     )
                     .allowedMethods("GET", "POST", "OPTIONS")
-                    .allowedHeaders("*")
+                    .allowedHeaders("Content-Type", "Authorization")
                     .allowCredentials(true);
             }
         };
