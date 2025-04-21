@@ -158,6 +158,10 @@ resource "aws_dms_replication_instance" "dms_instance" {
   tags = {
     Name = "MyDmsInstance"
   }
+
+  lifecycle {
+    prevent_destroy = false
+  }
 }
 
 #####################################################
