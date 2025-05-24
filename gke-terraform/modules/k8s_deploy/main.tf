@@ -219,6 +219,15 @@ resource "kubernetes_service" "app_two_service" {
 
 # cert-manager CRD + controller 설치를 오직 여기서만 함
 resource "null_resource" "install_cert_manager" {
+
+  depends_on = [
+    kubernetes_deployment.app_one,
+    kubernetes_deployment.app_two,
+    kubernetes_job.db_init_job,
+    kubernetes_service.app_one_service,
+    kubernetes_service.app_two_service
+  ]
+
   provisioner "local-exec" {
     command = <<EOT
       set -e  # 에러 발생 시 스크립트 종료
@@ -273,10 +282,29 @@ resource "kubernetes_secret" "route53_secret" {
   type = "Opaque"
 }
 
+resource "kubernetes_secret" "route53_secret_default" {
+  depends_on = [
+    null_resource.install_cert_manager
+  ]
+
+  metadata {
+    name      = "route53-secret"
+    namespace = "default"
+  }
+
+  data = {
+    access_key_id     = var.access_key_id
+    secret_access_key = var.secret_access_key
+  }
+
+  type = "Opaque"
+}
+
 resource "kubernetes_manifest" "letsencrypt_prod_issuer" {
   depends_on = [
     null_resource.install_cert_manager,
-    kubernetes_secret.route53_secret
+    kubernetes_secret.route53_secret,
+    kubernetes_secret.route53_secret_default
   ]
 
   manifest = yamldecode(<<EOF
@@ -368,6 +396,7 @@ resource "kubernetes_ingress_v1" "app_ingress" {
     }
   }
   spec {
+    ingress_class_name = "gce"
     tls {
       hosts      = ["api.ljhun.shop", "healthcheck.ljhun.shop"]
       secret_name = "app-ingress-tls"
