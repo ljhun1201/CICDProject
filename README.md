@@ -32,8 +32,8 @@
 ## 📦 애플리케이션 구성
 
 ### 🔧 백엔드 마이크로서비스 (Docker 기반)
-- `user-registration-service` (Flask)
-- `user-login-service` (Flask)
+- `user-registration-service` (Spring Boot)
+- `user-login-service` (Spring Boot)
 
 ### 🖼️ 프론트엔드
 - `html/` 디렉토리 내 정적 리소스 (S3 + CloudFront 통해 배포)
@@ -92,7 +92,7 @@ CICDProject/
 - **Cloud Router / VPN Gateway**: 클라우드 간 동기화 및 DB 통신 지원
 
 ### 🧩 백엔드 & 앱
-- **Python (Flask)**: `user-registration-service`, `user-login-service` 구현
+- **Python (Spring Boot)**: `user-registration-service`, `user-login-service` 구현
 - **정적 웹 (HTML/CSS)**: S3 + CloudFront로 배포되는 프론트엔드
 
 ---
